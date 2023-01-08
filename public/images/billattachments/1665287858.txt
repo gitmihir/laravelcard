@@ -1,0 +1,202 @@
+### Begin Install Info ###
+
+## Please include this information when posting support requests ##
+
+
+--- Site Info ---
+
+Site URL:					https://agents.atpinbound.com.au
+Home URL:					https://agents.atpinbound.com.au
+Multisite:					No
+
+--- Hosting Provider ---
+
+Host:						DBH: localhost, SRV: agents.atpinbound.com.au
+
+--- User Browser ---
+
+Platform:                 Apple 
+Browser Name:             Chrome  
+Browser Version:          106.0.0.0 
+User Agent String:        Mozilla/5.0 (Macintosh; Intel Ma 
+			  c OS X 10_15_7) AppleWebKit/537.
+                          36 (KHTML, like Gecko) Chrome/10
+                          6.0.0.0 Safari/537.36
+                          
+---- Current User Details --
+
+Role: administrator
+
+
+--- WordPress Configurations ---
+
+Version:						6.0.2
+Language:					en_US
+Permalink Structure:			/%postname%/
+Active Theme:				Alecaddd WordPress Starter theme 3.0.0
+Page On Front:				Front Page (#276)
+Page For Posts:				 (#0)
+ABSPATH:					/home/zvsktucz/agents.atpinbound.com.au/
+All Posts/Pages:				91
+WP Remote Post:           		wp_remote_post() works
+WP_DEBUG:                 			Enabled
+WP Table Prefix:          			Length: 3, Status: Acceptable
+Memory Limit:   				40MB
+
+
+--- UM Configurations ---
+
+Version:						2.5.0
+Upgraded From:            		2.5.0
+Current URL Method:			
+Cache User Profile:			Yes
+Generate Slugs on Directories:	Yes
+Force UTF-8 Encoding: 		No
+JS/CSS Compression: 			No
+Port Forwarding in URL: 		No
+Exclude CSS/JS on Home: 		No
+
+
+--- UM Pages Configuration ---
+
+User:						https://agents.atpinbound.com.au/
+Account:						https://agents.atpinbound.com.au/my-account/
+Members:					https://agents.atpinbound.com.au/
+Register:						https://agents.atpinbound.com.au/custom-login-page/
+Login:						https://agents.atpinbound.com.au/custom-login-page/
+Logout:						https://agents.atpinbound.com.au/
+Password Reset:				https://agents.atpinbound.com.au/my-account/
+
+
+--- UM Users Configuration ---
+
+Default New User Role: 		0
+Profile Permalink Base:		user_login
+User Display Name:			full_name
+Force Name to Uppercase:		No
+Redirect author to profile: 		Yes
+Enable Members Directory:	Yes
+Use Gravatars: 				No
+Require a strong password: 	Off
+
+
+--- UM Access Configuration ---
+
+Panic Key: 								
+Global Site Access:						Site accessible to Logged In Users
+Custom Redirect URL:						
+Exclude the following URLs:				
+Backend Login Screen for Guests:			No
+Redirect to alternative login page:			
+Backend Register Screen for Guests:		No
+Redirect to alternative register page:		
+Access Control widget for Admins only: 		No
+Enable the Reset Password Limit:			Yes
+Reset Password Limit: 3Disable Reset Password Limit for Admins: No
+Blacklist Words: 							5
+
+
+--- UM Email Configurations ---
+
+Mail appears from:  			Aussie Tour Planner
+Mail appears from address:  	Jasbir.wth@gmail.com
+Use HTML for E-mails:   		Yes
+Account Welcome Email:  		Yes
+Account Activation Email:   	No
+Pending Review Email:   		No
+Account Approved Email: 		No
+Account Rejected Email: 		No
+Account Deactivated Email:  	Yes
+Account Deleted Email:  		Yes
+Password Reset Email:   		Yes
+Password Changed Email: 		Yes
+
+
+--- UM Total Users ---
+
+				All Users(4)
+administrator(2)
+customer(1)
+employee_login(1)
+none(0)
+
+
+--- UM Roles ---
+
+				Administrator (administrator)
+Editor (editor)
+Author (author)
+Contributor (contributor)
+Subscriber (subscriber)
+Customer (customer)
+Shop manager (shop_manager)
+Employee Login (employee_login)
+SEO Manager (wpseo_manager)
+SEO Editor (wpseo_editor)
+
+
+--- UM Custom Templates ---
+
+				N/A
+
+
+--- UM Email HTML Templates ---
+
+				N/A
+
+
+--- Web Server Configurations ---
+
+PHP Version:              			7.4.32
+MySQL Version:            			10.3.36
+Web Server Info:          			LiteSpeed
+
+
+--- PHP Configurations ---
+
+PHP Memory Limit:         			1024M
+PHP Upload Max Size:      			1024M
+PHP Post Max Size:        			1024M
+PHP Upload Max Filesize:  			1024M
+PHP Time Limit:           			300
+PHP Max Input Vars:       			3000
+PHP Arg Separator:        			&
+PHP Allow URL File Open:  			Yes
+
+
+--- Web Server Extensions/Modules ---
+
+DISPLAY ERRORS:           			On (Off)
+FSOCKOPEN:                			Your server supports fsockopen.
+cURL:                     			Your server supports cURL.
+SOAP Client:              			Your server has the SOAP Client enabled.
+SUHOSIN:                  			Your server does not have SUHOSIN installed.
+GD Library:               			PHP GD library is installed on your web server.
+Mail:                     			PHP mail function exist on your web server.
+Exif:				          PHP Exif library is installed on your web server.
+
+
+--- Session Configurations ---
+
+Session:                  			Enabled
+Session Name:             			PHPSESSID
+Cookie Path:              			/
+Save Path:                			/var/cpanel/php/sessions/ea-php80
+Use Cookies:              			On
+Use Only Cookies:         			On
+
+
+--- WordPress Active Plugins ---
+
+				Advanced Custom Fields: 6.0.2
+Better Search Replace: 1.4.1
+Booking Details: 1.2
+Classic Editor: 1.6.2
+Classic Widgets: 0.3
+Custom Shopping Cart: 4.4.3
+Mobile Menu: 2.8.2.7
+Open Currency Converter: 1.4.5
+Taxonomy Images: 1.0
+Ultimate Member: 2.5.0
+
+### End Install Info ###

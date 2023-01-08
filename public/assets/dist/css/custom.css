@@ -1,0 +1,49 @@
+ul.nav.nav-treeview .nav-item {
+    margin-left: 15px;
+}
+
+[class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
+[class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
+[class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
+    background-color: #007bff;
+    color: #fff;
+}
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active,
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus,
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:hover {
+    background-color: #3f474e;
+    color: #ffffff;
+}
+
+.catwidth th,
+.catwidth td {
+    width: 50%;
+}
+
+.productimg img {
+    width: 100%;
+    height: auto;
+}
+
+.billclasstable td {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.billclass {
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+.brandlogoimages img {
+    width: 15%;
+    height: auto;
+}
+.backendimage img,
+.backendimage video {
+    width: 50%;
+    height: auto;
+}
+.productimge img {
+    width: 80%;
+}
