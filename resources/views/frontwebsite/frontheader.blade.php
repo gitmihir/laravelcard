@@ -112,7 +112,7 @@
                                     <div class="collapse navbar-collapse" id="navmenu">
                                         <ul class="navbar-nav">
                                             <li>
-                                                <a class="dropdown-item" href="{{ url('/') }}">home</a>
+                                                <a class="dropdown-item" href="{{ url('/') }}">home1</a>
                                             </li>
                                             <li><a class="dropdown-item" href="{{ url('/products') }}"> Products </a>
                                             </li>
