@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Models\User;
 use Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -46,10 +47,12 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('home')
-                ->withSuccess('You have Successfully loggedin');
+                ->with('You have Successfully loggedin');
+        } else {
+            return redirect('/login')->withErrors('message', 'Oppes! You have entered invalid credentials!');
         }
 
-        return redirect("/")->withSuccess('Oppes! You have entered invalid credentials');
+
     }
 
     /**
@@ -109,6 +112,6 @@ class AuthController extends Controller
         Session::flush();
         Auth::logout();
 
-        return Redirect('/');
+        return Redirect('/login');
     }
 }

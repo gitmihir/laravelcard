@@ -56,10 +56,10 @@
                     <th>Business GSTIN</th>
                     <td>{{ $branddata->sg_gstin }}</td>
                 </tr>
-                <tr>
+                {{-- <tr>
                     <th>GTS %</th>
                     <td>{{ $branddata->sg_gstin_tax }}</td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <th>Business T&C line</th>
                     <td>{{ $branddata->sg_brand_tandc_line }}</td>

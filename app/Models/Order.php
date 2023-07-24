@@ -23,6 +23,8 @@ class Order extends Model
         'sg_s_address',
         'sg_s_email',
         'sg_s_phone',
+        'sg_state',
+        'sg_s_state',
         'coupon_ID',
         'franchise_ID',
         'return_coupon_code',
@@ -35,6 +37,11 @@ class Order extends Model
         'product_quantities',
         'product_prices',
         'sg_tracking_status',
+        'payment_remark',
+        'Order_status',
+        'sg_CGST',
+        'sg_SGST',
+        'sg_IGST'
     ];
     public $timestamps = false;
 }

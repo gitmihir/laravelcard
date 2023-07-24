@@ -22,6 +22,8 @@ class ProductController extends Controller
         $product->product_type = $request->input('product_type');
         $product->product_category = $request->input('product_category');
         $product->product_list_price = $request->input('product_list_price');
+        $product->product_hsnsac = $request->input('product_hsnsac');
+
 
         /* Image Upload */
         if ($request->hasfile('image')) {
@@ -73,7 +75,7 @@ class ProductController extends Controller
         $product->product_type = $request->input('product_type');
         $product->product_category = $request->input('product_category');
         $product->product_list_price = $request->input('product_list_price');
-
+        $product->product_hsnsac = $request->input('product_hsnsac');
 
 
         if ($request->image != '') {
@@ -253,5 +255,14 @@ class ProductController extends Controller
     {
         $productdetailfront = Product::find($product_main_id);
         return view('/frontwebsite/productDetail', compact('productdetailfront'));
+    }
+
+    public function getproductamount(Request $request)
+    {
+        $productid = $_GET['productid'];
+        $productselectquery = DB::select('select * from products where product_main_id=' . $productid);
+        foreach ($productselectquery as $productamount) {
+            return $productamount->product_list_price;
+        }
     }
 }

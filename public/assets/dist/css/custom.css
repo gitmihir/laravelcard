@@ -1,49 +1,95 @@
 ul.nav.nav-treeview .nav-item {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link:focus {
-    background-color: #007bff;
-    color: #fff;
+  background-color: #007bff;
+  color: #fff;
 }
 
 [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active,
 [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus,
 [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:hover {
-    background-color: #3f474e;
-    color: #ffffff;
+  background-color: #3f474e;
+  color: #ffffff;
 }
 
 .catwidth th,
 .catwidth td {
-    width: 50%;
+  width: 50%;
 }
 
 .productimg img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .billclasstable td {
-    padding: 0 !important;
-    margin: 0;
+  padding: 0 !important;
+  margin: 0;
 }
 
 .billclass {
-    padding: 0.75rem;
-    border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
 }
 .brandlogoimages img {
-    width: 15%;
-    height: auto;
+  width: 15%;
+  height: auto;
 }
 .backendimage img,
 .backendimage video {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
 .productimge img {
-    width: 80%;
+  width: 80%;
+}
+.messageblock {
+  display: none;
+}
+.successblock {
+  display: none;
+}
+.failureblock {
+  display: none;
+}
+.custominput {
+  border: 0;
+  text-align: right;
+  padding: 0;
+}
+.emailerror,
+.availablemsg {
+  display: none;
+}
+.imageparent {
+  width: 100%;
+  float: left;
+}
+.imagechild {
+  width: 80%;
+  margin: 10px auto;
+}
+.imagechildprofile {
+  width: 20%;
+  margin: 10px auto;
+}
+.service-image img {
+  width: 100%;
+  height: auto;
+}
+.payment-image img {
+  width: 60%;
+  height: auto;
+}
+.bs-stepper .line,
+.bs-stepper-line {
+  flex: 1 0 10px !important;
+}
+.logoinvoinceimage img {
+  width: 200px;
+  height: 150px;
 }

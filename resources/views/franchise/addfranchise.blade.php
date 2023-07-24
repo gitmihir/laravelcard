@@ -25,8 +25,10 @@
             <div class="form-group">
                 <label for="sg_franchise_email">Franchise Email</label>
                 <input id="sg_franchise_email" name="sg_franchise_email" type="email" required="required"
-                    class="form-control">
+                    class="form-control sg_franchise_email">
             </div>
+            <div class="emailerror mb-3">Email already exist. Please try different email!</div>
+            <div class="availablemsg mb-3">Email Available!</div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
@@ -37,7 +39,8 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="hidden" value="{{ url('check-email') }}" class="ajaxurlforemailcheck">
+                <button type="submit" class="btn btn-primary btnclass">Submit</button>
                 <a href="{{ url('/franchise/allfranchise') }}" type="button" class="btn btn-info">Cancel</a>
             </div>
         </div>

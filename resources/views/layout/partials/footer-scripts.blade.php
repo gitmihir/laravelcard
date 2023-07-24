@@ -37,7 +37,7 @@
 <script src="{{ asset('/assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('/assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-
+<script src="{{ asset('/assets/plugins/bs-stepper/js/bs-stepper.min.js') }}"></script>
 <script src="{{ asset('/assets/dist/js/adminlte.js') }}"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltip.js/1.3.1/tooltip.min.js"></script> --}}
 
@@ -56,6 +56,11 @@
     });
 
     $(function() {
+        $("#example0").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $("#example1").DataTable({
             "responsive": true,
             "lengthChange": false,
@@ -71,5 +76,8 @@
             "autoWidth": false,
             "responsive": true,
         });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        window.stepper = new Stepper(document.querySelector(".bs-stepper"));
     });
 </script>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/plugins/bs-stepper/css/bs-stepper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/adminlte.min.css') }}">
 
 

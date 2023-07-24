@@ -16,6 +16,7 @@ class Product extends Model
         'product_type',
         'product_category',
         'product_list_price',
+        'product_hsnsac',
         'image',
         'image1',
         'image2',

@@ -37,6 +37,8 @@
                                 data-target="#modaldelete">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
+                            <a href="{{ url('view-franchise-orders/' . $franchisedata->id) }}"
+                                class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
                         </td>
                     </tr>
                     @php $i++ @endphp

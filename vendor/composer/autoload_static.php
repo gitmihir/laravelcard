@@ -29,6 +29,7 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '941748b3c8cae4466c827dfb5ca9602a' => __DIR__ . '/..' . '/rmccue/requests/library/Deprecated.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
@@ -37,6 +38,7 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
+        '13906c19e3d8fcd1341b24ed4d51cf72' => __DIR__ . '/..' . '/razorpay/razorpay/Deprecated.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
 
@@ -47,6 +49,7 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         ),
         'W' => 
         array (
+            'WpOrg\\Requests\\' => 15,
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
         ),
@@ -84,9 +87,12 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Spatie\\Permission\\' => 18,
+            'SimpleSoftwareIO\\QrCode\\' => 24,
         ),
         'R' => 
         array (
+            'Razorpay\\Tests\\' => 15,
+            'Razorpay\\Api\\' => 13,
             'Ramsey\\Uuid\\' => 12,
             'Ramsey\\Collection\\' => 18,
         ),
@@ -102,6 +108,7 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
             'PragmaRX\\Google2FA\\' => 19,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'Paytm\\JsCheckout\\' => 17,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
         'O' => 
@@ -134,6 +141,7 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         ),
         'J' => 
         array (
+            'JeroenDesloovere\\VCard\\' => 23,
             'Jenssegers\\Agent\\' => 17,
             'Jaybizzle\\CrawlerDetect\\' => 24,
         ),
@@ -181,12 +189,14 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Behat\\Transliterator\\' => 21,
             'BaconQrCode\\' => 12,
         ),
         'A' => 
         array (
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
+            'Anand\\LaravelPaytmWallet\\' => 25,
         ),
     );
 
@@ -194,6 +204,10 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
+        ),
+        'WpOrg\\Requests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rmccue/requests/src',
         ),
         'Whoops\\' => 
         array (
@@ -319,6 +333,18 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         array (
             0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
         ),
+        'SimpleSoftwareIO\\QrCode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
+        ),
+        'Razorpay\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/razorpay/razorpay/tests',
+        ),
+        'Razorpay\\Api\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/razorpay/razorpay/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -367,6 +393,10 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'PhpOption\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
+        ),
+        'Paytm\\JsCheckout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paytm/js-checkout/src',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (
@@ -435,6 +465,10 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'Laravel\\Fortify\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/fortify/src',
+        ),
+        'JeroenDesloovere\\VCard\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeroendesloovere/vcard/src',
         ),
         'Jenssegers\\Agent\\' => 
         array (
@@ -541,6 +575,10 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Behat\\Transliterator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/transliterator/src/Behat/Transliterator',
+        ),
         'BaconQrCode\\' => 
         array (
             0 => __DIR__ . '/..' . '/bacon/bacon-qr-code/src',
@@ -552,6 +590,10 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'Anand\\LaravelPaytmWallet\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src',
         ),
     );
 
@@ -573,6 +615,19 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
     );
 
     public static $classMap = array (
+        'Anand\\LaravelPaytmWallet\\Contracts\\Factory' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Contracts/Factory.php',
+        'Anand\\LaravelPaytmWallet\\Contracts\\Provider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Contracts/Provider.php',
+        'Anand\\LaravelPaytmWallet\\Facades\\PaytmWallet' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Facades/PaytmWallet.php',
+        'Anand\\LaravelPaytmWallet\\PaytmWalletManager' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/PaytmWalletManager.php',
+        'Anand\\LaravelPaytmWallet\\PaytmWalletServiceProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/PaytmWalletServiceProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\BalanceCheckProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/BalanceCheckProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\PaytmAppProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/PaytmAppProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\PaytmWalletProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/PaytmWalletProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\ReceivePaymentProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/ReceivePaymentProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\RefundPaymentProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/RefundPaymentProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\RefundStatusCheckProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/RefundStatusCheckProvider.php',
+        'Anand\\LaravelPaytmWallet\\Providers\\StatusCheckProvider' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Providers/StatusCheckProvider.php',
+        'Anand\\LaravelPaytmWallet\\Traits\\HasTransactionStatus' => __DIR__ . '/..' . '/anandsiddharth/laravel-paytm-wallet/src/Traits/HasTransactionStatus.php',
         'App\\Actions\\Fortify\\CreateNewUser' => __DIR__ . '/../..' . '/app/Actions/Fortify/CreateNewUser.php',
         'App\\Actions\\Fortify\\PasswordValidationRules' => __DIR__ . '/../..' . '/app/Actions/Fortify/PasswordValidationRules.php',
         'App\\Actions\\Fortify\\ResetUserPassword' => __DIR__ . '/../..' . '/app/Actions/Fortify/ResetUserPassword.php',
@@ -585,16 +640,22 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'App\\Http\\Controllers\\BillsController' => __DIR__ . '/../..' . '/app/Http/Controllers/BillsController.php',
         'App\\Http\\Controllers\\BrandController' => __DIR__ . '/../..' . '/app/Http/Controllers/BrandController.php',
         'App\\Http\\Controllers\\CMSController' => __DIR__ . '/../..' . '/app/Http/Controllers/CMSController.php',
+        'App\\Http\\Controllers\\CardController' => __DIR__ . '/../..' . '/app/Http/Controllers/CardController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\ClientsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ClientsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\CouponController' => __DIR__ . '/../..' . '/app/Http/Controllers/CouponController.php',
         'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
+        'App\\Http\\Controllers\\DownloadVcardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DownloadVcardController.php',
         'App\\Http\\Controllers\\DummyController' => __DIR__ . '/../..' . '/app/Http/Controllers/DummyController.php',
         'App\\Http\\Controllers\\ExpenseController' => __DIR__ . '/../..' . '/app/Http/Controllers/ExpenseController.php',
+        'App\\Http\\Controllers\\FranchiseController' => __DIR__ . '/../..' . '/app/Http/Controllers/FranchiseController.php',
         'App\\Http\\Controllers\\FrontContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontContactController.php',
         'App\\Http\\Controllers\\FrontfooterController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontfooterController.php',
+        'App\\Http\\Controllers\\InvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoiceController.php',
         'App\\Http\\Controllers\\LeadController' => __DIR__ . '/../..' . '/app/Http/Controllers/LeadController.php',
         'App\\Http\\Controllers\\MailController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailController.php',
+        'App\\Http\\Controllers\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrderController.php',
         'App\\Http\\Controllers\\OurTeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/OurTeamController.php',
         'App\\Http\\Controllers\\OwnerController' => __DIR__ . '/../..' . '/app/Http/Controllers/OwnerController.php',
         'App\\Http\\Controllers\\PCController' => __DIR__ . '/../..' . '/app/Http/Controllers/PCController.php',
@@ -618,13 +679,17 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'App\\Models\\Billtransaction' => __DIR__ . '/../..' . '/app/Models/Billtransaction.php',
         'App\\Models\\Brand' => __DIR__ . '/../..' . '/app/Models/Brand.php',
         'App\\Models\\CMS' => __DIR__ . '/../..' . '/app/Models/CMS.php',
+        'App\\Models\\Card' => __DIR__ . '/../..' . '/app/Models/Card.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Client' => __DIR__ . '/../..' . '/app/Models/Client.php',
+        'App\\Models\\Coupon' => __DIR__ . '/../..' . '/app/Models/Coupon.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\Expense' => __DIR__ . '/../..' . '/app/Models/Expense.php',
+        'App\\Models\\Franchise' => __DIR__ . '/../..' . '/app/Models/Franchise.php',
         'App\\Models\\FrontContact' => __DIR__ . '/../..' . '/app/Models/FrontContact.php',
         'App\\Models\\Frontfooter' => __DIR__ . '/../..' . '/app/Models/Frontfooter.php',
         'App\\Models\\Lead' => __DIR__ . '/../..' . '/app/Models/Lead.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\Models\\OurTeam' => __DIR__ . '/../..' . '/app/Models/OurTeam.php',
         'App\\Models\\Owner' => __DIR__ . '/../..' . '/app/Models/Owner.php',
         'App\\Models\\PC' => __DIR__ . '/../..' . '/app/Models/PC.php',
@@ -708,6 +773,8 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'BaconQrCode\\Renderer\\RendererStyle\\GradientType' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Renderer/RendererStyle/GradientType.php',
         'BaconQrCode\\Renderer\\RendererStyle\\RendererStyle' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Renderer/RendererStyle/RendererStyle.php',
         'BaconQrCode\\Writer' => __DIR__ . '/..' . '/bacon/bacon-qr-code/src/Writer.php',
+        'Behat\\Transliterator\\SyncTool' => __DIR__ . '/..' . '/behat/transliterator/src/Behat/Transliterator/SyncTool.php',
+        'Behat\\Transliterator\\Transliterator' => __DIR__ . '/..' . '/behat/transliterator/src/Behat/Transliterator/Transliterator.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',
@@ -2869,6 +2936,9 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'Jenssegers\\Agent\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Agent.php',
         'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
         'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
+        'JeroenDesloovere\\VCard\\VCard' => __DIR__ . '/..' . '/jeroendesloovere/vcard/src/VCard.php',
+        'JeroenDesloovere\\VCard\\VCardException' => __DIR__ . '/..' . '/jeroendesloovere/vcard/src/VCardException.php',
+        'JeroenDesloovere\\VCard\\VCardParser' => __DIR__ . '/..' . '/jeroendesloovere/vcard/src/VCardParser.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
         'Laravel\\Fortify\\Actions\\CompletePasswordReset' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/CompletePasswordReset.php',
@@ -4232,6 +4302,14 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'ParagonIE\\ConstantTime\\Encoding' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Encoding.php',
         'ParagonIE\\ConstantTime\\Hex' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/Hex.php',
         'ParagonIE\\ConstantTime\\RFC4648' => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src/RFC4648.php',
+        'Paytm\\JsCheckout\\Contracts\\Factory' => __DIR__ . '/..' . '/paytm/js-checkout/src/Contracts/Factory.php',
+        'Paytm\\JsCheckout\\Contracts\\Provider' => __DIR__ . '/..' . '/paytm/js-checkout/src/Contracts/Provider.php',
+        'Paytm\\JsCheckout\\Facades\\Paytm' => __DIR__ . '/..' . '/paytm/js-checkout/src/Facades/Paytm.php',
+        'Paytm\\JsCheckout\\PaytmManager' => __DIR__ . '/..' . '/paytm/js-checkout/src/PaytmManager.php',
+        'Paytm\\JsCheckout\\PaytmServiceProvider' => __DIR__ . '/..' . '/paytm/js-checkout/src/PaytmServiceProvider.php',
+        'Paytm\\JsCheckout\\Providers\\PaytmProvider' => __DIR__ . '/..' . '/paytm/js-checkout/src/Providers/PaytmProvider.php',
+        'Paytm\\JsCheckout\\Providers\\ReceivePaymentProvider' => __DIR__ . '/..' . '/paytm/js-checkout/src/Providers/ReceivePaymentProvider.php',
+        'Paytm\\JsCheckout\\Traits\\HasTransactionStatus' => __DIR__ . '/..' . '/paytm/js-checkout/src/Traits/HasTransactionStatus.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -4940,6 +5018,62 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Razorpay\\Api\\Addon' => __DIR__ . '/..' . '/razorpay/razorpay/src/Addon.php',
+        'Razorpay\\Api\\Api' => __DIR__ . '/..' . '/razorpay/razorpay/src/Api.php',
+        'Razorpay\\Api\\ArrayableInterface' => __DIR__ . '/..' . '/razorpay/razorpay/src/ArrayableInterface.php',
+        'Razorpay\\Api\\Card' => __DIR__ . '/..' . '/razorpay/razorpay/src/Card.php',
+        'Razorpay\\Api\\Collection' => __DIR__ . '/..' . '/razorpay/razorpay/src/Collection.php',
+        'Razorpay\\Api\\Customer' => __DIR__ . '/..' . '/razorpay/razorpay/src/Customer.php',
+        'Razorpay\\Api\\Entity' => __DIR__ . '/..' . '/razorpay/razorpay/src/Entity.php',
+        'Razorpay\\Api\\Errors\\BadRequestError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/BadRequestError.php',
+        'Razorpay\\Api\\Errors\\Error' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/Error.php',
+        'Razorpay\\Api\\Errors\\ErrorCode' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/ErrorCode.php',
+        'Razorpay\\Api\\Errors\\GatewayError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/GatewayError.php',
+        'Razorpay\\Api\\Errors\\ServerError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/ServerError.php',
+        'Razorpay\\Api\\Errors\\SignatureVerificationError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/SignatureVerificationError.php',
+        'Razorpay\\Api\\FundAccount' => __DIR__ . '/..' . '/razorpay/razorpay/src/FundAccount.php',
+        'Razorpay\\Api\\Invoice' => __DIR__ . '/..' . '/razorpay/razorpay/src/Invoice.php',
+        'Razorpay\\Api\\Item' => __DIR__ . '/..' . '/razorpay/razorpay/src/Item.php',
+        'Razorpay\\Api\\Order' => __DIR__ . '/..' . '/razorpay/razorpay/src/Order.php',
+        'Razorpay\\Api\\Payment' => __DIR__ . '/..' . '/razorpay/razorpay/src/Payment.php',
+        'Razorpay\\Api\\PaymentLink' => __DIR__ . '/..' . '/razorpay/razorpay/src/PaymentLink.php',
+        'Razorpay\\Api\\PaymentPage' => __DIR__ . '/..' . '/razorpay/razorpay/src/PaymentPage.php',
+        'Razorpay\\Api\\Plan' => __DIR__ . '/..' . '/razorpay/razorpay/src/Plan.php',
+        'Razorpay\\Api\\QrCode' => __DIR__ . '/..' . '/razorpay/razorpay/src/QrCode.php',
+        'Razorpay\\Api\\Refund' => __DIR__ . '/..' . '/razorpay/razorpay/src/Refund.php',
+        'Razorpay\\Api\\Request' => __DIR__ . '/..' . '/razorpay/razorpay/src/Request.php',
+        'Razorpay\\Api\\Resource' => __DIR__ . '/..' . '/razorpay/razorpay/src/Resource.php',
+        'Razorpay\\Api\\Settlement' => __DIR__ . '/..' . '/razorpay/razorpay/src/Settlement.php',
+        'Razorpay\\Api\\Subscription' => __DIR__ . '/..' . '/razorpay/razorpay/src/Subscription.php',
+        'Razorpay\\Api\\Token' => __DIR__ . '/..' . '/razorpay/razorpay/src/Token.php',
+        'Razorpay\\Api\\Transfer' => __DIR__ . '/..' . '/razorpay/razorpay/src/Transfer.php',
+        'Razorpay\\Api\\Utility' => __DIR__ . '/..' . '/razorpay/razorpay/src/Utility.php',
+        'Razorpay\\Api\\VirtualAccount' => __DIR__ . '/..' . '/razorpay/razorpay/src/VirtualAccount.php',
+        'Razorpay\\Api\\Webhook' => __DIR__ . '/..' . '/razorpay/razorpay/src/Webhook.php',
+        'Razorpay\\Tests\\AddonTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/AddonTest.php',
+        'Razorpay\\Tests\\CustomerTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/CustomerTest.php',
+        'Razorpay\\Tests\\EmandateTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/EmandateTest.php',
+        'Razorpay\\Tests\\FundTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/FundTest.php',
+        'Razorpay\\Tests\\InvoiceTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/InvoiceTest.php',
+        'Razorpay\\Tests\\ItemTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/ItemTest.php',
+        'Razorpay\\Tests\\OrdersTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/OrdersTest.php',
+        'Razorpay\\Tests\\PaperNachTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaperNachTest.php',
+        'Razorpay\\Tests\\PaymentLinkTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaymentLinkTest.php',
+        'Razorpay\\Tests\\PaymentTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaymentTest.php',
+        'Razorpay\\Tests\\PlanTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PlanTest.php',
+        'Razorpay\\Tests\\QrCodeTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/QrCodeTest.php',
+        'Razorpay\\Tests\\RefundTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RefundTest.php',
+        'Razorpay\\Tests\\RegisterEmandateTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RegisterEmandateTest.php',
+        'Razorpay\\Tests\\RegisterNachTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RegisterNachTest.php',
+        'Razorpay\\Tests\\SettlementTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SettlementTest.php',
+        'Razorpay\\Tests\\SignatureVerificationTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SignatureVerificationTest.php',
+        'Razorpay\\Tests\\SubscriptionTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SubscriptionTest.php',
+        'Razorpay\\Tests\\TestCase' => __DIR__ . '/..' . '/razorpay/razorpay/tests/TestCase.php',
+        'Razorpay\\Tests\\TokenTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/TokenTest.php',
+        'Razorpay\\Tests\\TransferTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/TransferTest.php',
+        'Razorpay\\Tests\\UpiTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/UpiTest.php',
+        'Razorpay\\Tests\\VirtualAccountTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/VirtualAccountTest.php',
+        'Requests' => __DIR__ . '/..' . '/rmccue/requests/library/Requests.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
         'SebastianBergmann\\CliParser\\AmbiguousOptionException' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/AmbiguousOptionException.php',
         'SebastianBergmann\\CliParser\\Exception' => __DIR__ . '/..' . '/sebastian/cli-parser/src/exceptions/Exception.php',
@@ -5141,6 +5275,18 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\BTC' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/BTC.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\DataTypeInterface' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/DataTypeInterface.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Email' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Email.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\Geo' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/Geo.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\PhoneNumber' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/PhoneNumber.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\SMS' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/SMS.php',
+        'SimpleSoftwareIO\\QrCode\\DataTypes\\WiFi' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/DataTypes/WiFi.php',
+        'SimpleSoftwareIO\\QrCode\\Facades\\QrCode' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Facades/QrCode.php',
+        'SimpleSoftwareIO\\QrCode\\Generator' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Generator.php',
+        'SimpleSoftwareIO\\QrCode\\Image' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/Image.php',
+        'SimpleSoftwareIO\\QrCode\\ImageMerge' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/ImageMerge.php',
+        'SimpleSoftwareIO\\QrCode\\QrCodeServiceProvider' => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src/QrCodeServiceProvider.php',
         'Spatie\\Permission\\Commands\\CacheReset' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CacheReset.php',
         'Spatie\\Permission\\Commands\\CreatePermission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreatePermission.php',
         'Spatie\\Permission\\Commands\\CreateRole' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Commands/CreateRole.php',
@@ -6006,6 +6152,70 @@ class ComposerStaticInit89725888e8952023d667fbd024b66b2d
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\SystemFacade' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/SystemFacade.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'WpOrg\\Requests\\Auth' => __DIR__ . '/..' . '/rmccue/requests/src/Auth.php',
+        'WpOrg\\Requests\\Auth\\Basic' => __DIR__ . '/..' . '/rmccue/requests/src/Auth/Basic.php',
+        'WpOrg\\Requests\\Autoload' => __DIR__ . '/..' . '/rmccue/requests/src/Autoload.php',
+        'WpOrg\\Requests\\Capability' => __DIR__ . '/..' . '/rmccue/requests/src/Capability.php',
+        'WpOrg\\Requests\\Cookie' => __DIR__ . '/..' . '/rmccue/requests/src/Cookie.php',
+        'WpOrg\\Requests\\Cookie\\Jar' => __DIR__ . '/..' . '/rmccue/requests/src/Cookie/Jar.php',
+        'WpOrg\\Requests\\Exception' => __DIR__ . '/..' . '/rmccue/requests/src/Exception.php',
+        'WpOrg\\Requests\\Exception\\ArgumentCount' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/ArgumentCount.php',
+        'WpOrg\\Requests\\Exception\\Http' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status304' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status304.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status305' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status305.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status306' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status306.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status400' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status400.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status401' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status401.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status402' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status402.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status403' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status403.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status404' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status404.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status405' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status405.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status406' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status406.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status407' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status407.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status408' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status408.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status409' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status409.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status410' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status410.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status411' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status411.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status412' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status412.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status413' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status413.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status414' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status414.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status415' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status415.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status416' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status416.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status417' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status417.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status418' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status418.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status428' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status428.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status429' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status429.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status431' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status431.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status500' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status500.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status501' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status501.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status502' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status502.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status503' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status503.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status504' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status504.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status505' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status505.php',
+        'WpOrg\\Requests\\Exception\\Http\\Status511' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/Status511.php',
+        'WpOrg\\Requests\\Exception\\Http\\StatusUnknown' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Http/StatusUnknown.php',
+        'WpOrg\\Requests\\Exception\\InvalidArgument' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/InvalidArgument.php',
+        'WpOrg\\Requests\\Exception\\Transport' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Transport.php',
+        'WpOrg\\Requests\\Exception\\Transport\\Curl' => __DIR__ . '/..' . '/rmccue/requests/src/Exception/Transport/Curl.php',
+        'WpOrg\\Requests\\HookManager' => __DIR__ . '/..' . '/rmccue/requests/src/HookManager.php',
+        'WpOrg\\Requests\\Hooks' => __DIR__ . '/..' . '/rmccue/requests/src/Hooks.php',
+        'WpOrg\\Requests\\IdnaEncoder' => __DIR__ . '/..' . '/rmccue/requests/src/IdnaEncoder.php',
+        'WpOrg\\Requests\\Ipv6' => __DIR__ . '/..' . '/rmccue/requests/src/Ipv6.php',
+        'WpOrg\\Requests\\Iri' => __DIR__ . '/..' . '/rmccue/requests/src/Iri.php',
+        'WpOrg\\Requests\\Port' => __DIR__ . '/..' . '/rmccue/requests/src/Port.php',
+        'WpOrg\\Requests\\Proxy' => __DIR__ . '/..' . '/rmccue/requests/src/Proxy.php',
+        'WpOrg\\Requests\\Proxy\\Http' => __DIR__ . '/..' . '/rmccue/requests/src/Proxy/Http.php',
+        'WpOrg\\Requests\\Requests' => __DIR__ . '/..' . '/rmccue/requests/src/Requests.php',
+        'WpOrg\\Requests\\Response' => __DIR__ . '/..' . '/rmccue/requests/src/Response.php',
+        'WpOrg\\Requests\\Response\\Headers' => __DIR__ . '/..' . '/rmccue/requests/src/Response/Headers.php',
+        'WpOrg\\Requests\\Session' => __DIR__ . '/..' . '/rmccue/requests/src/Session.php',
+        'WpOrg\\Requests\\Ssl' => __DIR__ . '/..' . '/rmccue/requests/src/Ssl.php',
+        'WpOrg\\Requests\\Transport' => __DIR__ . '/..' . '/rmccue/requests/src/Transport.php',
+        'WpOrg\\Requests\\Transport\\Curl' => __DIR__ . '/..' . '/rmccue/requests/src/Transport/Curl.php',
+        'WpOrg\\Requests\\Transport\\Fsockopen' => __DIR__ . '/..' . '/rmccue/requests/src/Transport/Fsockopen.php',
+        'WpOrg\\Requests\\Utility\\CaseInsensitiveDictionary' => __DIR__ . '/..' . '/rmccue/requests/src/Utility/CaseInsensitiveDictionary.php',
+        'WpOrg\\Requests\\Utility\\FilteredIterator' => __DIR__ . '/..' . '/rmccue/requests/src/Utility/FilteredIterator.php',
+        'WpOrg\\Requests\\Utility\\InputValidator' => __DIR__ . '/..' . '/rmccue/requests/src/Utility/InputValidator.php',
         'voku\\helper\\ASCII' => __DIR__ . '/..' . '/voku/portable-ascii/src/voku/helper/ASCII.php',
     );
 

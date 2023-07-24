@@ -34,6 +34,11 @@
                 <th>Price</th>
                 <td>{{ $product->product_list_price }}</td>
             </tr>
+            <tr>
+                <th>HSN / SAC</th>
+                <td>{{ $product->product_hsnsac }}</td>
+            </tr>
+
         </table>
     </div>
     <div class="col-md-12">

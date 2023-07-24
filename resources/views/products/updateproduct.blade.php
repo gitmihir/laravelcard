@@ -96,7 +96,13 @@
             </div>
         </div>
 
-
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="product_hsnsac">HSN / SAC</label>
+                <input type="text" name="product_hsnsac" value="{{ $product->product_hsnsac }}" class="form-control"
+                    id="product_hsnsac">
+            </div>
+        </div>
         <div class="col-md-12">
             <input type="hidden" value="{{ $id = Auth::id() }}" name="product_added_by">
             <input type="submit" value="Update" class="btn btn-primary">

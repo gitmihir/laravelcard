@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\ExpenseController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -42,15 +41,16 @@ Route::get('/checkout', function () {
 });
 Route::get('cart', 'App\Http\Controllers\ProductController@cart');
 Route::get('add-to-cart/{id}', 'App\Http\Controllers\ProductController@addToCart');
-
-
 Route::get('product-detail/{id}', 'App\Http\Controllers\ProductController@viewproductindetailfront');
-
 Route::patch('update-cart', 'App\Http\Controllers\ProductController@update');
 Route::delete('remove-from-cart', 'App\Http\Controllers\ProductController@remove');
 Route::patch('update-shopping-cart', 'App\Http\Controllers\ProductController@updateshoppingcart');
 
+
+/* Expenses Routes */
 Route::group(['middleware' => 'auth'], function () {
+
+
     Route::get(
         '/customers/allcustomers',
         function () {
@@ -71,16 +71,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update-employee/{id}', 'App\Http\Controllers\CustomerController@update');
     Route::get('delete-customer/{id}', 'App\Http\Controllers\CustomerController@destroy');
     Route::get('view-employee/{id}', 'App\Http\Controllers\CustomerController@viewcustomerindetail');
-});
-
-/* Expenses Routes */
-Route::group(['middleware' => 'auth'], function () {
     Route::get(
         '/expense/allexpense',
         function () {
             return view('/expense/allexpense');
         }
     );
+
     Route::get(
         '/expense/addexpense',
         function () {
@@ -96,10 +93,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update-expense/{expense_id}', 'App\Http\Controllers\ExpenseController@updateexpense');
     Route::get('delete-expense/{expense_id}', 'App\Http\Controllers\ExpenseController@destroyexpense');
     Route::get('view-expense/{expense_id}', 'App\Http\Controllers\ExpenseController@viewexpenseindetail');
-});
 
-/* Product Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Product Routes */
     Route::get(
         '/products/allproducts',
         function () {
@@ -120,10 +115,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('delete-product/{product_main_id}', 'App\Http\Controllers\ProductController@destroyproduct');
     Route::get('view-product/{product_main_id}', 'App\Http\Controllers\ProductController@viewproductindetail');
     Route::get('/products/addproduct', 'App\Http\Controllers\ProductController@categoryinproduct');
-});
 
-/* Category Routes */
-Route::group(['middleware' => 'auth'], function () {
+
+    /* Category Routes */
+
     Route::get(
         '/category/allcategory',
         function () {
@@ -136,18 +131,16 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/category/addcategory');
         }
     );
-    Route::get('insertcategory', 'App\Http\Controllers\categoryController@insertcategoryform');
-    Route::post('/submitcategory', 'App\Http\Controllers\categoryController@insertcategory');
-    Route::get('/category/allcategory', 'App\Http\Controllers\categoryController@viewcategory');
-    Route::get('edit-category/{category_id}', 'App\Http\Controllers\categoryController@editcategory');
-    Route::put('update-category/{category_id}', 'App\Http\Controllers\categoryController@updatecategory');
-    Route::get('delete-category/{category_id}', 'App\Http\Controllers\categoryController@destroycategory');
+    Route::get('insertcategory', 'App\Http\Controllers\CategoryController@insertcategoryform');
+    Route::post('/submitcategory', 'App\Http\Controllers\CategoryController@insertcategory');
+    Route::get('/category/allcategory', 'App\Http\Controllers\CategoryController@viewcategory');
+    Route::get('edit-category/{category_id}', 'App\Http\Controllers\CategoryController@editcategory');
+    Route::put('update-category/{category_id}', 'App\Http\Controllers\CategoryController@updatecategory');
+    Route::get('delete-category/{category_id}', 'App\Http\Controllers\CategoryController@destroycategory');
+    Route::get('view-category/{category_id}', 'App\Http\Controllers\CategoryController@viewcategoryindetail');
 
-    Route::get('view-category/{category_id}', 'App\Http\Controllers\categoryController@viewcategoryindetail');
-});
 
-/* Sub Category Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Sub Category Routes */
     Route::get(
         '/subcategory/allsubcategory',
         function () {
@@ -166,13 +159,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-subcategory/{subcategory_id}', 'App\Http\Controllers\SubcategoryController@editsubcategory');
     Route::put('update-subcategory/{subcategory_id}', 'App\Http\Controllers\SubcategoryController@updatesubcategory');
     Route::get('delete-subcategory/{subcategory_id}', 'App\Http\Controllers\SubcategoryController@destroysubcategory');
-
     Route::get('view-subcategory/{subcategory_id}', 'App\Http\Controllers\SubcategoryController@viewsubcategoryindetail');
-});
 
 
-/* Supplier Routes */
-Route::group(['middleware' => 'auth'], function () {
+
+    /* Supplier Routes */
     Route::get(
         '/supplier/allsupplier',
         function () {
@@ -191,12 +182,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-supplier/{id}', 'App\Http\Controllers\SupplierController@editsupplier');
     Route::put('update-supplier/{id}', 'App\Http\Controllers\SupplierController@updatesupplier');
     Route::get('delete-supplier/{id}', 'App\Http\Controllers\SupplierController@destroysupplier');
-
     Route::get('view-supplier/{id}', 'App\Http\Controllers\SupplierController@viewsupplierindetail');
-});
 
-/* Bills Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Bills Routes */
     Route::get(
         '/bills/addbills',
         function () {
@@ -210,42 +198,37 @@ Route::group(['middleware' => 'auth'], function () {
         }
     );
     Route::get('/bills/addbills', 'App\Http\Controllers\BillsController@selectqueries');
-
     Route::get('insertbill', 'App\Http\Controllers\SupplierController@insertbillform');
     Route::post('/createbill', 'App\Http\Controllers\BillsController@insertbill');
     Route::get('/bills/allbills', 'App\Http\Controllers\BillsController@viewbills');
     Route::get('view-bill', 'App\Http\Controllers\BillsController@viewbillindetail');
-
     Route::get('bill-transaction/{id}', 'App\Http\Controllers\BillsController@addbiilltransactionform');
     Route::put('submittransaction/', 'App\Http\Controllers\BillsController@inserttransaction');
-
     Route::get('delete-bills/{id}', 'App\Http\Controllers\BillsController@destroybill');
 
     /* Ajax Routes */
     Route::get('/bills/addbills/{productid}', 'App\Http\Controllers\BillsController@getproductamount');
-
     Route::get('edit-bill/{id}', 'App\Http\Controllers\BillsController@editbill');
     Route::put('update-bill/{id}', 'App\Http\Controllers\BillsController@updatebill');
-
     Route::get('listoftransactions/{id}', 'App\Http\Controllers\BillsController@listoftransactions');
-});
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get(
-        '/dashboard',
-        function () {
-            return view('dashboard');
-        }
-    )->name('dashboard');
-});
+    Route::middleware([
+        'auth:sanctum',
+        config('jetstream.auth_session'),
+        'verified'
+    ])->group(
+            function () {
+                Route::get(
+                    '/dashboard',
+                    function () {
+                                return view('dashboard');
+                            }
+                )->name('dashboard');
+            }
+        );
 
 
-/* SMTP Settings Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* SMTP Settings Routes */
     Route::get(
         '/smtp/smtpdetails',
         function () {
@@ -258,7 +241,6 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/smtp/addsmtp');
         }
     );
-
     Route::get('insertsupplier', 'App\Http\Controllers\SmtpController@insertsmtpform');
     Route::post('/createsmtp', 'App\Http\Controllers\SmtpController@insertsmtp');
     Route::get('/smtp/smtpdetails', 'App\Http\Controllers\SmtpController@viewsmtp');
@@ -266,10 +248,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update-smtp/{id}', 'App\Http\Controllers\SmtpController@updatesmtp');
     Route::get('delete-smtp/{id}', 'App\Http\Controllers\SmtpController@destroysmtp');
 
-});
-
-/* Front Footer Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Front Footer Routes */
     Route::get(
         '/frontfooter/footerdetails',
         function () {
@@ -282,7 +261,6 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/frontfooter/addfooter');
         }
     );
-
     Route::get('insertsupplier', 'App\Http\Controllers\FrontfooterController@insertfrontfooterform');
     Route::post('/createfrontfooter', 'App\Http\Controllers\FrontfooterController@insertfrontfooter');
     Route::get('/frontfooter/footerdetails', 'App\Http\Controllers\FrontfooterController@viewfrontfooter');
@@ -290,10 +268,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update-frontfooter/{id}', 'App\Http\Controllers\FrontfooterController@updatefrontfooter');
     Route::get('delete-frontfooter/{id}', 'App\Http\Controllers\FrontfooterController@destroyfrontfooter');
 
-});
-
-/* Brand Details Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Brand Details Routes */
     Route::get(
         '/branddetails/branddetail',
         function () {
@@ -306,17 +281,14 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/branddetails/addbrand');
         }
     );
-
     Route::get('insertsupplier', 'App\Http\Controllers\BrandController@insertbarndform');
     Route::post('/createbrand', 'App\Http\Controllers\BrandController@insertbrand');
     Route::get('/branddetails/branddetail', 'App\Http\Controllers\BrandController@viewbrand');
     Route::get('edit-brand/{id}', 'App\Http\Controllers\BrandController@editbrand');
     Route::put('update-brand/{id}', 'App\Http\Controllers\BrandController@updatebrand');
     Route::get('delete-brand/{id}', 'App\Http\Controllers\BrandController@destroybrand');
-});
 
-/* CMS Details Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* CMS Details Routes */
     Route::get(
         '/cms/cmsdetails',
         function () {
@@ -329,17 +301,14 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/cms/addcms');
         }
     );
-
     Route::get('insertcms', 'App\Http\Controllers\CMSController@insertcmsform');
     Route::post('/createcms', 'App\Http\Controllers\CMSController@insertcms');
     Route::get('/cms/cmsdetails', 'App\Http\Controllers\CMSController@viewcms');
     Route::get('edit-cms/{id}', 'App\Http\Controllers\CMSController@editcms');
     Route::put('update-cms/{id}', 'App\Http\Controllers\CMSController@updatecms');
     Route::get('delete-cms/{id}', 'App\Http\Controllers\CMSController@destroycms');
-});
 
-/* Payment Credentials Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Payment Credentials Routes */
     Route::get(
         '/paymentcredentials/pcdetails',
         function () {
@@ -352,17 +321,14 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/paymentcredentials/addpc');
         }
     );
-
     Route::get('insertsupplier', 'App\Http\Controllers\PCController@insertpcform');
     Route::post('/createpc', 'App\Http\Controllers\PCController@insertpc');
     Route::get('/paymentcredentials/pcdetails', 'App\Http\Controllers\PCController@viewpc');
     Route::get('edit-pc/{id}', 'App\Http\Controllers\PCController@editpc');
     Route::put('update-pc/{id}', 'App\Http\Controllers\PCController@updatepc');
     Route::get('delete-pc/{id}', 'App\Http\Controllers\PCController@destroypc');
-});
 
-/* Front Contact Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Front Contact Routes */
     Route::get(
         '/contactusfront/allcontacts',
         function () {
@@ -375,7 +341,6 @@ Route::group(['middleware' => 'auth'], function () {
             return view('/contactusfront/addcontact');
         }
     );
-
     Route::get('insertcontactfr', 'App\Http\Controllers\FrontContactController@insertproductform');
     Route::post('/createcontactfr', 'App\Http\Controllers\FrontContactController@insertcontactfr');
     Route::get('/contactusfront/allcontacts', 'App\Http\Controllers\FrontContactController@viewcontactfr');
@@ -383,10 +348,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-contactfr/{id}', 'App\Http\Controllers\FrontContactController@editcontactfr');
     Route::put('update-contactfr/{id}', 'App\Http\Controllers\FrontContactController@updatecontactfr');
     Route::get('delete-contactfr/{id}', 'App\Http\Controllers\FrontContactController@destroycontactfr');
-});
 
-/* Our Team Routes */
-Route::group(['middleware' => 'auth'], function () {
+
+    /* Our Team Routes */
     Route::get(
         '/ourteam/allteammembers',
         function () {
@@ -406,10 +370,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-team/{id}', 'App\Http\Controllers\OurTeamController@editteam');
     Route::put('update-team/{id}', 'App\Http\Controllers\OurTeamController@updateteam');
     Route::get('delete-team/{id}', 'App\Http\Controllers\OurTeamController@destroyteam');
-});
 
-/* Owner Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Owner Routes */
     Route::get(
         '/owner/allowners',
         function () {
@@ -429,10 +391,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-owner/{id}', 'App\Http\Controllers\OwnerController@editowner');
     Route::put('update-owner/{id}', 'App\Http\Controllers\OwnerController@updateowner');
     Route::get('delete-owner/{id}', 'App\Http\Controllers\OwnerController@destroyowner');
-});
 
-/* Video Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Video Routes */
     Route::get(
         '/webvideos/allvideos',
         function () {
@@ -452,10 +412,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-video/{id}', 'App\Http\Controllers\VideoController@editvideo');
     Route::put('update-video/{id}', 'App\Http\Controllers\VideoController@updatevideo');
     Route::get('delete-video/{id}', 'App\Http\Controllers\VideoController@destroyvideo');
-});
 
-/* Review Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Review Routes */
     Route::get(
         '/reviews/allreviews',
         function () {
@@ -475,10 +433,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-review/{id}', 'App\Http\Controllers\ReviewController@editreview');
     Route::put('update-review/{id}', 'App\Http\Controllers\ReviewController@updatereview');
     Route::get('delete-review/{id}', 'App\Http\Controllers\ReviewController@destroyreview');
-});
 
-/* Client Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Client Routes */
     Route::get(
         '/clients/allclients',
         function () {
@@ -498,10 +454,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-client/{id}', 'App\Http\Controllers\ClientsController@editclient');
     Route::put('update-client/{id}', 'App\Http\Controllers\ClientsController@updateclient');
     Route::get('delete-client/{id}', 'App\Http\Controllers\ClientsController@destroyclient');
-});
 
-/* Slides Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Slides Routes */
     Route::get(
         '/headertextslider/allslides',
         function () {
@@ -521,17 +475,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-slide/{id}', 'App\Http\Controllers\SlideController@editslide');
     Route::put('update-slide/{id}', 'App\Http\Controllers\SlideController@updateslide');
     Route::get('delete-slide/{id}', 'App\Http\Controllers\SlideController@destroyslide');
-});
 
-//Route::post('/sendemail', 'App\Http\Controllers\MailController@sendemailcontroller');
-
-/* Ajax For Contact Form */
-Route::get('/ajaxform', 'App\Http\Controllers\MailController@sendemailcontroller');
-Route::get('/ajaxform2', 'App\Http\Controllers\LeadController@insertLeadData');
+    //Route::post('/sendemail', 'App\Http\Controllers\MailController@sendemailcontroller');
+    /* Ajax For Contact Form */
+    Route::get('/ajaxform', 'App\Http\Controllers\MailController@sendemailcontroller');
 
 
-/* Franchise Routes */
-Route::group(['middleware' => 'auth'], function () {
+    /* Franchise Routes */
     Route::get(
         '/franchise/allfranchise',
         function () {
@@ -551,10 +501,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('edit-franchise/{id}', 'App\Http\Controllers\FranchiseController@editfranchise');
     Route::put('update-franchise/{id}', 'App\Http\Controllers\FranchiseController@updatefranchise');
     Route::get('delete-franchise/{id}', 'App\Http\Controllers\FranchiseController@destroyfranchise');
-});
 
-/* Coupon Routes */
-Route::group(['middleware' => 'auth'], function () {
+    Route::get('view-franchise-orders/{id}', 'App\Http\Controllers\FranchiseController@viewfranchiseorders');
+
+
+    /* Coupon Routes */
     Route::get(
         '/coupon/allcoupon',
         function () {
@@ -575,9 +526,73 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('update-coupon/{id}', 'App\Http\Controllers\CouponController@updatecoupon');
     Route::get('delete-coupon/{id}', 'App\Http\Controllers\CouponController@destroycoupon');
 
+
+    Route::get(
+        '/orderoffline/addorderoffline',
+        function () {
+            return view('/orderoffline/addorderoffline');
+        }
+    );
+    Route::get(
+        '/orderoffline/allorderoffline',
+        function () {
+            return view('/orderoffline/allorderoffline');
+        }
+    );
+
+    Route::get('/orderoffline/addorderoffline/{productid}', 'App\Http\Controllers\ProductController@getproductamount');
+    Route::get('view-order/{id}', 'App\Http\Controllers\OrderController@vieworderindetail');
+
+    Route::get('edit-order/{id}', 'App\Http\Controllers\OrderController@editorder');
+    Route::put('update-order/{id}', 'App\Http\Controllers\OrderController@updateorder');
+    Route::get('delete-order/{id}', 'App\Http\Controllers\OrderController@destroyorder');
+
 });
+
 Route::get('check-coupon-code', 'App\Http\Controllers\CouponController@checkCouponCode');
 /* Order Routes */
-
+Route::get('/ajaxform2', 'App\Http\Controllers\LeadController@insertLeadData');
 Route::get('inserorder', 'App\Http\Controllers\OrderController@insertorderform');
 Route::post('/createorder', 'App\Http\Controllers\OrderController@inserorder');
+
+Route::get('/insert-order', 'App\Http\Controllers\OrderController@inserorder');
+
+//Route::get('/paysuccess/?payment_id={payment_id}', 'App\Http\Controllers\OrderController@orderstatus');
+
+Route::get(
+    'paysuccess',
+    function () {
+        return view('frontwebsite/paysuccess');
+    }
+);
+Route::get('check-email', 'App\Http\Controllers\FranchiseController@CheckEmail');
+
+/* Cards Routes */
+Route::get(
+    '/userarea/allcards',
+    function () {
+        return view('/userarea/allcards');
+    }
+);
+Route::get('view-card-details/{id}/{customstring}', 'App\Http\Controllers\CardController@viewcardindetail');
+Route::get('edit-card/{id}', 'App\Http\Controllers\CardController@editcardindetail');
+Route::put('update-card/{id}', 'App\Http\Controllers\CardController@updatecard');
+Route::get('delete-image', 'App\Http\Controllers\CardController@DeleteImage');
+
+Route::get('/downloadvcard/{id}', 'App\Http\Controllers\DownloadVcardController@downloadVcard');
+Route::get('view-invoice/{id}', 'App\Http\Controllers\InvoiceController@viewinvoicedetail');
+Route::get('print-invoice/{id}', 'App\Http\Controllers\InvoiceController@printinvoice');
+
+
+/* User Routes */
+Route::get(
+    '/usermanagement/allusers',
+    function () {
+        return view('/usermanagement/allusers');
+    }
+);
+Route::get('/usermanagement/allusers', 'App\Http\Controllers\UserController@viewusers');
+Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewuserindetail');
+Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@edituser');
+Route::put('update-user/{id}', 'App\Http\Controllers\UserController@updateuser');
+Route::get('delete-user/{id}', 'App\Http\Controllers\UserController@destroyuser');

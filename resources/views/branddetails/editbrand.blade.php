@@ -52,13 +52,13 @@
                     required="required">
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="sg_gstin_tax">GST %</label>
-                <input id="sg_gstin_tax" name="sg_gstin_tax" value="{{ $brand->sg_gstin_tax }}" type="text"
-                    class="form-control" required="required">
-            </div>
-        </div>
+        {{-- <div class="col-md-6">
+            <div class="form-group"> --}}
+        {{-- <label for="sg_gstin_tax">GST %</label> --}}
+        <input id="sg_gstin_tax" name="sg_gstin_tax" value="{{ $brand->sg_gstin_tax }}" type="hidden"
+            class="form-control">
+        {{-- </div>
+        </div> --}}
 
 
         <div class="col-md-6">
@@ -89,8 +89,8 @@
             <div class="form-group">
                 <label for="sg_brand_busienss_phone">Business Phone</label>
                 <input id="sg_brand_busienss_phone" name="sg_brand_busienss_phone"
-                    value="{{ $brand->sg_brand_busienss_phone }}" type="number" min="1" max="10"
-                    class="form-control" required="required">
+                    value="{{ $brand->sg_brand_busienss_phone }}" type="number" class="form-control"
+                    required="required">
             </div>
         </div>
         <div class="col-md-6">

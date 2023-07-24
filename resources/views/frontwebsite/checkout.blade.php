@@ -1,6 +1,7 @@
 @include('frontwebsite.frontheader')
 @php
     $shippingdata = App\Models\CMS::all();
+    
 @endphp
 <form action="/createorder" method="POST" class="form-group">
     @csrf
@@ -193,6 +194,59 @@
                                                                     class="form-control sg_business_phone" />
                                                             </div>
                                                         </div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                            <div class="form-group">
+                                                                <select name="sg_state"
+                                                                    class="form-control sg_state statechangecalculation">
+                                                                    <option value="">Select State</option>
+                                                                    <option value="Andhra Pradesh">Andhra Pradesh
+                                                                    </option>
+                                                                    <option value="Andaman and Nicobar Islands">Andaman
+                                                                        and Nicobar Islands</option>
+                                                                    <option value="Arunachal Pradesh">Arunachal Pradesh
+                                                                    </option>
+                                                                    <option value="Assam">Assam</option>
+                                                                    <option value="Bihar">Bihar</option>
+                                                                    <option value="Chandigarh">Chandigarh</option>
+                                                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                                                    <option value="Dadar and Nagar Haveli">Dadar and
+                                                                        Nagar Haveli</option>
+                                                                    <option value="Daman and Diu">Daman and Diu
+                                                                    </option>
+                                                                    <option value="Delhi">Delhi</option>
+                                                                    <option value="Lakshadweep">Lakshadweep</option>
+                                                                    <option value="Puducherry">Puducherry</option>
+                                                                    <option value="Goa">Goa</option>
+                                                                    <option value="Gujarat">Gujarat</option>
+                                                                    <option value="Haryana">Haryana</option>
+                                                                    <option value="Himachal Pradesh">Himachal Pradesh
+                                                                    </option>
+                                                                    <option value="Jammu and Kashmir">Jammu and Kashmir
+                                                                    </option>
+                                                                    <option value="Jharkhand">Jharkhand</option>
+                                                                    <option value="Karnataka">Karnataka</option>
+                                                                    <option value="Kerala">Kerala</option>
+                                                                    <option value="Madhya Pradesh">Madhya Pradesh
+                                                                    </option>
+                                                                    <option value="Maharashtra">Maharashtra</option>
+                                                                    <option value="Manipur">Manipur</option>
+                                                                    <option value="Meghalaya">Meghalaya</option>
+                                                                    <option value="Mizoram">Mizoram</option>
+                                                                    <option value="Nagaland">Nagaland</option>
+                                                                    <option value="Odisha">Odisha</option>
+                                                                    <option value="Punjab">Punjab</option>
+                                                                    <option value="Rajasthan">Rajasthan</option>
+                                                                    <option value="Sikkim">Sikkim</option>
+                                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                                    <option value="Telangana">Telangana</option>
+                                                                    <option value="Tripura">Tripura</option>
+                                                                    <option value="Uttar Pradesh">Uttar Pradesh
+                                                                    </option>
+                                                                    <option value="Uttarakhand">Uttarakhand</option>
+                                                                    <option value="West Bengal">West Bengal</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -253,6 +307,59 @@
                                                                     class="form-control sg_s_phone" />
                                                             </div>
                                                         </div>
+                                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                            <div class="form-group">
+                                                                <select name="sg_s_state" id="sg_s_state"
+                                                                    class="form-control sg_s_state">
+                                                                    <option value="">Select State</option>
+                                                                    <option value="Andhra Pradesh">Andhra Pradesh
+                                                                    </option>
+                                                                    <option value="Andaman and Nicobar Islands">Andaman
+                                                                        and Nicobar Islands</option>
+                                                                    <option value="Arunachal Pradesh">Arunachal Pradesh
+                                                                    </option>
+                                                                    <option value="Assam">Assam</option>
+                                                                    <option value="Bihar">Bihar</option>
+                                                                    <option value="Chandigarh">Chandigarh</option>
+                                                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                                                    <option value="Dadar and Nagar Haveli">Dadar and
+                                                                        Nagar Haveli</option>
+                                                                    <option value="Daman and Diu">Daman and Diu
+                                                                    </option>
+                                                                    <option value="Delhi">Delhi</option>
+                                                                    <option value="Lakshadweep">Lakshadweep</option>
+                                                                    <option value="Puducherry">Puducherry</option>
+                                                                    <option value="Goa">Goa</option>
+                                                                    <option value="Gujarat">Gujarat</option>
+                                                                    <option value="Haryana">Haryana</option>
+                                                                    <option value="Himachal Pradesh">Himachal Pradesh
+                                                                    </option>
+                                                                    <option value="Jammu and Kashmir">Jammu and Kashmir
+                                                                    </option>
+                                                                    <option value="Jharkhand">Jharkhand</option>
+                                                                    <option value="Karnataka">Karnataka</option>
+                                                                    <option value="Kerala">Kerala</option>
+                                                                    <option value="Madhya Pradesh">Madhya Pradesh
+                                                                    </option>
+                                                                    <option value="Maharashtra">Maharashtra</option>
+                                                                    <option value="Manipur">Manipur</option>
+                                                                    <option value="Meghalaya">Meghalaya</option>
+                                                                    <option value="Mizoram">Mizoram</option>
+                                                                    <option value="Nagaland">Nagaland</option>
+                                                                    <option value="Odisha">Odisha</option>
+                                                                    <option value="Punjab">Punjab</option>
+                                                                    <option value="Rajasthan">Rajasthan</option>
+                                                                    <option value="Sikkim">Sikkim</option>
+                                                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                                                    <option value="Telangana">Telangana</option>
+                                                                    <option value="Tripura">Tripura</option>
+                                                                    <option value="Uttar Pradesh">Uttar Pradesh
+                                                                    </option>
+                                                                    <option value="Uttarakhand">Uttarakhand</option>
+                                                                    <option value="West Bengal">West Bengal</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -266,7 +373,7 @@
                                 <header class="header">
                                     <h1>Checkout</h1>
                                 </header>
-                                <div class="form" method="POST">
+                                <div class="form">
                                     <div class="input-group">
                                         <input type="text" class="form-control coupon_code" name="coupon_code"
                                             placeholder="Apply Coupon Code" />
@@ -287,39 +394,52 @@
                                     <div>
                                         <h2>Shopping Bill</h2>
                                         <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Shipping fee</td>
-                                                    <td align="right">&#8377;
-                                                        @foreach ($shippingdata as $shippingcharge)
-                                                            {{ $shippingcharge->sg_shipping_rate }}
-                                                        @endforeach
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Price Total</td>
-                                                    <td align="right">&#8377;{{ $total }}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Discount</td>
-                                                    <td align="right" class="discount_amount">&#8377;0</td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td>Total</td>
-                                                    <td align="right" class="grand_total">&#8377;0</td>
-                                                </tr>
-                                            </tfoot>
+                                            <tr>
+                                                <th align="left">Price Total</th>
+                                                <td align="right" class="bill_amount">&#8377;{{ $total }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th align="left">Discount</th>
+                                                <td align="right" class="discounted_price_display">&#8377;0</td>
+                                            </tr>
+                                            <tr>
+                                                <th align="left">After Discount Price</th>
+                                                <td align="right" class="sg_order_base_price_display">
+                                                    &#8377;{{ $total }}</td>
+                                                <input type="hidden" name="sg_order_base_price"
+                                                    class="sg_order_base_price" value="{{ $total }}">
+                                            </tr>
+                                            <tr class="sg_CGST_class">
+                                                <th align="left">CGST @ 9%</th>
+                                                <td align="right" class="sg_CGST">&#8377;0</td>
+                                                <input type="hidden" class="cgst" name="sg_CGST">
+                                            </tr>
+                                            <tr class="sg_SGST_class">
+                                                <th align="left">SGST @ 9%</th>
+                                                <td align="right" class="sg_SGST">&#8377;0</td>
+                                                <input type="hidden" class="sgst" name="sg_SGST">
+                                            </tr>
+                                            <tr class="sg_IGST_class">
+                                                <th align="left">IGST @ 18%</th>
+                                                <td align="right" class="sg_IGST">&#8377;0</td>
+                                                <input type="hidden" class="igst" name="sg_IGST">
+                                            </tr>
+                                            <tr>
+                                                <th align="left">Grand Total</th>
+                                                <td align="right" class="grandTotalafterGstInclusion"></td>
+                                            </tr>
                                         </table>
                                     </div>
                                     <div>
-
+                                        <input type="hidden" value="Order placed" class="Order_status"
+                                            name="Order_status">
                                         <input type="hidden" class="coupon_ID" name="coupon_ID">
                                         <input type="hidden" class="franchise_ID" name="franchise_ID">
                                         <input type="hidden" class="return_coupon_code" name="return_coupon_code">
                                         <input type="hidden" class="coupon_discount" name="coupon_discount">
-
+                                        <input type="hidden" class="payment_remark" value="0"
+                                            name="payment_remark">
                                         <input type="hidden" class="shipping_fee" name="shipping_fee"
                                             value="0">
                                         <input type="hidden" class="before_discount_total"
@@ -327,11 +447,21 @@
                                         <input type="hidden" class="discounted_price" name="discounted_price">
                                         <input type="hidden" class="after_discount_total"
                                             name="after_discount_total">
-
-                                        <button class="button button--full" type="submit">
+                                        <input type="hidden" class="order_id_for_status" name="order_id_for_status"
+                                            value="<?php echo time(); ?>">
+                                        <input type="hidden" class="sg_order_status" name="sg_order_status"
+                                            value="0">
+                                        <button type="button" data-amount="" data-current-method="razorpay"
+                                            data-id="<?php echo time(); ?>" class="button button--full buy_now mb-3">
                                             <svg class="icon">
                                                 <use xlink:href="#icon-shopping-bag" />
-                                            </svg>Buy Now
+                                            </svg>Pay with Razor Pay
+                                        </button>
+                                        <button type="button" data-amount="" data-current-method="paytmpayment"
+                                            data-id="<?php echo time(); ?>" class="button button--full buy_now_paytm">
+                                            <svg class="icon">
+                                                <use xlink:href="#icon-shopping-bag" />
+                                            </svg>Pay with Paytm
                                         </button>
                                     </div>
                                 </div>

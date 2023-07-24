@@ -1,4 +1,7 @@
 @include('layout.partials.head')
+@php
+    $allcategory = App\Models\Category::orderBy('category_id', 'desc')->get();
+@endphp
 <div class="row mb-3 ml-3 mr-3 mt-3">
     <div class="col-md-6">
         <h3>Categories</h3>
@@ -19,9 +22,9 @@
             </thead>
             <tbody>
                 @php $i = 1 @endphp
-                @foreach ($category as $categorydata)
+                @foreach ($allcategory as $categorydata)
                     <tr>
-                        <td>{{ $i }}</td>
+                        <td>{{ $categorydata->category_id }}</td>
                         <td>{{ $categorydata->category_name }}</td>
                         <td>
                             <a href="{{ url('view-category/' . $categorydata->category_id) }}"

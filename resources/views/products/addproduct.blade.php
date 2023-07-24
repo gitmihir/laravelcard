@@ -71,6 +71,12 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="product_hsnsac">HSN / SAC</label>
+                <input type="text" name="product_hsnsac" class="form-control" id="product_hsnsac" required>
+            </div>
+        </div>
 
         <div class="col-md-12">
             <input type="submit" class="btn btn-primary">

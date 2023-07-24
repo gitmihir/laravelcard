@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '7f43cef682b4a02c0bc88dc498f0d3b21b61c2f3',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'anandsiddharth/laravel-paytm-wallet' => array(
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '5342add0719e9c5ca94fdd13f766e6a810f2ef45',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../anandsiddharth/laravel-paytm-wallet',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.1.1',
             'version' => '2.1.1.0',
@@ -25,6 +34,15 @@
             'reference' => 'd70c840f68657ce49094b8d91f9ee0cc07fbf66c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../bacon/bacon-qr-code',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'behat/transliterator' => array(
+            'pretty_version' => 'v1.5.0',
+            'version' => '1.5.0.0',
+            'reference' => 'baac5873bac3749887d28ab68e2f74db3a4408af',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../behat/transliterator',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -415,6 +433,17 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'jeroendesloovere/vcard' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'baff586cd57f197060bc9e0c8c49573b894e264c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jeroendesloovere/vcard',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -449,9 +478,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '7f43cef682b4a02c0bc88dc498f0d3b21b61c2f3',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -659,6 +688,17 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
             'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'paytm/js-checkout' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '8f43902c40bf793d9a486aa68b1477ed295b3bb8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paytm/js-checkout',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'phar-io/manifest' => array(
@@ -893,11 +933,29 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'razorpay/razorpay' => array(
+            'pretty_version' => '2.8.5',
+            'version' => '2.8.5.0',
+            'reference' => '31027cfb689b9480d67419dbec7c203097e9d9ac',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../razorpay/razorpay',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
                 0 => '4.2.3',
             ),
+        ),
+        'rmccue/requests' => array(
+            'pretty_version' => 'v2.0.5',
+            'version' => '2.0.5.0',
+            'reference' => 'b717f1d2f4ef7992ec0c127747ed8b7e170c2f49',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rmccue/requests',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'sebastian/cli-parser' => array(
             'pretty_version' => '1.0.1',
@@ -1042,6 +1100,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'simplesoftwareio/simple-qrcode' => array(
+            'pretty_version' => '4.2.0',
+            'version' => '4.2.0.0',
+            'reference' => '916db7948ca6772d54bb617259c768c9cdc8d537',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../simplesoftwareio/simple-qrcode',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/laravel-permission' => array(
             'pretty_version' => '5.7.0',
