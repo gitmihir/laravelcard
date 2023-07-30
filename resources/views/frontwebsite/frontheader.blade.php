@@ -1,10 +1,16 @@
 @include('frontwebsite.front-head')
+@php
+    $viewslideonfront = App\Models\Slide::all();
+    $viewCms = App\Models\CMS::all();
+    $viewHeader = App\Models\Brand::all();
+@endphp
 
 <body class="darg-bg">
     <div id="welcome-user" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content welcome-box">
                 <div class="modal-header bb-0">
+                    <h1>This is Recent Change</h1>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body welcome-box-body">

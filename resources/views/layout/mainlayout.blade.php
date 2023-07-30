@@ -1,9 +1,8 @@
 @include('layout.partials.head')
 @php
-    $countquery = "SELECT SUM(sg_total_product_count) AS totalcount, DATE_FORMAT(created_at, '%Y-%m-%d') AS currentdate FROM sg_order WHERE `return_coupon_code` IS NULL OR return_coupon_code = ' ' AND DATE_FORMAT(created_at, '%Y-%m-%d') = CURDATE()";
+    // $countquery = "SELECT SUM(sg_total_product_count) AS totalcount, DATE_FORMAT(created_at, '%Y-%m-%d') AS currentdate FROM sg_order WHERE `return_coupon_code` IS NULL OR return_coupon_code = ' ' AND DATE_FORMAT(created_at, '%Y-%m-%d') = CURDATE()";
     
-    echo $data ?? ''['totalcount'];
-    
+    // echo $data ?? ''['totalcount'];
 @endphp
 <section class="content">
     <div class="container-fluid">
