@@ -6,7 +6,7 @@
 </div>
 <div class="row mb-3 ml-3 mr-3 mt-3">
     <div class="col-md-12">
-        <table id="example1" class="table table-bordered table-hover dataTable dtr-inline">
+        <table id="example3" class="table table-bordered table-hover dataTable dtr-inline">
             <thead>
                 <tr>
                     <th>User Id</th>
