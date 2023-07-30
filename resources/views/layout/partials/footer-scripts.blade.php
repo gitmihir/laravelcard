@@ -88,7 +88,7 @@
     });
     new DataTable('#example3', {
         order: [
-            [0, 'desc']
+            [1, 'desc']
         ]
     });
 </script>
