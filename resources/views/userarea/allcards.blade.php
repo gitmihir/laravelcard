@@ -22,6 +22,7 @@
                 <tr>
                     <th>Card No.</th>
                     <th>Order Id</th>
+                    <th>Name</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -31,6 +32,13 @@
                     <tr>
                         <td>{{ $carddata->id }}</td>
                         <td>{{ $carddata->sg_order_id }}</td>
+                        <td>
+                            @if ($carddata->sg_cd_name)
+                                {{ $carddata->sg_cd_name }}
+                            @else
+                                {{ 'NA' }}
+                            @endif
+                        </td>
                         <td>
                             @php
                                 $cardurl = explode('/', $carddata->sg_cd_QR_Link);
