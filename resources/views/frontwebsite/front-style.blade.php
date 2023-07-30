@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/assets/bootstrap-4.1.1/bootstrap.min.css') }}">
 <!-- END BOOTSTRAP CSS -->
+<link rel="stylesheet" href="{{ asset('/frontassets/css/all.min.css') }}" />
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/css/adminlte.min.css') }}" />
 <!-- ANIMATED CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/assets/animations/animate.css') }}">
 <!-- END ANIMATED CSS -->
@@ -18,6 +21,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/css/slick.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/assets/lightbox/jquery.littlelightbox.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/css/OverlayScrollbars.min.css') }}">
 <!-- END STYLE CSS -->
 <!-- RESPONSIVE CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('/frontassets/css/responsive.css') }}">

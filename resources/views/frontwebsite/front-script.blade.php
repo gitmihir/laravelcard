@@ -10,6 +10,9 @@
 <script src="{{ asset('/frontassets/assets/lightbox/jquery.littlelightbox.js') }}"></script>
 <script src="{{ asset('/frontassets/js/slick.min.js') }}"></script>
 <script src="{{ asset('/frontassets/js/main.js') }}"></script>
+<script src="{{ asset('/frontassets/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ asset('/frontassets/js/adminlte.js') }}"></script>
+<script src="{{ asset('/frontassets/js/dashboard.js') }}"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 @if (env('PAYTM_ENVIRONMENT') == 'production')
     <script type="application/javascript" crossorigin="anonymous" src="https:\\securegw.paytm.in\merchantpgpui\checkoutjs\merchants\<?php echo env('PAYTM_MERCHANT_ID')?>.js" ></script>
