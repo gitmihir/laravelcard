@@ -589,8 +589,9 @@
                             <h4> Or check my social channels: </h4>
                             <div class='buttons-container customcolor'>
                                 <div class="socail-box">
-                                    <a href="http://www.facebook.com/sharer.php?u={{ $qrurl }}"
-                                        target="_blank">
+                                    <a
+                                        href='https://www.facebook.com/sharer.php?u={{ $qrurl }}
+                                        target="_blank"'>
                                         <div class='button facebook'>
                                             <i class="fa fa-facebook fa-2x"></i>
                                         </div>
@@ -598,12 +599,12 @@
                                     </a>
                                 </div>
                                 <div class="socail-box">
-                                    <a href="http://twitter.com/share?url={{ $qrurl }}&text=hey have a look at my digital card"
+                                    <a href="https://twitter.com/share?url={{ $qrurl }}&text=hey have a look at my digital card"
                                         target="_blank">
                                         <div class='button twitter'>
                                             <i class="fa fa-twitter fa-2x"></i>
                                         </div>
-                                        <h6> Twitter </h6>
+                                        <h6>Twitter</h6>
                                     </a>
                                 </div>
                                 <div class="socail-box">
@@ -613,24 +614,6 @@
                                             <i class="fa fa-whatsapp fa-2x"></i>
                                         </div>
                                         <h6> Whatsapp </h6>
-                                    </a>
-                                </div>
-                                <div class="socail-box">
-                                    <a href="http://reddit.com/submit?url={{ $qrurl }}&title=Simple Share Buttons"
-                                        target="_blank">
-                                        <div class='button reddit'>
-                                            <i class="fa fa-reddit fa-2x"></i>
-                                        </div>
-                                        <h6> Reddit </h6>
-                                    </a>
-                                </div>
-                                <div class="socail-box">
-                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ $qrurl }}"
-                                        target="_blank">
-                                        <div class='button linkedin'>
-                                            <i class="fa fa-linkedin fa-2x"></i>
-                                        </div>
-                                        <h6> Linkedin </h6>
                                     </a>
                                 </div>
                             </div>

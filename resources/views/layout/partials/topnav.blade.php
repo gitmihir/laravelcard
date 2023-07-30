@@ -129,12 +129,12 @@
             </a>
         </li>
         @guest
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('/') }}">Login</a>
-            </li>
-            <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">Register</a>
-            </li>
+            </li> --}}
         @else
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}">Logout</a>

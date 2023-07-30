@@ -119,7 +119,7 @@ class OrderController extends Controller
             \Mail::html(
                 "Name: " . $_GET['sg_full_name'] . "</br>" . "Email: " . $_GET['sg_business_email'] . "</br>" . "Password: " . $psw,
                 function ($message) {
-                    $message->to('developermihir009@gmail.com')->subject('Order');
+                    $message->to($_GET['sg_business_email'])->subject('Order');
                 }
             );
             $user->save();

@@ -586,9 +586,9 @@ Route::get('print-invoice/{id}', 'App\Http\Controllers\InvoiceController@printin
 
 /* User Routes */
 Route::get(
-    '/usermanagement/allusers',
+    'usermanagement/allusers',
     function () {
-        return view('/usermanagement/allusers');
+        return view('usermanagement/allusers');
     }
 );
 Route::get('/usermanagement/allusers', 'App\Http\Controllers\UserController@viewusers');

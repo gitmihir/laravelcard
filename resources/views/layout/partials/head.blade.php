@@ -34,7 +34,6 @@
                 height="60" width="60">
         </div>
         @include('layout.partials.topnav')
-
         @include('layout.partials.leftnav')
         <div class="content-wrapper">
             <div class="content-header">
