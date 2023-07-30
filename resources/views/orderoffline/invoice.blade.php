@@ -16,6 +16,13 @@
         <div class="row">
             <div class="col-12">
                 <div class="invoice p-3 mb-3">
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <h3 class="text-center">INVOICE</h3>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
                     @foreach ($brand as $branddata)
                         <div class="row">
                             <div class="col-6">

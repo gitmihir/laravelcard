@@ -43,6 +43,11 @@
             </table>
             <a href="{{ url('edit-smtp/' . $smtpdata->id) }}" class="btn btn-primary btn-sm">Update Settings</a>
         @endforeach
+        @php
+            \Mail::html('Yes: Testing Success!', function ($message) {
+                $message->to('developermihir009@gmail.com')->subject('Email From ContactUs Form');
+            });
+        @endphp
     </div>
 </div>
 @include('layout.partials.footer')

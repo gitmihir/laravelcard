@@ -169,6 +169,15 @@
                             </p>
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a href="{{ url('/leads/allleads') }}" class="nav-link">
+                            <i class="nav-icon fa fa-shopping-bag"></i>
+                            <p>
+                                Leads
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="{{ url('/orderoffline/allorderoffline') }}" class="nav-link">
                             <i class="nav-icon fa fa-shopping-bag"></i>

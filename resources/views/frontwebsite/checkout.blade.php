@@ -80,7 +80,7 @@
                                                                         </td>
                                                                         <td>
                                                                             <div class="cart-price text-center">
-                                                                                <span>${{ $details['price'] * $details['quantity'] }}</span>
+                                                                                <span>&#8377;{{ $details['price'] * $details['quantity'] }}</span>
                                                                             </div>
                                                                         </td>
                                                                         <td>
@@ -456,12 +456,6 @@
                                             <svg class="icon">
                                                 <use xlink:href="#icon-shopping-bag" />
                                             </svg>Pay with Razor Pay
-                                        </button>
-                                        <button type="button" data-amount="" data-current-method="paytmpayment"
-                                            data-id="<?php echo time(); ?>" class="button button--full buy_now_paytm">
-                                            <svg class="icon">
-                                                <use xlink:href="#icon-shopping-bag" />
-                                            </svg>Pay with Paytm
                                         </button>
                                     </div>
                                 </div>

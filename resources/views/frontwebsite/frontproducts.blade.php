@@ -90,8 +90,8 @@
                                                             href="#">{{ $productdata->product_name }}</a> </span>
                                                     <span class="vender"> {{ $productdata->product_type }} </span>
                                                     <div class="price-box">
-                                                        <span
-                                                            class="price">{{ $productdata->product_list_price }}</span>
+                                                        <span class="price">&#8377;
+                                                            {{ $productdata->product_list_price }}</span>
                                                     </div>
                                                 </div>
                                                 <div class="pro-hover-cont-right">
@@ -121,8 +121,8 @@
                                                         </span>
                                                         <span class="vender"> {{ $productdata->product_type }} </span>
                                                         <div class="price-box">
-                                                            <span
-                                                                class="price">{{ $productdata->product_list_price }}</span>
+                                                            <span class="price">&#8377;
+                                                                {{ $productdata->product_list_price }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="pro-hover-cont-right">
@@ -153,8 +153,8 @@
                                                         </span>
                                                         <span class="vender"> {{ $productdata->product_type }} </span>
                                                         <div class="price-box">
-                                                            <span
-                                                                class="price">{{ $productdata->product_list_price }}</span>
+                                                            <span class="price">&#8377;
+                                                                {{ $productdata->product_list_price }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="pro-hover-cont-right">
@@ -185,8 +185,8 @@
                                                         </span>
                                                         <span class="vender"> {{ $productdata->product_type }} </span>
                                                         <div class="price-box">
-                                                            <span
-                                                                class="price">{{ $productdata->product_list_price }}</span>
+                                                            <span class="price">&#8377;
+                                                                {{ $productdata->product_list_price }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="pro-hover-cont-right">

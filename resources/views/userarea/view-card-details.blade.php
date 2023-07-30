@@ -232,15 +232,28 @@
                                                 <i class="fa fa-map-signs fa-2x"></i>
                                             </a>
                                         </div>
-                                        <h6>Residence</h6>
+                                        <h6>Branch</h6>
                                     </div>
                                 @endif
-
+                                @if ($carddata->sg_cd_Branch2)
+                                    <div class="socail-box">
+                                        <div class="button facebook">
+                                            <a data-toggle="modal" class="modalapendclassaddress"
+                                                data-address={{ $carddata->sg_cd_Branch2 }}
+                                                data-target="#exampleModalCenter">
+                                                <i class="fa fa-map-signs fa-2x"></i>
+                                            </a>
+                                        </div>
+                                        <h6>Branch</h6>
+                                    </div>
+                                @endif
                             </div>
                         </div>
 
                         <div class="service-card">
-                            <h3> Services </h3>
+                            @if ($carddata->sg_cd_Service_Title_1)
+                                <h3> Services </h3>
+                            @endif
                             <div id="service-card" class="owl-carousel">
                                 @if ($carddata->sg_cd_Service_Title_1 && $carddata->sg_Service_Image_1 && $carddata->sg_cd_Service_About_1)
                                     <div class="item">
@@ -410,10 +423,9 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="service-card">
-                            <h3> Video </h3>
-                            @if ($carddata->sg_cd_YouTube_Link)
+                        @if ($carddata->sg_cd_YouTube_Link)
+                            <div class="service-card">
+                                <h3> Video </h3>
                                 <div class="card-video-row">
                                     <div class="card-video-col">
                                         <iframe width="100%" height="315"
@@ -423,8 +435,8 @@
                                             allowfullscreen></iframe>
                                     </div>
                                 </div>
-                            @endif
-                        </div>
+                            </div>
+                        @endif
                         <div class="payment-icon-row">
                             <div class="social-menu">
                                 <h4> Links option: </h4>
@@ -580,11 +592,6 @@
                         <h4> Share this card </h4>
                         @php $qrurl = URL('/') . $carddata->sg_cd_QR_Link; @endphp
                         <div class="qrcode">{!! QrCode::size(200)->generate($qrurl) !!}</div>
-                        <p> There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered
-                            alteration in some form, by injected humour, or randomised words which don't look even
-                            slightly
-                            believable. </p>
                         <div class="popup-social-menu">
                             <h4> Or check my social channels: </h4>
                             <div class='buttons-container customcolor'>

@@ -554,8 +554,14 @@ Route::get('check-coupon-code', 'App\Http\Controllers\CouponController@checkCoup
 Route::get('/ajaxform2', 'App\Http\Controllers\LeadController@insertLeadData');
 Route::get('inserorder', 'App\Http\Controllers\OrderController@insertorderform');
 Route::post('/createorder', 'App\Http\Controllers\OrderController@inserorder');
-
 Route::get('/insert-order', 'App\Http\Controllers\OrderController@inserorder');
+Route::get(
+    'leads/allleads',
+    function () {
+        return view('leads/allleads');
+    }
+);
+Route::get('delete-lead/{id}', 'App\Http\Controllers\LeadController@destroylead');
 
 //Route::get('/paysuccess/?payment_id={payment_id}', 'App\Http\Controllers\OrderController@orderstatus');
 

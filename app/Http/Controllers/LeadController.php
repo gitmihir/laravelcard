@@ -80,5 +80,10 @@ class LeadController extends Controller
         //return redirect('/products');
     }
 
-
+    public function destroylead($id)
+    {
+        $order = Lead::find($id);
+        $order->delete();
+        return redirect('/leads/allleads');
+    }
 }
