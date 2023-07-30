@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Storage;
 use App\Models\Order;
 use App\Models\User;
 use App\Models\Card;
@@ -97,6 +98,13 @@ class OrderController extends Controller
             $card->sg_order_id = $_GET['order_id_for_status'];
             $card->sg_cd_QR_Link = $baseurl;
             $card->sg_user_order_email = $_GET['sg_business_email'];
+            $finename = "qr-" . time() . $c;
+            $card->sg_card_image_name = $finename;
+            $qrurl = 'http://' . $_SERVER['SERVER_NAME'];
+            $finalurl = $qrurl . $baseurl;
+            $image = \QrCode::format('png')->size(400)->errorCorrection('H')->generate($finalurl);
+            $output_file = '/images/qrimages/' . $finename . '.png';
+            Storage::disk('public')->put($output_file, $image);
             $card->save();
         }
         if (User::where('email', '=', $_GET['sg_business_email'])->exists()) {

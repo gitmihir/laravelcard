@@ -11,25 +11,15 @@ class DownloadVcardController extends Controller
 {
     public function downloadVcard($id)
     {
-
         $vcard = new VCard();
-
-        //$card = Card::where(['id' => $id]);
-        //$cardq = DB::table('sg_card_details')->where('id', $id)->first();
         $cardq = DB::select('select * from sg_card_details where id=' . $id);
-        //print_r($card);
-        // define variables
         foreach ($cardq as $carddata) {
             $lastname = '';
             $firstname = $carddata->sg_cd_name;
             $additional = '';
             $prefix = '';
             $suffix = '';
-
-            // add personal data
             $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
-
-            // add work data
             $vcard->addCompany($carddata->sg_cd_company_name);
             $vcard->addJobtitle($carddata->sg_cd_designation);
             $vcard->addRole('');
@@ -47,7 +37,32 @@ class DownloadVcardController extends Controller
             );
             $vcard->addLabel('-');
             $vcard->addURL($carddata->sg_cd_website);
-            return $vcard->download();
+            $path = public_path() . '/images/cards/';
+
+            \File::delete($path);
+            if (!is_dir($path)) {
+                \File::makeDirectory($path, 0777);
+            }
+            $vcard->setSavePath($path);
+            $vcard->save();
+            $file = $vcard->getFilename() . '.' . $vcard->getFileExtension();
+            self::download($path . '/' . $file);
+        }
+    }
+    function download($file)
+    {
+        if (file_exists($file)) {
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename=' . basename($file));
+            header('Content-Transfer-Encoding: binary');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($file));
+            flush();
+            readfile($file);
+            exit;
         }
     }
 }

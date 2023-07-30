@@ -1,6 +1,5 @@
 @foreach ($cardselectquery as $carddata)
-    @php echo phpinfo(); @endphp
-    @include('frontwebsite.front-style')
+    @include('frontwebsite.front-head')
 
     <body class="darg-bg">
         <div class="main-card-col">
