@@ -57,7 +57,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_brand_busienss_phone">Business Phone</label>
-                <input id="sg_brand_busienss_phone" name="sg_brand_busienss_phone" type="number" min="1"
+                <input id="sg_brand_busienss_phone" name="sg_brand_busienss_phone" type="text" min="1"
                     max="10" class="form-control" required="required">
             </div>
         </div>

@@ -50,9 +50,13 @@
                             GSTIN: {{ $invoicedata->sg_business_GST_number }}<br>
                         </address>
                     </div>
+                    @php
+                        $createDate = new DateTime($invoicedata->created_at);
+                        $strip = $createDate->format('d-m-Y');
+                    @endphp
                     <div class="col-sm-4 invoice-col">
-                        <b>Invoice #007612</b><br>
-                        <br>
+                        <b>Invoice: #007612</b><br>
+                        <b>Order Date: {{ $strip }}</b><br>
                         <b>Order ID:</b> 4F3S8J<br>
                     </div>
                 </div>

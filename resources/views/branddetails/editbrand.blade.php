@@ -89,7 +89,7 @@
             <div class="form-group">
                 <label for="sg_brand_busienss_phone">Business Phone</label>
                 <input id="sg_brand_busienss_phone" name="sg_brand_busienss_phone"
-                    value="{{ $brand->sg_brand_busienss_phone }}" type="number" class="form-control"
+                    value="{{ $brand->sg_brand_busienss_phone }}" type="text" class="form-control"
                     required="required">
             </div>
         </div>

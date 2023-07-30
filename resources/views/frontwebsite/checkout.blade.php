@@ -189,7 +189,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="number" name="sg_business_phone"
+                                                                <input type="text" name="sg_business_phone"
                                                                     placeholder="Phone Number" required=""
                                                                     class="form-control sg_business_phone" />
                                                             </div>
@@ -302,7 +302,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="number" name="sg_s_phone"
+                                                                <input type="text" name="sg_s_phone"
                                                                     placeholder="Phone Number" required=""
                                                                     class="form-control sg_s_phone" />
                                                             </div>

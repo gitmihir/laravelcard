@@ -22,7 +22,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Contact No.</label>
-                <input type="number" class="form-control" placeholder="Contact No." name="emp_contact_no" required>
+                <input type="text" class="form-control" placeholder="Contact No." name="emp_contact_no" required>
             </div>
         </div>
         <div class="col-md-6">

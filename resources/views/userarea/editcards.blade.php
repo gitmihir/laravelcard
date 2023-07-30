@@ -190,7 +190,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_phone_number">Phone</label>
-                                            <input type="number" class="form-control" name="sg_cd_phone_number"
+                                            <input type="text" class="form-control" name="sg_cd_phone_number"
                                                 id="sg_cd_phone_number" value="{{ $card->sg_cd_phone_number }}"
                                                 placeholder="Enter Phone Number">
                                         </div>
@@ -198,7 +198,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_whatsapp_number">Whatsapp number</label>
-                                            <input type="number" class="form-control" name="sg_cd_whatsapp_number"
+                                            <input type="text" class="form-control" name="sg_cd_whatsapp_number"
                                                 id="sg_cd_whatsapp_number" value="{{ $card->sg_cd_whatsapp_number }}"
                                                 placeholder="Enter Whatsapp number">
                                         </div>
@@ -207,7 +207,7 @@
                                         <div class="form-group">
                                             <label for="sg_cd_Business_whatsapp_number">Whatsapp Business
                                                 number</label>
-                                            <input type="number" class="form-control"
+                                            <input type="text" class="form-control"
                                                 name="sg_cd_Business_whatsapp_number"
                                                 id="sg_cd_Business_whatsapp_number"
                                                 value="{{ $card->sg_cd_Business_whatsapp_number }}"

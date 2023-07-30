@@ -62,7 +62,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="number" name="sg_business_phone" placeholder="Enter Phone Number"
+                                    <input type="text" name="sg_business_phone" placeholder="Enter Phone Number"
                                         required="" class="form-control sg_business_phone" />
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>Phone Number</label>
-                                    <input type="number" name="sg_s_phone" placeholder="Enter Phone Number"
+                                    <input type="text" name="sg_s_phone" placeholder="Enter Phone Number"
                                         required="" class="form-control sg_s_phone" />
                                 </div>
                             </div>
