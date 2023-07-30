@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function viewusers()
     {
-        $viewusers = DB::select('select * from users ORDER BY id DESC');
+        $viewusers = DB::select('select * from users ORDERBY id DESC');
         return view('/usermanagement/allusers', ['viewusers' => $viewusers]);
     }
     public function viewsupplierindetail($id)
