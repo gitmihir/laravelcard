@@ -2638,11 +2638,11 @@ a.gallery-view-link:hover {
   box-shadow: none;
 }
 
-.login-form {
+/* .login-form {
   padding-top: 0;
   border-radius: 15px;
   border: 1px solid #e8e8e8;
-}
+} */
 
 .login-form h2 {
   font-size: 16px;
@@ -2654,17 +2654,23 @@ a.gallery-view-link:hover {
   border-bottom: 1px solid #e8e8e8;
 }
 
-.login-form form {
+/* .login-form form {
   padding: 30px;
   padding-right: 50px;
+} */
+.login-form form a:hover {
+  color: #c69b0e !important;
 }
-
+.login-form .btn {
+  cursor: pointer;
+}
 .login-form form a {
   text-align: center;
   display: block;
   text-decoration: underline;
-  padding-bottom: 30px;
-  color: #333;
+  color: #ffffff !important;
+  margin-top: 10px;
+  font-size: 15px;
 }
 
 .remember-me {

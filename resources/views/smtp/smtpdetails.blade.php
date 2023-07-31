@@ -44,15 +44,15 @@
             <a href="{{ url('edit-smtp/' . $smtpdata->id) }}" class="btn btn-primary btn-sm">Update Settings</a>
         @endforeach
     </div>
-    <div class="col-md-12">
+    {{-- <div class="col-md-12">
         <form method="POST" action="/send-email">
             @csrf
             <div class="form-group">
-                <label>Enter Email</label>
+                <label>Enter Email to test SMTP</label>
                 <input type="email" class="form-control" name="emailentered">
                 <input type="submit">
             </div>
         </form>
-    </div>
+    </div> --}}
 </div>
 @include('layout.partials.footer')

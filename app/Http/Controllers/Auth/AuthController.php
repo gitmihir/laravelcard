@@ -35,7 +35,7 @@ class AuthController extends Controller
     /**
      * Write code on Method
      *
-     * @return response()
+     * @return \response()
      */
     public function postLogin(Request $request)
     {
@@ -58,7 +58,7 @@ class AuthController extends Controller
     /**
      * Write code on Method
      *
-     * @return response()
+     * @return \response()
      */
     public function postRegistration(Request $request)
     {
@@ -77,7 +77,7 @@ class AuthController extends Controller
     /**
      * Write code on Method
      *
-     * @return response()
+     * @return \response()
      */
     public function home()
     {
@@ -91,7 +91,7 @@ class AuthController extends Controller
     /**
      * Write code on Method
      *
-     * @return response()
+     * @return \response()
      */
     public function create(array $data)
     {
@@ -105,7 +105,7 @@ class AuthController extends Controller
     /**
      * Write code on Method
      *
-     * @return response()
+     * @return \response()
      */
     public function logout()
     {
