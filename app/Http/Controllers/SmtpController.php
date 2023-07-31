@@ -61,4 +61,28 @@ class SmtpController extends Controller
         $smtp->delete();
         return redirect('/smtp/smtpdetails');
     }
+
+    public function testemail(Request $request)
+    {
+        // \Mail::html('Yes: Testing Success!', function ($message) {
+        //     $message->to($email)->subject('Email From ContactUs Form');
+        // });
+        $mail_data = [
+            'recipient' => $request->emailentered,
+            'fromEmail' => 'info@imihir.com',
+            'fromName' => 'Card System',
+            'subject' => 'Testing Card Email',
+            'body' => 'Testing Success!'
+        ];
+        \Mail::send(
+            'email-template',
+            $mail_data,
+            function ($message) use ($mail_data) {
+                $message->to($mail_data['recipient'])
+                    ->from($mail_data['fromEmail'], $mail_data['fromName'])
+                    ->subject($mail_data['subject']);
+            }
+        );
+        return redirect()->back()->with('success', 'Email Sent!');
+    }
 }

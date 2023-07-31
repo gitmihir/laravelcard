@@ -602,3 +602,5 @@ Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewuserindeta
 Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@edituser');
 Route::put('update-user/{id}', 'App\Http\Controllers\UserController@updateuser');
 Route::get('delete-user/{id}', 'App\Http\Controllers\UserController@destroyuser');
+
+Route::post('/send-email', 'App\Http\Controllers\SmtpController@testemail');
