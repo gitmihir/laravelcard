@@ -41,7 +41,8 @@ class Order extends Model
         'Order_status',
         'sg_CGST',
         'sg_SGST',
-        'sg_IGST'
+        'sg_IGST',
+        'created_at'
     ];
     public $timestamps = false;
 }

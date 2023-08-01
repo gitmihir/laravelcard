@@ -1,18 +1,44 @@
 @include('layout.partials.head')
-
-
 @php
-    
-    // $organicsalesq = DB::select("SELECT SUM(sg_total_product_count) AS totalcount, DATE_FORMAT(created_at, '%Y-%m-%d') AS currentdate FROM sg_order WHERE `return_coupon_code` IS NULL OR return_coupon_code = ' ' AND DATE_FORMAT(created_at, '%Y-%m-%d') = " . CURDATE());
-    
-    $organicsales = App\Models\Order::select('sg_total_product_count', 'created_at')
-        ->where('return_coupon_code', null)
-        ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), date('Y-m-d'))
+    $current_date = date('Y-m-d');
+    $current_month = date('m');
+    $current_year = date('Y');
+    $organicsales_today = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $current_date)
+        ->where('return_coupon_code', '')
         ->get()
         ->sum('sg_total_product_count');
-    echo '<pre>';
-    print_r($organicsales);
-    echo '</pre>';
+    $organicsales_month = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%m'))"), $current_month)
+        ->where('return_coupon_code', '')
+        ->get()
+        ->sum('sg_total_product_count');
+    $organicsales_yearly = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"), $current_year)
+        ->where('return_coupon_code', '')
+        ->get()
+        ->sum('sg_total_product_count');
+    $franchise_today = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $current_date)
+        ->where('return_coupon_code', '!=', '')
+        ->get()
+        ->sum('sg_total_product_count');
+    $franchise_month = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%m'))"), $current_month)
+        ->where('return_coupon_code', '!=', '')
+        ->get()
+        ->sum('sg_total_product_count');
+    $franchise_yearly = DB::table('sg_order')
+        ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
+        ->where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"), $current_year)
+        ->where('return_coupon_code', '!=', '')
+        ->get()
+        ->sum('sg_total_product_count');
 @endphp
 
 <section class="content">
@@ -24,7 +50,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $organicsales_today }}</h3>
                         <p>Today's card sale</p>
                     </div>
                     <div class="icon">
@@ -35,7 +61,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>{{ $organicsales_month }}</h3>
                         <p>Monthly card sale</p>
                     </div>
                     <div class="icon">
@@ -46,7 +72,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>{{ $organicsales_yearly }}</h3>
                         <p>Yearly card sales</p>
                     </div>
                     <div class="icon">
@@ -62,7 +88,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
+                        <h3>{{ $franchise_today }}</h3>
                         <p>Today's card sale</p>
                     </div>
                     <div class="icon">
@@ -73,7 +99,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>{{ $franchise_month }}</h3>
                         <p>Monthly card sale</p>
                     </div>
                     <div class="icon">
@@ -84,7 +110,7 @@
             <div class="col-lg-3 col-6">
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>44</h3>
+                        <h3>{{ $franchise_yearly }}</h3>
                         <p>Yearly card sales</p>
                     </div>
                     <div class="icon">
