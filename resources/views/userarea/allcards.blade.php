@@ -29,7 +29,7 @@
             <tbody>
                 @php $i = 1 @endphp
                 @foreach ($viewcard as $carddata)
-                    @if ($carddata->sg_order_status === '1')
+                    @if ($carddata->sg_order_status === 1)
                         <tr>
                             <td>{{ $carddata->id }}</td>
                             <td>{{ $carddata->sg_order_id }}</td>
