@@ -98,6 +98,7 @@ class Card extends Model
         'sg_cd_Gallery_6',
         'sg_cd_Gallery_7',
         'sg_cd_Gallery_8',
+        'sg_order_status'
     ];
     public $timestamps = false;
 }

@@ -28,6 +28,7 @@
                         $authorized = $resultdata->status;
                         if ($authorized == 'authorized') {
                             App\Models\Order::where('order_id_for_status', $product_id)->update(['sg_order_status' => '1', 'payment_remark' => $payment_id]);
+                            App\Models\Card::where('sg_order_id', $product_id)->update(['sg_order_status' => '1']);
                         }
                     @endphp
                 </div>

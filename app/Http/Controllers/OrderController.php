@@ -105,6 +105,7 @@ class OrderController extends Controller
             $image = \QrCode::format('png')->size(400)->errorCorrection('H')->generate($finalurl);
             $output_file = '/images/qrimages/' . $finename . '.png';
             Storage::disk('public')->put($output_file, $image);
+            $card->sg_order_status = '0';
             $card->save();
         }
         if (User::where('email', '=', $_GET['sg_business_email'])->exists()) {
@@ -125,39 +126,7 @@ class OrderController extends Controller
             $user->save();
             $user->password = $psw;
         }
-
-        // if ($_GET['currentmethod'] === 'paytmpayment') {
-        //     $userData = [
-        //         'name' => $_GET['sg_full_name'],
-        //         // Name of user
-        //         'mobile' => $_GET['sg_business_phone'],
-        //         //Mobile number of user
-        //         'email' => $_GET['sg_s_email'],
-        //         //Email of user
-        //         'fee' => $sg_price_plus_gst,
-        //         'order_id' => $_GET['order_id_for_status'] //Order id
-        //     ];
-
-        //     $payment = Paytm::with('receive');
-
-        //     $payment->prepare([
-        //         'order' => $userData['order_id'],
-        //         'user' => 1,
-        //         'mobile_number' => $_GET['sg_business_phone'],
-        //         'email' => $_GET['sg_s_email'],
-        //         // your user email address
-        //         'amount' => $sg_price_plus_gst,
-        //         // amount will be paid in INR.
-        //         'callback_url' => route('status') // callback URL
-        //     ]);
-        //     $response = $payment->receive(); // initiate a new payment
-        //     return $response;
-        // }
-
-        //return redirect('/');
     }
-
-    // Paytm
     public function paymentCallback()
     {
         $transaction = Paytm::with('receive');
