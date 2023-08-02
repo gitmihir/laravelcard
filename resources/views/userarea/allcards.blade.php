@@ -29,32 +29,35 @@
             <tbody>
                 @php $i = 1 @endphp
                 @foreach ($viewcard as $carddata)
-                    <tr>
-                        <td>{{ $carddata->id }}</td>
-                        <td>{{ $carddata->sg_order_id }}</td>
-                        <td>
-                            @if ($carddata->sg_cd_name)
-                                {{ $carddata->sg_cd_name }}
-                            @else
-                                {{ 'NA' }}
-                            @endif
-                        </td>
-                        <td>
-                            @php
-                                $cardurl = explode('/', $carddata->sg_cd_QR_Link);
-                                $qrurl = URL('/') . $carddata->sg_cd_QR_Link;
-                            @endphp
-                            <a target="_blank" href="{{ url('view-card-details/' . $cardurl[2] . '/' . $cardurl[3]) }}"
-                                class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
-                            <a href="{{ url('edit-card/' . $carddata->id) }}" class="btn btn-primary btn-sm"><i
-                                    class="far fa-edit"></i></a>
-                            @if ($carddata->sg_card_image_name)
-                                <a download=""
-                                    href="{{ asset('images/qrimages/' . $carddata->sg_card_image_name . '.png') }}"
-                                    class="btn btn-success btn-sm"><i class="fa fa-download"></i></a>
-                            @endif
-                        </td>
-                    </tr>
+                    @if ($carddata->sg_order_status === '1')
+                        <tr>
+                            <td>{{ $carddata->id }}</td>
+                            <td>{{ $carddata->sg_order_id }}</td>
+                            <td>
+                                @if ($carddata->sg_cd_name)
+                                    {{ $carddata->sg_cd_name }}
+                                @else
+                                    {{ 'NA' }}
+                                @endif
+                            </td>
+                            <td>
+                                @php
+                                    $cardurl = explode('/', $carddata->sg_cd_QR_Link);
+                                    $qrurl = URL('/') . $carddata->sg_cd_QR_Link;
+                                @endphp
+                                <a target="_blank"
+                                    href="{{ url('view-card-details/' . $cardurl[2] . '/' . $cardurl[3]) }}"
+                                    class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                                <a href="{{ url('edit-card/' . $carddata->id) }}" class="btn btn-primary btn-sm"><i
+                                        class="far fa-edit"></i></a>
+                                @if ($carddata->sg_card_image_name)
+                                    <a download=""
+                                        href="{{ asset('images/qrimages/' . $carddata->sg_card_image_name . '.png') }}"
+                                        class="btn btn-success btn-sm"><i class="fa fa-download"></i></a>
+                                @endif
+                            </td>
+                        </tr>
+                    @endif
                     @php $i++ @endphp
                 @endforeach
             </tbody>
