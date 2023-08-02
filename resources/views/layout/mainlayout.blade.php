@@ -3,6 +3,11 @@
     $current_date = date('Y-m-d');
     $current_month = date('m');
     $current_year = date('Y');
+    
+    echo Auth::user()->id;
+    
+    $couponcode = App\Models\Coupon::where('id', '=', Auth::user()->id)->get();
+    echo $couponcode->sg_coupon_code;
     /* Admin Query */
     if (Auth::user()->user_role === 'super_admin') {
         $organicsales_today = DB::table('sg_order')
