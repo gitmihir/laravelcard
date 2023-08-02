@@ -50,7 +50,6 @@ class OrderController extends Controller
         $order->sg_order_status = $_GET['sg_order_status'];
         $order->Order_status = $_GET['Order_status'];
 
-
         if (isset($_GET['cgst'])) {
             $order->sg_CGST = $_GET['cgst'];
         } else {

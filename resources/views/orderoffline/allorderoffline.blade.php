@@ -71,7 +71,9 @@
                             @else
                                 <a href="{{ url('edit-order/' . $orderdata->id) }}" class="btn btn-primary btn-sm"><i
                                         class="far fa-edit"></i></a>
-                                <button type="button" delete-url-id='{{ url('delete-order/' . $orderdata->id) }}'
+                                <button type="button"
+                                    delete-card-url-id='{{ url('delete-card/' . $orderdata->order_id_for_status) }}'
+                                    delete-url-id='{{ url('delete-order/' . $orderdata->id) }}'
                                     class="btn btn-danger btn-sm deletemodal" data-toggle="modal"
                                     data-target="#modaldelete">
                                     <i class="fas fa-trash-alt"></i>
