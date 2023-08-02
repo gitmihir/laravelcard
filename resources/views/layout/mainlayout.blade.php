@@ -11,7 +11,7 @@
     foreach ($couponcode as $code) {
         $codedisplay = $code->sg_coupon_code;
     }
-    echo $codedisplay;
+    print_r($codedisplay);
     /* Admin Query */
     if (Auth::user()->user_role === 'super_admin') {
         $organicsales_today = DB::table('sg_order')
