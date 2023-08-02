@@ -56,21 +56,18 @@
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $current_date)
             ->where('return_coupon_code', 'NAV25')
-            ->where('sg_business_email', Auth::user()->email)
             ->get()
             ->sum('sg_total_product_count');
         $franchise_user_month = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%m'))"), $current_month)
             ->where('return_coupon_code', 'NAV25')
-            ->where('sg_business_email', Auth::user()->email)
             ->get()
             ->sum('sg_total_product_count');
         $franchise_user_yearly = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"), $current_year)
             ->where('return_coupon_code', 'NAV25')
-            ->where('sg_business_email', Auth::user()->email)
             ->get()
             ->sum('sg_total_product_count');
         /* Normal User Query */
