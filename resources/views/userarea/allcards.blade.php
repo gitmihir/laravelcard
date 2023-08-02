@@ -33,7 +33,7 @@
                         //order_id_for_status, sg_order_status (0 - Not Success, 1 - Successful) - Order Table,
                         //sg_order_id - Card Table
                         $carddata->sg_order_id;
-                        $orderidquery = App\Models\sg_order::where('order_id_for_status', '=', $carddata->sg_order_id)->get();
+                        $orderidquery = App\Models\Order::where('order_id_for_status', '=', $carddata->sg_order_id)->get();
                     @endphp
                     @foreach ($orderidquery as $orderidcheck)
                         @if ($orderidcheck->sg_order_status === '1')
