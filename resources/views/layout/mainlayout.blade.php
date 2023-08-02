@@ -3,15 +3,20 @@
     $current_date = date('Y-m-d');
     $current_month = date('m');
     $current_year = date('Y');
-    $couponcode = DB::table('sg_coupon_code')
-        ->select('sg_coupon_code', 'id')
-        ->where('id', Auth::user()->id)
-        ->get();
-    $codedisplay = [];
+    
+    $couponcode = App\Models\Franchise::where('sg_franchise_email', '=', Auth::user()->email)->get();
+    $idforcoupon = [];
     foreach ($couponcode as $code) {
-        $codedisplay = $code->sg_coupon_code;
+        $idforcoupon = $code->id;
     }
-    print_r($codedisplay);
+    $couponcode = DB::table('sg_coupon_code')
+        ->select('sg_coupon_code', 'sg_franchise_id')
+        ->where('sg_franchise_id', $idforcoupon)
+        ->get();
+    $couponford = [];
+    foreach ($couponcode as $coupon) {
+        $couponford = $coupon->sg_coupon_code;
+    }
     /* Admin Query */
     if (Auth::user()->user_role === 'super_admin') {
         $organicsales_today = DB::table('sg_order')
@@ -55,19 +60,19 @@
         $franchise_user_today = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $current_date)
-            ->where('return_coupon_code', 'TMOB30')
+            ->where('return_coupon_code', $couponford)
             ->get()
             ->sum('sg_total_product_count');
         $franchise_user_month = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%m'))"), $current_month)
-            ->where('return_coupon_code', 'TMOB30')
+            ->where('return_coupon_code', $couponford)
             ->get()
             ->sum('sg_total_product_count');
         $franchise_user_yearly = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at', 'sg_business_email')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"), $current_year)
-            ->where('return_coupon_code', 'TMOB30')
+            ->where('return_coupon_code', $couponford)
             ->get()
             ->sum('sg_total_product_count');
         /* Normal User Query */

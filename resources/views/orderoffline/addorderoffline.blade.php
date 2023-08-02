@@ -12,6 +12,13 @@
             </h3>
         </div>
     </div>
+    <div class="containersp"> <!--There's the container that centers it-->
+        <div class="spinner-frame"> <!--The background-->
+            <div class="spinner-cover"></div> <!--The Foreground-->
+            <div class="spinner-bar"></div> <!--and The Spinny thing-->
+        </div>
+    </div>
+
     <div class="row mb-3 ml-3 mr-3 mt-3">
         <div class="panel panel-default">
             <div id="collapse-payment-address-1" class="panel-collapse checkout-box collapse show">
@@ -367,3 +374,99 @@
 </form>
 @include('layout.partials.footer')
 @include('orderoffline.orderofflinescripts')
+<style>
+    .containersp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        background: #f2f2f2;
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    .containersp:before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .containersp .spinner-frame {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 5px solid #fff;
+        padding: 10px;
+    }
+
+    .containersp .spinner-frame .spinner-cover {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .containersp .spinner-frame .spinner-bar {
+        background: #29d;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100% 0 0 0;
+        -webkit-animation: spinny 2s linear infinite;
+        transform-origin: 100% 100%;
+    }
+
+    @-webkit-keyframes spinny {
+        0% {
+            transform: rotate(0deg);
+            background: #29d;
+        }
+
+        50% {
+            transform: rotate(180deg);
+            background: #00427c;
+        }
+
+        100% {
+            transform: rotate(360deg);
+            background: #29d;
+        }
+    }
+
+    /* .four-dots:before {
+        display: block;
+        height: 5px;
+        width: 5px;
+        content: '';
+        -webkit-animation: spin 1s infinite;
+        animation: spin 1s infinite;
+        border-radius: 100%;
+        -webkit-box-shadow: 20px 0 0 5px var(--primary), 0 20px 0 5px var(--secondary), 0 -20px 0 5px var(--secondary), -20px 0 0 5px var(--primary);
+        box-shadow: 20px 0 0 5px var(--primary), 0 20px 0 5px var(--secondary), 0 -20px 0 5px var(--secondary), -20px 0 0 5px var(--primary);
+    }
+
+    @-webkit-keyframes spin {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        to {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    } */
+</style>

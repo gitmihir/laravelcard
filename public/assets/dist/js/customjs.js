@@ -336,8 +336,10 @@ $.ajaxSetup({
     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
   },
 });
+$(".containersp").hide();
 $(".orderstatus").hide();
 $("body").on("click", ".ordernow", function (e) {
+  $(".containersp").show();
   $(".orderstatus").hide();
   /* Store Order Details */
   var ajaxurlforofforder = $(".ajaxurlforofforder").val();

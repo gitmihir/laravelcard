@@ -385,17 +385,13 @@
         //var product_ids = $("input[name='product_ids[]']").val();
         //var product_quantities = $("input[name='product_quantities[]']").val();
         //var product_prices = $(".input[name='product_prices[]']").val();
-
-
         if (sg_full_name.length === 0 &&
             sg_business_name.length === 0 &&
             sg_business_address.length === 0 &&
             sg_business_GST_number.length === 0 &&
             sg_business_email.length === 0 &&
             sg_business_phone.length === 0) {
-
             alert("Please Fillup all billing details before payment!");
-
         } else {
 
             $.ajax({
@@ -437,8 +433,6 @@
                 success: function(response) {}
             });
             /* End */
-
-
             var totalAmount = $(this).attr("data-amount");
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
@@ -466,98 +460,6 @@
             e.preventDefault();
         }
     });
-    // $('body').on('click', '.buy_now_paytm', function(e) {
-    //     //data-current-method="paytmpayment"
-    //     //var currentmethod = $(this).attr('data-current-method');
-    //     /* Store Order Details */
-    //     var sg_full_name = $(".sg_full_name").val();
-    //     var sg_business_name = $(".sg_business_name").val();
-    //     var sg_business_address = $(".sg_business_address").val();
-    //     var sg_business_GST_number = $(".sg_business_GST_number").val();
-    //     var sg_business_email = $(".sg_business_email").val();
-    //     var sg_business_phone = $(".sg_business_phone").val();
-    //     var sg_s_name = $(".sg_s_name").val();
-    //     var sg_s_address = $(".sg_s_address").val();
-    //     var sg_s_email = $(".sg_s_email").val();
-    //     var sg_s_phone = $(".sg_s_phone").val();
-    //     var coupon_ID = $(".coupon_ID").val();
-    //     var franchise_ID = $(".franchise_ID").val();
-    //     var return_coupon_code = $(".return_coupon_code").val();
-    //     var coupon_discount = $(".coupon_discount").val();
-    //     var shipping_fee = $(".shipping_rate").val();
-    //     var before_discount_total = $(".before_discount_total").val();
-    //     var discounted_price = $(".discounted_price").val();
-    //     var after_discount_total = $(".after_discount_total").val();
-    //     var order_id_for_status = $(".order_id_for_status").val();
-    //     var payment_remark = $(".payment_remark").val();
-    //     var sg_order_status = $(".sg_order_status").val();
-
-    //     var sg_s_state = $(".sg_s_state").val();
-    //     var Order_status = $(".Order_status").val();
-    //     var sg_state = $(".sg_state").val();
-
-    //     var product_ids = [];
-    //     $("input[name='product_ids[]']").each(function() {
-    //         product_ids.push($(this).val());
-    //     });
-
-    //     var product_quantities = [];
-    //     $("input[name='product_quantities[]']").each(function() {
-    //         product_quantities.push($(this).val());
-    //     });
-
-    //     var product_prices = [];
-    //     $("input[name='product_prices[]']").each(function() {
-    //         product_prices.push($(this).val());
-    //     });
-    //     if (sg_full_name.length === 0 &&
-    //         sg_business_name.length === 0 &&
-    //         sg_business_address.length === 0 &&
-    //         sg_business_GST_number.length === 0 &&
-    //         sg_business_email.length === 0 &&
-    //         sg_business_phone.length === 0) {
-    //         alert("Please Fillup all billing details before payment!");
-    //     } else {
-    //         $.ajax({
-    //             url: '{{ url('insert-order') }}',
-    //             method: "GET",
-    //             data: {
-    //                 sg_full_name: sg_full_name,
-    //                 sg_business_name: sg_business_name,
-    //                 sg_business_address: sg_business_address,
-    //                 sg_business_GST_number: sg_business_GST_number,
-    //                 sg_business_email: sg_business_email,
-    //                 sg_business_phone: sg_business_phone,
-    //                 sg_s_name: sg_s_name,
-    //                 sg_s_address: sg_s_address,
-    //                 sg_s_email: sg_s_email,
-    //                 sg_s_phone: sg_s_phone,
-    //                 sg_s_state: sg_s_state,
-    //                 Order_status: Order_status,
-    //                 sg_state: sg_state,
-    //                 coupon_ID: coupon_ID,
-    //                 franchise_ID: franchise_ID,
-    //                 return_coupon_code: return_coupon_code,
-    //                 coupon_discount: coupon_discount,
-    //                 shipping_fee: shipping_fee,
-    //                 before_discount_total: before_discount_total,
-    //                 discounted_price: discounted_price,
-    //                 after_discount_total: after_discount_total,
-    //                 product_ids: product_ids,
-    //                 product_quantities: product_quantities,
-    //                 product_prices: product_prices,
-    //                 order_id_for_status: order_id_for_status,
-    //                 payment_remark: payment_remark,
-    //                 sg_order_status: sg_order_status
-    //                 // currentmethod: currentmethod
-    //             },
-    //             success: function(data) {
-    //                 invokeBlinkCheckoutPopup(data.orderId, data.txnToken, data.amount)
-    //             }
-    //         });
-    //         /* End */
-    //     }
-    // });
 
     function invokeBlinkCheckoutPopup(orderId, txnToken, amount) {
         window.Paytm.CheckoutJS.init({
@@ -630,5 +532,6 @@
         }
     });
 </script>
+
 
 </html>

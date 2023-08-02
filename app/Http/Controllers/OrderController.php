@@ -80,7 +80,7 @@ class OrderController extends Controller
                 $order->sg_total_tax = $_GET['sg_IGST'];
             }
         }
-        $order->sg_order_base_price = $_GET['before_discount_total'];
+        $order->sg_order_base_price = $_GET['sg_order_base_price'];
         $order->save();
         $request->session()->forget('cart');
 
