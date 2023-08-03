@@ -446,11 +446,15 @@
                                 Order_status: Order_status,
                                 sg_order_base_price: sg_order_base_price
                             },
-                            success: function(response) {}
+                            success: function(response) {
+                                window.location.href = SITEURL + '/' +
+                                    'paysuccess?payment_id=' + response
+                                    .razorpay_payment_id + '&product_id=' + product_id +
+                                    '&amount=' + totalAmount;
+                            }
                         });
                     }
-                    window.location.href = SITEURL + '/' + 'paysuccess?payment_id=' + response
-                        .razorpay_payment_id + '&product_id=' + product_id + '&amount=' + totalAmount;
+
                 },
                 "prefill": {
                     "contact": contact,
