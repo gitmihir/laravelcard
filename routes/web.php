@@ -545,7 +545,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('edit-order/{id}', 'App\Http\Controllers\OrderController@editorder');
     Route::put('update-order/{id}', 'App\Http\Controllers\OrderController@updateorder');
-    Route::get('delete-order/{id}', 'App\Http\Controllers\OrderController@destroyorder');
+    Route::get('delete-order/{id}/{orderid}', 'App\Http\Controllers\OrderController@destroyorder');
 
 });
 

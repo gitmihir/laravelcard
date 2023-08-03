@@ -90,6 +90,11 @@ $(document).on("click", ".deletemodal", function () {
   var deleteurl = $(this).attr("delete-url-id");
   $(".appendurl").attr("href", deleteurl);
 });
+$(document).on("click", ".deletecardorder", function () {
+  var deleteorderurl = $(this).attr("delete-url-id");
+  $(".appendurl").attr("href", deleteorderurl);
+});
+
 $.ajaxSetup({
   headers: {
     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),

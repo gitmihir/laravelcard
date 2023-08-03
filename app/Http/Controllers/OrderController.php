@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mockery\Undefined;
 use Paytm;
+use DB;
 
 class OrderController extends Controller
 {
@@ -202,9 +203,12 @@ class OrderController extends Controller
         return redirect('/orderoffline/allorderoffline');
     }
 
-    public function destroyorder($id)
+    public function destroyorder(Request $request)
     {
+        $id = $request->id;
+        $orderid = $request->orderid;
         $order = Order::find($id);
+        DB::select('DELETE from sg_card_details WHERE sg_order_id =  ' . $orderid);
         $order->delete();
         return redirect('/orderoffline/allorderoffline');
     }

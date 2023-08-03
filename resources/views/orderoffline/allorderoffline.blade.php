@@ -72,10 +72,9 @@
                                 <a href="{{ url('edit-order/' . $orderdata->id) }}" class="btn btn-primary btn-sm"><i
                                         class="far fa-edit"></i></a>
                                 <button type="button"
-                                    delete-card-url-id='{{ url('delete-card/' . $orderdata->order_id_for_status) }}'
-                                    delete-url-id='{{ url('delete-order/' . $orderdata->id) }}'
-                                    class="btn btn-danger btn-sm deletemodal" data-toggle="modal"
-                                    data-target="#modaldelete">
+                                    delete-url-id='{{ url('delete-order/' . $orderdata->id . '/' . $orderdata->order_id_for_status) }}'
+                                    class="btn btn-danger btn-sm deletecardorder" data-toggle="modal"
+                                    data-target="#modaldeletecardorder">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             @endif
