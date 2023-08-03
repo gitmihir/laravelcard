@@ -338,6 +338,7 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    $(".containersp").hide();
     $('body').on('click', '.buy_now', function(e) {
         /* Store Order Details */
         var sg_full_name = $(".sg_full_name").val();
@@ -410,6 +411,7 @@
                 "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
                 "handler": function(response) {
                     if (response.razorpay_payment_id) {
+                        $(".containersp").show();
                         $.ajax({
                             url: '{{ url('insert-order') }}',
                             method: "GET",
@@ -591,6 +593,75 @@
         $(".buy_now").attr("data-amount", $('.after_discount_total').val());
     });
 </script>
+<style>
+    .containersp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        background: #f2f2f2;
+        opacity: 0.8;
+        z-index: 1;
+    }
 
+    .containersp:before {
+        content: "";
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .containersp .spinner-frame {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        border: 5px solid #fff;
+        padding: 10px;
+    }
+
+    .containersp .spinner-frame .spinner-cover {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .containersp .spinner-frame .spinner-bar {
+        background: #29d;
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100% 0 0 0;
+        -webkit-animation: spinny 2s linear infinite;
+        transform-origin: 100% 100%;
+    }
+
+    @-webkit-keyframes spinny {
+        0% {
+            transform: rotate(0deg);
+            background: #29d;
+        }
+
+        50% {
+            transform: rotate(180deg);
+            background: #00427c;
+        }
+
+        100% {
+            transform: rotate(360deg);
+            background: #29d;
+        }
+    }
+</style>
 
 </html>

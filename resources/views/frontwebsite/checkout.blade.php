@@ -9,6 +9,12 @@
         <div class="shop-page">
             <!-- end full width banner -->
             <div class="checkout-page cart-page pt-50 pb-50">
+                <div class="containersp"> <!--There's the container that centers it-->
+                    <div class="spinner-frame"> <!--The background-->
+                        <div class="spinner-cover"></div> <!--The Foreground-->
+                        <div class="spinner-bar"></div> <!--and The Spinny thing-->
+                    </div>
+                </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-7">
