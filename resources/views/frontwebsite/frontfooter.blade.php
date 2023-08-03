@@ -397,44 +397,6 @@
             alert("Please Fillup all billing details before payment!");
         } else {
 
-            $.ajax({
-                url: '{{ url('insert-order') }}',
-                method: "GET",
-                data: {
-                    sg_full_name: sg_full_name,
-                    sg_business_name: sg_business_name,
-                    sg_business_address: sg_business_address,
-                    sg_business_GST_number: sg_business_GST_number,
-                    sg_business_email: sg_business_email,
-                    sg_business_phone: sg_business_phone,
-                    sg_s_name: sg_s_name,
-                    sg_s_address: sg_s_address,
-                    sg_s_email: sg_s_email,
-                    sg_s_phone: sg_s_phone,
-                    sg_state: sg_state,
-                    sg_s_state: sg_s_state,
-                    coupon_ID: coupon_ID,
-                    franchise_ID: franchise_ID,
-                    return_coupon_code: return_coupon_code,
-                    coupon_discount: coupon_discount,
-                    //shipping_fee: shipping_fee,
-                    before_discount_total: before_discount_total,
-                    discounted_price: discounted_price,
-                    after_discount_total: after_discount_total,
-                    product_ids: product_ids,
-                    product_quantities: product_quantities,
-                    product_prices: product_prices,
-                    order_id_for_status: order_id_for_status,
-                    payment_remark: payment_remark,
-                    sg_order_status: sg_order_status,
-                    cgst: cgst,
-                    sgst: sgst,
-                    igst: igst,
-                    Order_status: Order_status,
-                    sg_order_base_price: sg_order_base_price
-                },
-                success: function(response) {}
-            });
             /* End */
             var totalAmount = $(this).attr("data-amount");
             var product_id = $(this).attr("data-id");
@@ -447,6 +409,46 @@
                 "description": "Payment",
                 "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
                 "handler": function(response) {
+                    if (response.razorpay_payment_id) {
+                        $.ajax({
+                            url: '{{ url('insert-order') }}',
+                            method: "GET",
+                            data: {
+                                sg_full_name: sg_full_name,
+                                sg_business_name: sg_business_name,
+                                sg_business_address: sg_business_address,
+                                sg_business_GST_number: sg_business_GST_number,
+                                sg_business_email: sg_business_email,
+                                sg_business_phone: sg_business_phone,
+                                sg_s_name: sg_s_name,
+                                sg_s_address: sg_s_address,
+                                sg_s_email: sg_s_email,
+                                sg_s_phone: sg_s_phone,
+                                sg_state: sg_state,
+                                sg_s_state: sg_s_state,
+                                coupon_ID: coupon_ID,
+                                franchise_ID: franchise_ID,
+                                return_coupon_code: return_coupon_code,
+                                coupon_discount: coupon_discount,
+                                //shipping_fee: shipping_fee,
+                                before_discount_total: before_discount_total,
+                                discounted_price: discounted_price,
+                                after_discount_total: after_discount_total,
+                                product_ids: product_ids,
+                                product_quantities: product_quantities,
+                                product_prices: product_prices,
+                                order_id_for_status: order_id_for_status,
+                                payment_remark: payment_remark,
+                                sg_order_status: sg_order_status,
+                                cgst: cgst,
+                                sgst: sgst,
+                                igst: igst,
+                                Order_status: Order_status,
+                                sg_order_base_price: sg_order_base_price
+                            },
+                            success: function(response) {}
+                        });
+                    }
                     window.location.href = SITEURL + '/' + 'paysuccess?payment_id=' + response
                         .razorpay_payment_id + '&product_id=' + product_id + '&amount=' + totalAmount;
                 },
@@ -464,31 +466,7 @@
         }
     });
 
-    function invokeBlinkCheckoutPopup(orderId, txnToken, amount) {
-        window.Paytm.CheckoutJS.init({
-            "root": "",
-            "flow": "DEFAULT",
-            "data": {
-                "orderId": orderId,
-                "token": txnToken,
-                "tokenType": "TXN_TOKEN",
-                "amount": amount,
-            },
-            handler: {
-                transactionStatus: function(data) {},
-                notifyMerchant: function notifyMerchant(eventName, data) {
-                    if (eventName == "APP_CLOSED") {
-                        $('.paytm-pg-loader').hide();
-                        $('.paytm-overlay').hide();
-                        //location.reload();
-                    }
-                    console.log("notify merchant about the payment state");
-                }
-            }
-        }).then(function() {
-            window.Paytm.CheckoutJS.invoke();
-        });
-    }
+
     $(".sg_CGST_class").hide();
     $(".sg_SGST_class").hide();
     $(".sg_IGST_class").hide();
@@ -533,6 +511,80 @@
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(2));
             }
         }
+
+        $(".buy_now").attr("data-amount", grand_total);
+    });
+    $(".removecoupon").on("click", function() {
+        $(".removecode").hide();
+        $(".messageblock").hide();
+        $(".successblock").hide();
+        $(".failureblock").hide();
+        $(".coupon_code").removeAttr("readonly");
+        $(".coupon_code").val("");
+        var bill_amount = $(".bill_amount").val();
+        var sg_order_base_price = $(".sg_order_base_price").val();
+        $(".return_coupon_code").val("");
+        $(".coupon_discount").val(0);
+        $(".discounted_price").val(0);
+        $(".discounted_price_display").html(0);
+        $(".sg_order_base_price").val(bill_amount);
+        $(".sg_order_base_price_display").html($(".before_discount_total").val());
+
+        let final_amount = sg_order_base_price;
+        //GST Calculation
+        var stateval = $(".statechangecalculation").val();
+        if (stateval === "Gujarat") {
+            $(".sg_CGST_class").show();
+            $(".sg_SGST_class").show();
+            $(".sg_IGST_class").hide();
+            if (final_amount) {
+                var total_amount_after_tax = final_amount * 0.09;
+                $(".sg_CGST").html("&#8377;" + total_amount_after_tax.toFixed(2));
+                $(".sg_SGST").html("&#8377;" + total_amount_after_tax.toFixed(2));
+                $(".cgst").val(total_amount_after_tax.toFixed(2));
+                $(".sgst").val(total_amount_after_tax.toFixed(2));
+                var grand_total =
+                    parseFloat(final_amount) +
+                    parseFloat($(".cgst").val()) +
+                    parseFloat($(".sgst").val());
+                $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
+                    2));
+                $(".after_discount_total").val(grand_total);
+            }
+        } else if (stateval !== "Gujarat") {
+            $(".sg_CGST_class").hide();
+            $(".sg_SGST_class").hide();
+            $(".sg_IGST_class").show();
+            if (final_amount) {
+                var total_amount_after_tax = final_amount * 0.18;
+                $(".sg_IGST").html("&#8377;" + total_amount_after_tax.toFixed(2));
+                $(".igst").val(total_amount_after_tax.toFixed(2));
+
+                var grand_total =
+                    parseFloat(final_amount) +
+                    parseFloat($(".igst").val());
+                $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
+                    2));
+                $(".after_discount_total").val(grand_total);
+            }
+        } else {
+            $(".sg_CGST_class").hide();
+            $(".sg_SGST_class").hide();
+            $(".sg_IGST_class").show();
+            if (final_amount) {
+                var total_amount_after_tax = final_amount * 0.18;
+                $(".sg_IGST").html("&#8377;" + total_amount_after_tax.toFixed(2));
+                $(".igst").val(total_amount_after_tax.toFixed(2));
+
+                var grand_total =
+                    parseFloat(final_amount) +
+                    parseFloat($(".igst").val());
+                $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
+                    2));
+                $(".after_discount_total").val(grand_total);
+            }
+        }
+        $(".buy_now").attr("data-amount", $('.after_discount_total').val());
     });
 </script>
 

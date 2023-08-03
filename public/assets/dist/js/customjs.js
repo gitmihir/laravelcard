@@ -665,11 +665,7 @@ $(".removecoupon").on("click", function () {
   $(".coupon_code").removeAttr("readonly");
   $(".coupon_code").val("");
   var bill_amount = $(".bill_amount").val();
-  var discounted_price = $(".discounted_price").val();
   var sg_order_base_price = $(".sg_order_base_price").val();
-  var custominput = $(".custominput").val();
-  var coupon_discount = $(".coupon_discount").val();
-  var return_coupon_code = $(".return_coupon_code").val();
   $(".return_coupon_code").val("");
   $(".coupon_discount").val(0);
   $(".discounted_price").val(0);
