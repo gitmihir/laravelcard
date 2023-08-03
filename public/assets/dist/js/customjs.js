@@ -489,6 +489,7 @@ $(".coupon_code_check").click(function () {
         $(".messageblock").hide();
         $(".successblock").hide();
       } else {
+        $(".coupon_code").attr("readonly", "readonly");
         $(".successblock").show();
         $(".failureblock").hide();
         $(".messageblock").hide();
