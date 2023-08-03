@@ -103,3 +103,24 @@ ul.nav.nav-treeview .nav-item {
 .viewordersection p {
   padding: 0.375rem 0.75rem;
 }
+.removecode {
+  width: 100%;
+  float: left;
+  text-align: right;
+  color: #de0a0a;
+}
+/* .successblock {
+  width: 100%;
+  float: left;
+  color: #21b821;
+}
+.failureblock {
+  width: 100%;
+  float: left;
+  color: #de0a0a;
+}
+.messageblock {
+  width: 100%;
+  float: left;
+  color: #de0a0a;
+} */

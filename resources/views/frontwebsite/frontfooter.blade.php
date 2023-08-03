@@ -240,6 +240,7 @@
         }
     });
     $(".double-ringed").hide();
+    $(".removecode").hide();
     //var shipping_rate = $(".shipping_rate").val();
     var withshippingratetotal = parseFloat({{ $total ?? '1' }});
     $(".grand_total").html("&#8377;" + withshippingratetotal);
@@ -265,6 +266,7 @@
                     $(".messageblock").hide();
                     $(".successblock").hide();
                 } else {
+                    $(".removecode").show();
                     $(".coupon_code").attr("readonly", "readonly");
                     $(".successblock").show();
                     $(".failureblock").hide();

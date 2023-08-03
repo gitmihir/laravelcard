@@ -14,10 +14,7 @@ function bill_amount_calculate() {
       final_bill_amount += +$(this).val();
     });
     $(".bill_amount").val(final_bill_amount.toFixed(2));
-
     var couponcodeval = $(".coupon_discount").val();
-    $(".sg_order_base_price").val(final_bill_amount);
-
     $(".sg_order_base_price").val(final_bill_amount.toFixed(2));
     var sg_order_base_price = $(".sg_order_base_price").val();
     //GST Calculation
@@ -467,7 +464,7 @@ $(".sameasbilling").change(function () {
     $(".sg_s_state").val("");
   }
 });
-
+$(".removecode").hide();
 $(".coupon_code_check").click(function () {
   var couponcheckurl = $(".couponcheckurl").val();
   $(".double-ringed").show();
@@ -489,6 +486,7 @@ $(".coupon_code_check").click(function () {
         $(".messageblock").hide();
         $(".successblock").hide();
       } else {
+        $(".removecode").show();
         $(".coupon_code").attr("readonly", "readonly");
         $(".successblock").show();
         $(".failureblock").hide();
@@ -509,8 +507,15 @@ $(".coupon_code_check").click(function () {
         $(".sg_order_base_price").val(
           parseFloat(bill_amount) - parseFloat(discount_amount)
         );
+        var final_bill_amount = 0;
+        $("input[name='product_total_amount[]").each(function () {
+          final_bill_amount += +$(this).val();
+        });
+        $(".bill_amount").val(final_bill_amount.toFixed(2));
+        $(".sg_order_base_price").val(final_bill_amount.toFixed(2));
 
         var sg_order_base_price = $(".sg_order_base_price").val();
+        var couponcodeval = $(".coupon_discount").val();
         //GST Calculation
         var sg_state = $(".sg_state").val();
         if (sg_state === "Gujarat") {
@@ -651,4 +656,47 @@ $(".delete_image").on("click", function () {
       }
     },
   });
+});
+$(".removecoupon").on("click", function () {
+  $(".removecode").hide();
+  $(".messageblock").hide();
+  $(".successblock").hide();
+  $(".failureblock").hide();
+  $(".coupon_code").removeAttr("readonly");
+  $(".coupon_code").val("");
+  var bill_amount = $(".bill_amount").val();
+  var discounted_price = $(".discounted_price").val();
+  var sg_order_base_price = $(".sg_order_base_price").val();
+  var custominput = $(".custominput").val();
+  var coupon_discount = $(".coupon_discount").val();
+  var return_coupon_code = $(".return_coupon_code").val();
+  $(".return_coupon_code").val("");
+  $(".coupon_discount").val(0);
+  $(".discounted_price").val(0);
+  $(".sg_order_base_price").val(bill_amount);
+  var final_bill_amount = 0;
+  $("input[name='product_total_amount[]").each(function () {
+    final_bill_amount += +$(this).val();
+  });
+  $(".bill_amount").val(final_bill_amount.toFixed(2));
+  $(".sg_order_base_price").val(final_bill_amount.toFixed(2));
+  var sg_order_base_price = $(".sg_order_base_price").val();
+  //GST Calculation
+  var sg_state = $(".sg_state").val();
+  if (sg_state === "Gujarat") {
+    var total_amount_after_tax = sg_order_base_price * 0.09;
+    $(".sg_CGST").val(total_amount_after_tax.toFixed(2));
+    $(".sg_SGST").val(total_amount_after_tax.toFixed(2));
+    var grand_total =
+      parseFloat(sg_order_base_price) +
+      parseFloat($(".sg_CGST").val()) +
+      parseFloat($(".sg_SGST").val());
+    $(".after_discount_total").val(grand_total.toFixed(2));
+  } else {
+    var total_amount_after_tax = sg_order_base_price * 0.18;
+    $(".sg_IGST").val(total_amount_after_tax.toFixed(2));
+    var grand_total =
+      parseFloat(sg_order_base_price) + parseFloat($(".sg_IGST").val());
+    $(".after_discount_total").val(grand_total.toFixed(2));
+  }
 });

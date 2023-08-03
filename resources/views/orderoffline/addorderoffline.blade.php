@@ -300,6 +300,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="removecode">
+                            <p class="removecoupon" style="cursor: pointer;">Remove Coupon code</p>
+                        </div>
                         <div class="messageblock">Please enter coupon code!</div>
                         <div class="successblock">Coupon code matched!</div>
                         <div class="failureblock">Coupon code does not Match! Please try different coupon
