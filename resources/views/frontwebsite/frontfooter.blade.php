@@ -515,7 +515,7 @@
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(2));
             }
         }
-
+        $(".after_discount_total").val(grand_total);
         $(".buy_now").attr("data-amount", grand_total);
     });
     $(".removecoupon").on("click", function() {
