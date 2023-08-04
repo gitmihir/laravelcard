@@ -24,7 +24,9 @@
                                  @if ($errors->has('password'))
                                      <span class="text-danger">{{ $errors->first('password') }}</span>
                                  @endif
-
+                                 @if (Session::has('message'))
+                                     {{ Session::get('message') }}
+                                 @endif
                                  @if (Route::has('password.request'))
                                      <div class="form-group mb-4">
                                          <a href="{{ route('password.request') }}"

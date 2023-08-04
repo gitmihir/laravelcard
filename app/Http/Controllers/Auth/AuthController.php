@@ -9,6 +9,7 @@ use Session;
 use App\Models\User;
 use Hash;
 use Illuminate\Support\Facades\Validator;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -49,7 +50,8 @@ class AuthController extends Controller
             return redirect()->intended('home')
                 ->with('You have Successfully loggedin');
         } else {
-            return redirect('/login')->withErrors('message', 'Oppes! You have entered invalid credentials!');
+            return redirect('/login')->with('message', 'Oppes! You have entered invalid credentials!');
+            //Redirect::back()->with('message', 'message|Record updated.');
         }
 
 
