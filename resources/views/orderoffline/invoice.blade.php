@@ -62,9 +62,9 @@
                         $strip = $createDate->format('d-m-Y');
                     @endphp
                     <div class="col-sm-4 invoice-col">
-                        <b>Invoice: #007612</b><br>
+                        <b>Invoice: {{ $invoicedata->id }}</b><br>
                         <b>Order Date: {{ $strip }}</b><br>
-                        <b>Order ID:</b> 4F3S8J<br>
+                        <b>Order ID:</b> {{ $invoicedata->order_id_for_status }}<br>
                     </div>
                 </div>
                 <div class="row mt-3">
