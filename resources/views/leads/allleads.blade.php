@@ -1,6 +1,6 @@
 @include('layout.partials.head')
 @php
-    $viewleads = App\Models\Lead::orderBy('id', 'desc')->get();
+    $viewleads = App\Models\Lead::orderBy('id', 'asc')->get();
 @endphp
 <div class="row mb-3 ml-3 mr-3 mt-3">
     <div class="col-md-6">

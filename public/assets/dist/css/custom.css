@@ -124,3 +124,12 @@ ul.nav.nav-treeview .nav-item {
   float: left;
   color: #de0a0a;
 } */
+div[class*="errorclass_"] {
+  color: #ee0909;
+}
+.errorclass {
+  color: #ee0909;
+}
+.errorborderclass {
+  border-color: #ee0909 !important;
+}

@@ -698,3 +698,41 @@ $(".removecoupon").on("click", function () {
     $(".after_discount_total").val(grand_total.toFixed(2));
   }
 });
+
+/* Javascript Validations */
+
+function validatePhoneNumber(numberval) {
+  if (!numberval.value.match(/^[0-9]{10}$/)) {
+    $(".errorclass_" + numberval.name).remove();
+    $("input[name=" + numberval.name + "]").after(
+      '<div class="errorclass_' +
+        numberval.name +
+        '">Please Enter a Valid Phone Number</div>'
+    );
+    $("input[name=" + numberval.name + "]").addClass("errorborderclass");
+    numberval.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + numberval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + numberval.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+
+function validatePhoneNumber(numberval) {
+  if (!numberval.value.match(/^[0-9]{10}$/)) {
+    $(".errorclass_" + numberval.name).remove();
+    $("input[name=" + numberval.name + "]").after(
+      '<div class="errorclass_' +
+        numberval.name +
+        '">Please Enter a Valid Phone Number</div>'
+    );
+    $("input[name=" + numberval.name + "]").addClass("errorborderclass");
+    numberval.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + numberval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + numberval.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}

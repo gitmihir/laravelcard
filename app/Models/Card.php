@@ -37,6 +37,8 @@ class Card extends Model
         'sg_cd_Linkedin',
         'sg_cd_Pinterest',
         'sg_cd_Youtube',
+        'sg_cd_Snapchat',
+        'sg_cd_google_business',
 
         'sg_cd_Office',
         'sg_cd_Branch',

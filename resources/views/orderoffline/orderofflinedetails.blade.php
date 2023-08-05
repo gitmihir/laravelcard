@@ -31,8 +31,14 @@
                 <div class="card-body">
                     <div class="form-billing-details">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <h5 class="form-check-label shippinglabel" for="form2Example3c">Billing Details</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="form-check-label shippinglabel text-right" for="form2Example3c">Invoice No :
+                                    {{ $order->id }}</h5>
+                            </div>
+                            <div class="col-md-12">
                                 <hr>
                             </div>
                             @php

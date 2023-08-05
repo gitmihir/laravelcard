@@ -80,6 +80,9 @@ class CardController extends Controller
         $card->sg_cd_Linkedin = $request->input('sg_cd_Linkedin');
         $card->sg_cd_Pinterest = $request->input('sg_cd_Pinterest');
         $card->sg_cd_Youtube = $request->input('sg_cd_Youtube');
+        $card->sg_cd_Snapchat = $request->input('sg_cd_Snapchat');
+        $card->sg_cd_google_business = $request->input('sg_cd_google_business');
+
         $card->sg_cd_Office = $request->input('sg_cd_Office');
         $card->sg_cd_Branch = $request->input('sg_cd_Branch');
         $card->sg_cd_Branch2 = $request->input('sg_cd_Branch2');
@@ -417,7 +420,7 @@ class CardController extends Controller
         $card->sg_cd_Link_4 = $request->input('sg_cd_Link_4');
 
         $card->update();
-        return redirect('/userarea/allcards');
+        return redirect('/edit-card/' . $card->id);
     }
     public function DeleteImage(Request $request)
     {

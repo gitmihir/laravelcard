@@ -8,9 +8,10 @@
             <div class="card card-default">
                 <div class="card-header">
                     <h3 class="card-title">Card Details</h3>
-                    <button type="submit" class="btn btn-primary" style="
-    float: right;
-">Update</button>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary disabledclass">Update</button>
+                        <a href="{{ url('/userarea/allcards') }}" type="button" class="btn btn-info">Cancel</a>
+                    </div>
                 </div>
                 <div class="card-body p-0">
                     <div class="bs-stepper">
@@ -190,17 +191,21 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_phone_number">Phone</label>
-                                            <input type="text" class="form-control" name="sg_cd_phone_number"
+                                            <input onblur="validatePhoneNumber(this);" type="text"
+                                                class="form-control" name="sg_cd_phone_number"
                                                 id="sg_cd_phone_number" value="{{ $card->sg_cd_phone_number }}"
                                                 placeholder="Enter Phone Number">
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_whatsapp_number">Whatsapp number</label>
-                                            <input type="text" class="form-control" name="sg_cd_whatsapp_number"
+                                            <input onblur="validatePhoneNumber(this);" type="text"
+                                                class="form-control" name="sg_cd_whatsapp_number"
                                                 id="sg_cd_whatsapp_number" value="{{ $card->sg_cd_whatsapp_number }}"
                                                 placeholder="Enter Whatsapp number">
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -287,6 +292,22 @@
                                             <input type="text" value="{{ $card->sg_cd_Youtube }}"
                                                 class="form-control" name="sg_cd_Youtube" id="sg_cd_Youtube"
                                                 placeholder="Enter Linkedin">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sg_cd_Snapchat">Snap Chat</label>
+                                            <input type="text" value="{{ $card->sg_cd_Snapchat }}"
+                                                class="form-control" name="sg_cd_Snapchat" id="sg_cd_Snapchat"
+                                                placeholder="Enter Snap chat">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sg_cd_google_business">Google Business</label>
+                                            <input type="text" value="{{ $card->sg_cd_google_business }}"
+                                                class="form-control" name="sg_cd_google_business"
+                                                id="sg_cd_google_business" placeholder="Enter Google Business">
                                         </div>
                                     </div>
                                 </div>
@@ -1046,7 +1067,7 @@
                                     onclick="stepper.previous()">Previous</button>
                                 <input type="hidden" class="ajaxurlforremoveimage"
                                     value="{{ url('delete-image') }}">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary disabledclass">Update</button>
                             </div>
                         </div>
                     </div>
