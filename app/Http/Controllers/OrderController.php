@@ -105,7 +105,11 @@ class OrderController extends Controller
             $image = \QrCode::format('png')->size(400)->errorCorrection('H')->generate($finalurl);
             $output_file = '/images/qrimages/' . $finename . '.png';
             Storage::disk('public')->put($output_file, $image);
-            $card->sg_order_status = '0';
+            if (isset($_GET['OfflineOrder'])) {
+                $card->sg_order_status = '1';
+            } else {
+                $card->sg_order_status = '0';
+            }
             $card->save();
         }
         if (User::where('email', '=', $_GET['sg_business_email'])->exists()) {
@@ -127,28 +131,6 @@ class OrderController extends Controller
             $user->password = $psw;
         }
     }
-    public function paymentCallback()
-    {
-        $transaction = Paytm::with('receive');
-
-        $response = $transaction->response();
-
-        $order_id = $transaction->getOrderId(); // return a order id
-
-        $transaction->getTransactionId(); // return a transaction id
-        // update the db data as per result from api call
-        if ($transaction->isSuccessful()) {
-            return redirect(route('initiate.payment'))->with('message', "Your payment is successfull.");
-
-        } else if ($transaction->isFailed()) {
-            return redirect(route('initiate.payment'))->with('message', "Your payment is failed.");
-
-        } else if ($transaction->isOpen()) {
-            return redirect(route('initiate.payment'))->with('message', "Your payment is processing.");
-        }
-        $transaction->getResponseMessage(); //Get Response Message If Available
-    }
-
     public function vieworderindetail($id)
     {
         $order = Order::find($id);

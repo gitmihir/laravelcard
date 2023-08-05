@@ -343,6 +343,7 @@ $(".orderstatus").hide();
 $("body").on("click", ".ordernow", function (e) {
   $(".containersp").show();
   $(".orderstatus").hide();
+
   /* Store Order Details */
   var ajaxurlforofforder = $(".ajaxurlforofforder").val();
   var sg_full_name = $(".sg_full_name").val();
@@ -390,7 +391,7 @@ $("body").on("click", ".ordernow", function (e) {
   $("input[name='product_total_amount[]']").each(function () {
     product_prices.push($(this).val());
   });
-
+  var OfflineOrder = "OfflineOrder";
   if (
     sg_full_name.length === 0 &&
     sg_business_name.length === 0 &&
@@ -436,6 +437,7 @@ $("body").on("click", ".ordernow", function (e) {
         sg_SGST: sg_SGST,
         sg_IGST: sg_IGST,
         sg_order_base_price: sg_order_base_price,
+        OfflineOrder: OfflineOrder,
       },
       success: function (response) {
         $(".orderstatus").show();
