@@ -11,42 +11,47 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_driver">Facebook</label>
-                <input id="sg_smtp_driver" name="sg_footer_fb_link" value="{{ $frontfooter->sg_footer_fb_link }}"
-                    type="text" required="required" class="form-control">
+                <input onblur="validateURL(this);" id="sg_smtp_driver" name="sg_footer_fb_link"
+                    value="{{ $frontfooter->sg_footer_fb_link }}" type="text" required="required"
+                    class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_host">Instagram</label>
-                <input id="sg_smtp_host" name="sg_footer_inst_link" value="{{ $frontfooter->sg_footer_inst_link }}"
-                    type="text" required="required" class="form-control">
+                <input onblur="validateURL(this);" id="sg_smtp_host" name="sg_footer_inst_link"
+                    value="{{ $frontfooter->sg_footer_inst_link }}" type="text" required="required"
+                    class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_port">Twitter</label>
-                <input id="sg_smtp_port" name="sg_footer_tw_link" value="{{ $frontfooter->sg_footer_tw_link }}"
-                    type="text" required="required" class="form-control">
+                <input onblur="validateURL(this);" id="sg_smtp_port" name="sg_footer_tw_link"
+                    value="{{ $frontfooter->sg_footer_tw_link }}" type="text" required="required"
+                    class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_username">LinkedIn</label>
-                <input id="sg_smtp_username" name="sg_footer_lk_link" value="{{ $frontfooter->sg_footer_lk_link }}"
-                    type="text" class="form-control" required="required">
+                <input onblur="validateURL(this);" id="sg_smtp_username" name="sg_footer_lk_link"
+                    value="{{ $frontfooter->sg_footer_lk_link }}" type="text" class="form-control"
+                    required="required">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_password">Pinterest</label>
-                <input id="sg_smtp_password" name="sg_footer_pt_link" value="{{ $frontfooter->sg_footer_pt_link }}"
-                    type="text" class="form-control" required="required">
+                <input onblur="validateURL(this);" id="sg_smtp_password" name="sg_footer_pt_link"
+                    value="{{ $frontfooter->sg_footer_pt_link }}" type="text" class="form-control"
+                    required="required">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_encryption">Call</label>
-                <input id="sg_smtp_encryption" name="sg_footer_call_link"
+                <input onblur="validatePhoneNumber(this);" id="sg_smtp_encryption" name="sg_footer_call_link"
                     value="{{ $frontfooter->sg_footer_call_link }}" type="text" class="form-control"
                     required="required">
             </div>
@@ -54,7 +59,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_encryption">WhatsApp</label>
-                <input id="sg_smtp_encryption" name="sg_footer_whatsapp_link"
+                <input onblur="validatePhoneNumber(this);" id="sg_smtp_encryption" name="sg_footer_whatsapp_link"
                     value="{{ $frontfooter->sg_footer_whatsapp_link }}" type="text" class="form-control"
                     required="required">
             </div>
@@ -62,7 +67,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_smtp_encryption">Email</label>
-                <input id="sg_smtp_encryption" name="sg_footer_email" type="text"
+                <input onblur="validateEmail(this);" id="sg_smtp_encryption" name="sg_footer_email" type="text"
                     value="{{ $frontfooter->sg_footer_email }}" class="form-control" required="required">
             </div>
         </div>

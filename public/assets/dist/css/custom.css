@@ -133,3 +133,9 @@ div[class*="errorclass_"] {
 .errorborderclass {
   border-color: #ee0909 !important;
 }
+.instructionClass {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #555555;
+}

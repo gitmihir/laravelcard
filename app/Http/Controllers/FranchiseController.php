@@ -42,17 +42,24 @@ class FranchiseController extends Controller
             $psw = $request->input('sg_franchise_password');
             $user['password'] = \Hash::make($psw);
             $user['user_role'] = 'franchiseuser';
-
-            \Mail::html(
-                "Name: " . $request->input('sg_franchise_name') . "</br>" . "Email: " . $request->input('sg_franchise_email') . "</br>" . "Password: " . $psw,
-                function ($message) {
-                    $message->to('developermihir009@gmail.com')->subject('Frenchise');
-                }
-            );
             $user->save();
             $user->password = $psw;
         }
         $franchise->save();
+        if (Franchise::where('sg_franchise_email', '=', $request->input('sg_franchise_email'))->exists()) {
+            \Mail::html(
+                "Name: " . $request->input('sg_franchise_name') . "</br>" . "Email: " . $request->input('sg_franchise_email') . "</br>" . "Password: " . $psw,
+                function ($message) {
+                    $franchise = Franchise::all();
+                    $emailtosend = [];
+                    foreach ($franchise as $franchiseemail) {
+                        $emailtosend = $franchiseemail->sg_franchise_email;
+                    }
+                    $message->to($emailtosend)->subject('Frenchise');
+                }
+            );
+        }
+
         return redirect('/franchise/allfranchise');
     }
 

@@ -46,7 +46,8 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="sg_cms_popup_image">Popup Image</label>
-                <input type="file" id="sg_cms_popup_image" class="form-control" name="sg_cms_popup_image">
+                <input type="file" onchange="validateImageSize(this);" id="sg_cms_popup_image"
+                    accept="image/png, image/jpeg" class="form-control" name="sg_cms_popup_image">
             </div>
             @if ($cms->sg_cms_popup_image)
                 <div class="backendimage">
@@ -57,7 +58,8 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="sg_cms_header_image">Header Image</label>
-                <input type="file" id="sg_cms_header_image" class="form-control" name="sg_cms_header_image">
+                <input type="file" onchange="validateImageSize(this);" id="sg_cms_header_image"
+                    accept="image/png, image/jpeg" class="form-control" name="sg_cms_header_image">
             </div>
             @if ($cms->sg_cms_header_image)
                 <div class="backendimage">
@@ -121,7 +123,8 @@
         <div class="col-md-12 mb-5">
             <div class="form-group">
                 <label for="sg_cms_block_image">Block Image</label>
-                <input type="file" id="sg_cms_block_image" class="form-control" name="sg_cms_block_image">
+                <input type="file" onchange="validateImageSize(this);" id="sg_cms_block_image"
+                    accept="image/png, image/jpeg" class="form-control" name="sg_cms_block_image">
             </div>
 
             @if ($cms->sg_cms_block_image)

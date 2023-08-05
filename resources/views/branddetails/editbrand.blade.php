@@ -11,7 +11,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_brand_logo">Logo</label>
-                <input id="sg_brand_logo" name="sg_brand_logo" type="file" class="form-control">
+                <input id="sg_brand_logo" onchange="validateImageSize(this);" name="sg_brand_logo" type="file"
+                    accept="image/png, image/jpeg" class="form-control">
             </div>
             <div class="brandlogoimages">
                 <img src="{{ asset('images/brandimages/' . $brand->sg_brand_logo) }}">
@@ -21,7 +22,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_favicon_icon">Favicon</label>
-                <input id="sg_favicon_icon" name="sg_favicon_icon" type="file" class="form-control">
+                <input id="sg_favicon_icon" onchange="validateImageSize(this);" name="sg_favicon_icon" type="file"
+                    accept="image/png, image/jpeg" class="form-control">
             </div>
             <div class="brandlogoimages">
                 <img src="{{ asset('images/brandimages/' . $brand->sg_favicon_icon) }}">
@@ -64,7 +66,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_brand_business_logo">Business Logo</label>
-                <input id="sg_brand_business_logo" name="sg_brand_business_logo" type="file" class="form-control">
+                <input id="sg_brand_business_logo" name="sg_brand_business_logo" onchange="validateImageSize(this);"
+                    type="file" accept="image/png, image/jpeg" class="form-control">
             </div>
             <div class="brandlogoimages">
                 <img src="{{ asset('images/brandimages/' . $brand->sg_brand_business_logo) }}">

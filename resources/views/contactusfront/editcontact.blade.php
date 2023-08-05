@@ -11,29 +11,29 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_contact_title">Contact Title</label>
-                <input id="sg_contact_title" name="sg_contact_title" value="{{ $contactfr->sg_contact_title }}"
-                    type="text" required="required" class="form-control">
+                <input id="sg_contact_title" onblur="validateInputText(this);" name="sg_contact_title"
+                    value="{{ $contactfr->sg_contact_title }}" type="text" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_contact_detail">Contact Detail</label>
-                <input id="sg_contact_detail" name="sg_contact_detail" value="{{ $contactfr->sg_contact_detail }}"
-                    type="text" required="required" class="form-control">
+                <input id="sg_contact_detail" onblur="validatePhoneNumber(this);" name="sg_contact_detail"
+                    value="{{ $contactfr->sg_contact_detail }}" type="text" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_contact_email">Contact Email</label>
-                <input id="sg_contact_email" name="sg_contact_email" value="{{ $contactfr->sg_contact_email }}"
-                    type="email" required="required" class="form-control">
+                <input id="sg_contact_email" onblur="validateEmail(this);" name="sg_contact_email"
+                    value="{{ $contactfr->sg_contact_email }}" type="email" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_contact_number">Contact Number</label>
-                <input id="sg_contact_number" name="sg_contact_number" value="{{ $contactfr->sg_contact_number }}"
-                    type="text" class="form-control" required="required">
+                <input id="sg_contact_number" onblur="validatePhoneNumber(this);" name="sg_contact_number"
+                    value="{{ $contactfr->sg_contact_number }}" type="text" class="form-control" required="required">
             </div>
         </div>
         <div class="col-md-12">

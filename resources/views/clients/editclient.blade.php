@@ -18,7 +18,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_client_logo">Logo</label>
-                <input id="sg_client_logo" name="sg_client_logo" type="file" class="form-control">
+                <input id="sg_client_logo" name="sg_client_logo" onchange="validateImageSize(this);" type="file"
+                    accept="image/png, image/jpeg" class="form-control">
             </div>
             <div>
                 <img src="{{ asset('images/clientimages/' . $client->sg_client_logo) }}">

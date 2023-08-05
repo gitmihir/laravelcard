@@ -10,14 +10,15 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_brand_logo">Logo</label>
-                <input id="sg_brand_logo" name="sg_brand_logo" type="file" required="required" class="form-control">
+                <input id="sg_brand_logo" name="sg_brand_logo" onchange="validateImageSize(this);" type="file"
+                    accept="image/png, image/jpeg" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_favicon_icon">Favicon</label>
-                <input id="sg_favicon_icon" name="sg_favicon_icon" type="file" required="required"
-                    class="form-control">
+                <input id="sg_favicon_icon" name="sg_favicon_icon" onchange="validateImageSize(this);" type="file"
+                    accept="image/png, image/jpeg" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-6">
@@ -37,8 +38,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_brand_business_logo">Business Logo</label>
-                <input id="sg_brand_business_logo" name="sg_brand_business_logo" type="file" class="form-control"
-                    required="required">
+                <input id="sg_brand_business_logo" name="sg_brand_business_logo" onchange="validateImageSize(this);"
+                    type="file" accept="image/png, image/jpeg" class="form-control" required="required">
             </div>
         </div>
         <div class="col-md-6">

@@ -1,12 +1,12 @@
 @include('layout.partials.head')
 @php
-$productname = explode('~', $bills->product_name);
-$productprice = explode('~', $bills->product_price);
-$productquantity = explode('~', $bills->product_quantity);
-$producttotalamount = explode('~', $bills->product_total_amount);
-$productid = explode('~', $bills->product_id);
-$allarray = array_map(null, $productname, $productprice, $productquantity, $producttotalamount, $productid);
-
+    $productname = explode('~', $bills->product_name);
+    $productprice = explode('~', $bills->product_price);
+    $productquantity = explode('~', $bills->product_quantity);
+    $producttotalamount = explode('~', $bills->product_total_amount);
+    $productid = explode('~', $bills->product_id);
+    $allarray = array_map(null, $productname, $productprice, $productquantity, $producttotalamount, $productid);
+    
 @endphp
 <form action="{{ url('update-bill/' . $bills->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -49,7 +49,8 @@ $allarray = array_map(null, $productname, $productprice, $productquantity, $prod
                 <label for="exampleInputFile">Attachment</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" onchange="validateImageSize(this);" accept="image/png, image/jpeg"
+                            name="image" class="custom-file-input" id="exampleInputFile">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
 
                     </div>

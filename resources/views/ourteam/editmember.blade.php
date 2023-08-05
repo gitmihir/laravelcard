@@ -18,7 +18,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_our_team_image">Image</label>
-                <input id="sg_our_team_image" name="sg_our_team_image" type="file" class="form-control">
+                <input id="sg_our_team_image" onchange="validateImageSize(this);" name="sg_our_team_image"
+                    accept="image/png, image/jpeg" type="file" class="form-control">
             </div>
             <div>
                 <img src="{{ asset('images/memberimages/' . $team->sg_our_team_image) }}">

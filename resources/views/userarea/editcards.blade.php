@@ -113,9 +113,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_cover_image">Cover Image</label>
+                                            <label for="sg_cd_cover_image">Cover Image <span
+                                                    class="instructionClass">(Valid file (.jpg,
+                                                    .png) Max3MB)</span></label>
                                             <div>
-                                                <input type="file" class="sg_cd_cover_image"
+                                                <input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="sg_cd_cover_image"
                                                     name="sg_cd_cover_image">
                                             </div>
                                             @if ($card->sg_cd_cover_image)
@@ -135,9 +138,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_profile_image">Profile Image</label>
+                                            <label for="sg_cd_profile_image">Profile Image <span
+                                                    class="instructionClass">(Valid file (.jpg,
+                                                    .png) Max3MB)</span></label>
                                             <div>
-                                                <input type="file" name="sg_cd_profile_image"
+                                                <input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" name="sg_cd_profile_image"
                                                     id="sg_cd_profile_image">
                                             </div>
                                             @if ($card->sg_cd_profile_image)
@@ -159,33 +165,36 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_name">Name</label>
-                                            <input type="text" class="form-control" name="sg_cd_name"
-                                                id="sg_cd_name" value="{{ $card->sg_cd_name }}"
-                                                placeholder="Enter Name">
+                                            <input type="text" onblur="validateInputText(this);"
+                                                class="form-control" name="sg_cd_name" id="sg_cd_name"
+                                                value="{{ $card->sg_cd_name }}" placeholder="Enter Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_designation">Designation</label>
-                                            <input type="text" class="form-control" name="sg_cd_designation"
-                                                id="sg_cd_designation" value="{{ $card->sg_cd_designation }}"
+                                            <input type="text" onblur="validateInputText(this);"
+                                                class="form-control" name="sg_cd_designation" id="sg_cd_designation"
+                                                value="{{ $card->sg_cd_designation }}"
                                                 placeholder="Enter Designation">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_company_name">Company Name</label>
-                                            <input type="text" class="form-control" name="sg_cd_company_name"
+                                            <input type="text" onblur="validateInputText(this);"
+                                                class="form-control" name="sg_cd_company_name"
                                                 id="sg_cd_company_name" value="{{ $card->sg_cd_company_name }}"
                                                 placeholder="Enter Company Name">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_about_us">About Us</label>
-                                            <input type="text" class="form-control" name="sg_cd_about_us"
-                                                id="sg_cd_about_us" value="{{ $card->sg_cd_about_us }}"
-                                                placeholder="Enter About Us">
+                                            <label for="sg_cd_about_us">About Us <span class="instructionClass">(250
+                                                    Text character limit.)</span>
+                                            </label>
+                                            <textarea type="text" onkeyup="validateTextSize(this);" class="form-control" name="sg_cd_about_us"
+                                                id="sg_cd_about_us" placeholder="Enter About Us">{{ $card->sg_cd_about_us }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -216,23 +225,24 @@
                                                 name="sg_cd_Business_whatsapp_number"
                                                 id="sg_cd_Business_whatsapp_number"
                                                 value="{{ $card->sg_cd_Business_whatsapp_number }}"
-                                                placeholder="Enter Business Whatsapp number">
+                                                placeholder="Enter Business Whatsapp number"
+                                                onblur="validatePhoneNumber(this);">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_email">Email</label>
-                                            <input type="email" class="form-control" name="sg_cd_email"
-                                                id="sg_cd_email" value="{{ $card->sg_cd_email }}"
+                                            <input onblur="validateEmail(this);" type="email" class="form-control"
+                                                name="sg_cd_email" id="sg_cd_email" value="{{ $card->sg_cd_email }}"
                                                 placeholder="Enter Email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_website">Website</label>
-                                            <input type="text" class="form-control" name="sg_cd_website"
-                                                id="sg_cd_website" value="{{ $card->sg_cd_website }}"
-                                                placeholder="Enter Website">
+                                            <input onblur="validateURL(this);" type="text" class="form-control"
+                                                name="sg_cd_website" id="sg_cd_website"
+                                                value="{{ $card->sg_cd_website }}" placeholder="Enter Website">
                                         </div>
                                     </div>
                                 </div>
@@ -248,32 +258,35 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Facebook">Facebook</label>
-                                            <input type="text" value="{{ $card->sg_cd_Facebook }}"
-                                                class="form-control" name="sg_cd_Facebook" id="sg_cd_Facebook"
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Facebook }}" class="form-control"
+                                                name="sg_cd_Facebook" id="sg_cd_Facebook"
                                                 placeholder="Enter Facebook">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Instagram">Instagram</label>
-                                            <input type="text" value="{{ $card->sg_cd_Instagram }}"
-                                                class="form-control" name="sg_cd_Instagram" id="sg_cd_Instagram"
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Instagram }}" class="form-control"
+                                                name="sg_cd_Instagram" id="sg_cd_Instagram"
                                                 placeholder="Enter Instagram">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Twitter">Twitter</label>
-                                            <input type="text" value="{{ $card->sg_cd_Twitter }}"
-                                                class="form-control" name="sg_cd_Twitter" id="sg_cd_Twitter"
-                                                placeholder="Enter Twitter">
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Twitter }}" class="form-control"
+                                                name="sg_cd_Twitter" id="sg_cd_Twitter" placeholder="Enter Twitter">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Linkedin">Linkedin</label>
-                                            <input type="text" value="{{ $card->sg_cd_Linkedin }}"
-                                                class="form-control" name="sg_cd_Linkedin" id="sg_cd_Linkedin"
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Linkedin }}" class="form-control"
+                                                name="sg_cd_Linkedin" id="sg_cd_Linkedin"
                                                 placeholder="Enter Linkedin">
                                         </div>
                                     </div>
@@ -281,33 +294,36 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Pinterest">Pinterest</label>
-                                            <input type="text" value="{{ $card->sg_cd_Pinterest }}"
-                                                class="form-control" name="sg_cd_Pinterest" id="sg_cd_Pinterest"
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Pinterest }}" class="form-control"
+                                                name="sg_cd_Pinterest" id="sg_cd_Pinterest"
                                                 placeholder="Enter Linkedin">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Youtube">Youtube</label>
-                                            <input type="text" value="{{ $card->sg_cd_Youtube }}"
-                                                class="form-control" name="sg_cd_Youtube" id="sg_cd_Youtube"
-                                                placeholder="Enter Linkedin">
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Youtube }}" class="form-control"
+                                                name="sg_cd_Youtube" id="sg_cd_Youtube" placeholder="Enter Linkedin">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Snapchat">Snap Chat</label>
-                                            <input type="text" value="{{ $card->sg_cd_Snapchat }}"
-                                                class="form-control" name="sg_cd_Snapchat" id="sg_cd_Snapchat"
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Snapchat }}" class="form-control"
+                                                name="sg_cd_Snapchat" id="sg_cd_Snapchat"
                                                 placeholder="Enter Snap chat">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_google_business">Google Business</label>
-                                            <input type="text" value="{{ $card->sg_cd_google_business }}"
-                                                class="form-control" name="sg_cd_google_business"
-                                                id="sg_cd_google_business" placeholder="Enter Google Business">
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_google_business }}" class="form-control"
+                                                name="sg_cd_google_business" id="sg_cd_google_business"
+                                                placeholder="Enter Google Business">
                                         </div>
                                     </div>
                                 </div>
@@ -361,17 +377,22 @@
                                     <table class="table">
                                         <tr>
                                             <th>No.</th>
-                                            <th>Service Title</th>
-                                            <th>Service Image</th>
-                                            <th>Service About</th>
+                                            <th>Service Title <span class="instructionClass">(20 Text character
+                                                    limit.)</span></th>
+                                            <th>Service Image <span class="instructionClass">((.jpg,
+                                                    .png) Max3MB)</span></th>
+                                            <th>Service About <span class="instructionClass">(250 Text character
+                                                    limit.)</span></th>
                                         </tr>
                                         <tr>
                                             <td>1</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_1" id="sg_cd_Service_Title_1"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_1"
+                                                    id="sg_cd_Service_Title_1"
                                                     value="{{ $card->sg_cd_Service_Title_1 }}"></td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_1"
-                                                    id="sg_Service_Image_1">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_1" id="sg_Service_Image_1">
                                                 @if ($card->sg_Service_Image_1)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -389,20 +410,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_1" id="sg_cd_Service_About_1"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_1 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_1"
+                                                    id="sg_cd_Service_About_1" placeholder="Enter About">{{ $card->sg_cd_Service_About_1 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_2" id="sg_cd_Service_Title_2"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_2"
+                                                    id="sg_cd_Service_Title_2"
                                                     value="{{ $card->sg_cd_Service_Title_2 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_2"
-                                                    id="sg_Service_Image_2">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_2" id="sg_Service_Image_2">
                                                 @if ($card->sg_Service_Image_2)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -420,20 +442,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_2" id="sg_cd_Service_About_2"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_2 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_2"
+                                                    id="sg_cd_Service_About_2" placeholder="Enter About">{{ $card->sg_cd_Service_About_2 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_3" id="sg_cd_Service_Title_3"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_3"
+                                                    id="sg_cd_Service_Title_3"
                                                     value="{{ $card->sg_cd_Service_Title_3 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_3"
-                                                    id="sg_Service_Image_3">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_3" id="sg_Service_Image_3">
                                                 @if ($card->sg_Service_Image_3)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -451,20 +474,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_3" id="sg_cd_Service_About_3"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_3 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_3"
+                                                    id="sg_cd_Service_About_3" placeholder="Enter About">{{ $card->sg_cd_Service_About_3 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_4" id="sg_cd_Service_Title_4"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_4"
+                                                    id="sg_cd_Service_Title_4"
                                                     value="{{ $card->sg_cd_Service_Title_4 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_4"
-                                                    id="sg_Service_Image_4">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_4" id="sg_Service_Image_4">
                                                 @if ($card->sg_Service_Image_4)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -482,20 +506,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_4" id="sg_cd_Service_About_4"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_4 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_4"
+                                                    id="sg_cd_Service_About_4" placeholder="Enter About">{{ $card->sg_cd_Service_About_4 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_5" id="sg_cd_Service_Title_5"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_5"
+                                                    id="sg_cd_Service_Title_5"
                                                     value="{{ $card->sg_cd_Service_Title_5 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_5"
-                                                    id="sg_Service_Image_5">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_5" id="sg_Service_Image_5">
                                                 @if ($card->sg_Service_Image_5)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -513,20 +538,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_5" id="sg_cd_Service_About_5"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_5 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_5"
+                                                    id="sg_cd_Service_About_5" placeholder="Enter About">{{ $card->sg_cd_Service_About_5 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_6" id="sg_cd_Service_Title_6"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_6"
+                                                    id="sg_cd_Service_Title_6"
                                                     value="{{ $card->sg_cd_Service_Title_6 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_6"
-                                                    id="sg_Service_Image_6">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_6" id="sg_Service_Image_6">
                                                 @if ($card->sg_Service_Image_6)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -544,20 +570,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_6" id="sg_cd_Service_About_6"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_6 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_6"
+                                                    id="sg_cd_Service_About_6" placeholder="Enter About">{{ $card->sg_cd_Service_About_6 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>7</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_7" id="sg_cd_Service_Title_7"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_7"
+                                                    id="sg_cd_Service_Title_7"
                                                     value="{{ $card->sg_cd_Service_Title_7 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_7"
-                                                    id="sg_Service_Image_7">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_7" id="sg_Service_Image_7">
                                                 @if ($card->sg_Service_Image_7)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -575,20 +602,21 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_7" id="sg_cd_Service_About_7"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_7 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_7"
+                                                    id="sg_cd_Service_About_7" placeholder="Enter About">{{ $card->sg_cd_Service_About_7 }}</textarea>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>8</td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_Title_8" id="sg_cd_Service_Title_8"
+                                            <td><input type="text" onkeyup="validateTextSize2(this);"
+                                                    class="form-control" name="sg_cd_Service_Title_8"
+                                                    id="sg_cd_Service_Title_8"
                                                     value="{{ $card->sg_cd_Service_Title_8 }}">
                                             </td>
-                                            <td><input type="file" class="form-control" name="sg_Service_Image_8"
-                                                    id="sg_Service_Image_8">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_Service_Image_8" id="sg_Service_Image_8">
                                                 @if ($card->sg_Service_Image_8)
                                                     <p class="delete_image"
                                                         style="cursor: pointer;padding: 0;margin: 0;color: #ff0000;"
@@ -606,10 +634,9 @@
                                                     </div>
                                                 @endif
                                             </td>
-                                            <td><input type="text" class="form-control"
-                                                    name="sg_cd_Service_About_8" id="sg_cd_Service_About_8"
-                                                    placeholder="Enter About"
-                                                    value="{{ $card->sg_cd_Service_About_8 }}">
+                                            <td>
+                                                <textarea type="text" class="form-control" onkeyup="validateTextSize(this);" name="sg_cd_Service_About_8"
+                                                    id="sg_cd_Service_About_8" placeholder="Enter About">{{ $card->sg_cd_Service_About_8 }}</textarea>
                                             </td>
                                         </tr>
                                     </table>
@@ -628,13 +655,15 @@
                                     <table class="table">
                                         <tr>
                                             <th>No.</th>
-                                            <th>Gallery Image</th>
+                                            <th>Gallery Image <span class="instructionClass">((.jpg,
+                                                    .png) Max3MB)</span></th>
                                             <th>View Image</th>
                                         </tr>
                                         <tr>
                                             <td>1</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_1"
-                                                    id="sg_cd_Gallery_1">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_1" id="sg_cd_Gallery_1">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_1)
@@ -657,8 +686,9 @@
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_2"
-                                                    id="sg_cd_Gallery_2">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_2" id="sg_cd_Gallery_2">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_2)
@@ -681,8 +711,9 @@
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_3"
-                                                    id="sg_cd_Gallery_3">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_3" id="sg_cd_Gallery_3">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_3)
@@ -705,8 +736,9 @@
                                         </tr>
                                         <tr>
                                             <td>4</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_4"
-                                                    id="sg_cd_Gallery_4">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_4" id="sg_cd_Gallery_4">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_4)
@@ -729,8 +761,9 @@
                                         </tr>
                                         <tr>
                                             <td>5</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_5"
-                                                    id="sg_cd_Gallery_5">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_5" id="sg_cd_Gallery_5">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_5)
@@ -753,8 +786,9 @@
                                         </tr>
                                         <tr>
                                             <td>6</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_6"
-                                                    id="sg_cd_Gallery_6">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_6" id="sg_cd_Gallery_6">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_6)
@@ -777,8 +811,9 @@
                                         </tr>
                                         <tr>
                                             <td>7</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_7"
-                                                    id="sg_cd_Gallery_7">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_7" id="sg_cd_Gallery_7">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_7)
@@ -801,8 +836,9 @@
                                         </tr>
                                         <tr>
                                             <td>8</td>
-                                            <td><input type="file" class="form-control" name="sg_cd_Gallery_8"
-                                                    id="sg_cd_Gallery_8">
+                                            <td><input type="file" onchange="validateImageSize(this);"
+                                                    accept="image/png, image/jpeg" class="form-control"
+                                                    name="sg_cd_Gallery_8" id="sg_cd_Gallery_8">
                                             </td>
                                             <td>
                                                 @if ($card->sg_cd_Gallery_8)
@@ -839,9 +875,10 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_YouTube_Link">YouTube Link</label>
-                                            <input type="text" value="{{ $card->sg_cd_YouTube_Link }}"
-                                                class="form-control" name="sg_cd_YouTube_Link"
-                                                id="sg_cd_YouTube_Link" placeholder="Enter YouTube Link">
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_YouTube_Link }}" class="form-control"
+                                                name="sg_cd_YouTube_Link" id="sg_cd_YouTube_Link"
+                                                placeholder="Enter YouTube Link">
                                         </div>
                                     </div>
                                 </div>
@@ -856,11 +893,21 @@
                                     onclick="stepper.previous()">Previous</button>
                                 <button type="button" class="btn btn-primary" onclick="stepper.next()">Next</button>
                                 <div class="row">
+                                    <div class="col-md-12 mt-3">
+                                        <p class="text-center">Please check and be sure before uploading "Payment QR
+                                            Codes", if you are not
+                                            sure leave it empty. "we will be not liable for any issues related to
+                                            payment made with this "Payment QR Codes"</p>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Google_Pay">Google Pay</label>
-                                            <input type="file" class="form-control" name="sg_cd_Google_Pay"
-                                                id="sg_cd_Google_Pay" placeholder="Enter Google Pay">
+                                            <label for="sg_cd_Google_Pay">Google Pay <span
+                                                    class="instructionClass">(Valid file (.jpg,
+                                                    .png) Max3MB)</span></label>
+                                            <input type="file" onchange="validateImageSize(this);"
+                                                accept="image/png, image/jpeg" class="form-control"
+                                                name="sg_cd_Google_Pay" id="sg_cd_Google_Pay"
+                                                placeholder="Enter Google Pay">
                                         </div>
                                         @if ($card->sg_cd_Google_Pay)
                                             <p class="delete_image"
@@ -877,9 +924,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Phone_pe">Phone Pe</label>
-                                            <input type="file" class="form-control" name="sg_cd_Phone_pe"
-                                                id="sg_cd_Phone_pe" placeholder="Phone Pe">
+                                            <label for="sg_cd_Phone_pe">Phone Pe <span class="instructionClass">(Valid
+                                                    file (.jpg,
+                                                    .png) Max3MB)</span></label>
+                                            <input type="file" onchange="validateImageSize(this);"
+                                                accept="image/png, image/jpeg" class="form-control"
+                                                name="sg_cd_Phone_pe" id="sg_cd_Phone_pe" placeholder="Phone Pe">
                                         </div>
                                         @if ($card->sg_cd_Phone_pe)
                                             <p class="delete_image"
@@ -896,9 +946,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Paytm">Paytm</label>
-                                            <input type="file" class="form-control" name="sg_cd_Paytm"
-                                                id="sg_cd_Paytm" placeholder="Enter Paytm">
+                                            <label for="sg_cd_Paytm">Paytm <span class="instructionClass">(Valid file
+                                                    (.jpg,
+                                                    .png) Max3MB)</span></label>
+                                            <input type="file" onchange="validateImageSize(this);"
+                                                accept="image/png, image/jpeg" class="form-control"
+                                                name="sg_cd_Paytm" id="sg_cd_Paytm" placeholder="Enter Paytm">
                                         </div>
                                         @if ($card->sg_cd_Paytm)
                                             <p class="delete_image"
@@ -915,9 +968,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_Bhim_UPI">Bhim UPI</label>
-                                            <input type="file" class="form-control" name="sg_Bhim_UPI"
-                                                id="sg_Bhim_UPI" placeholder="Enter Bhim UPI">
+                                            <label for="sg_Bhim_UPI">Bhim UPI <span class="instructionClass">(Valid
+                                                    file (.jpg,
+                                                    .png) Max3MB)</span></label>
+                                            <input type="file" onchange="validateImageSize(this);"
+                                                accept="image/png, image/jpeg" class="form-control"
+                                                name="sg_Bhim_UPI" id="sg_Bhim_UPI" placeholder="Enter Bhim UPI">
                                         </div>
                                         @if ($card->sg_Bhim_UPI)
                                             <p class="delete_image"
@@ -953,10 +1009,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Link_1">Link 1</label>
-                                            <input type="text" value="{{ $card->sg_cd_Link_1 }}"
-                                                class="form-control" name="sg_cd_Link_1" id="sg_cd_Link_1"
-                                                placeholder="Enter Link">
+                                            <label for="sg_cd_Link_1">Link 1 <span class="instructionClass">(Custom
+                                                    Link)</span></label>
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Link_1 }}" class="form-control"
+                                                name="sg_cd_Link_1" id="sg_cd_Link_1" placeholder="Enter Link">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -969,10 +1026,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Link_2">Link 2</label>
-                                            <input type="text" value="{{ $card->sg_cd_Link_2 }}"
-                                                class="form-control" name="sg_cd_Link_2" id="sg_cd_Link_2"
-                                                placeholder="Enter Link">
+                                            <label for="sg_cd_Link_2">Link 2 <span class="instructionClass">(Custom
+                                                    Link)</span></label>
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Link_2 }}" class="form-control"
+                                                name="sg_cd_Link_2" id="sg_cd_Link_2" placeholder="Enter Link">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -985,10 +1043,11 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Link_3">Link 3</label>
-                                            <input type="text" value="{{ $card->sg_cd_Link_3 }}"
-                                                class="form-control" name="sg_cd_Link_3" id="sg_cd_Link_3"
-                                                placeholder="Enter Link">
+                                            <label for="sg_cd_Link_3">Link 3 <span class="instructionClass">(Custom
+                                                    Link)</span></label>
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Link_3 }}" class="form-control"
+                                                name="sg_cd_Link_3" id="sg_cd_Link_3" placeholder="Enter Link">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1001,18 +1060,20 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="sg_cd_Link_4">Link 4</label>
-                                            <input type="text" value="{{ $card->sg_cd_Link_4 }}"
-                                                class="form-control" name="sg_cd_Link_4" id="sg_cd_Link_4"
-                                                placeholder="Enter Link">
+                                            <label for="sg_cd_Link_4">Link 4 <span class="instructionClass">(Custom
+                                                    Link)</span></label>
+                                            <input onblur="validateURL(this);" type="text"
+                                                value="{{ $card->sg_cd_Link_4 }}" class="form-control"
+                                                name="sg_cd_Link_4" id="sg_cd_Link_4" placeholder="Enter Link">
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-group">
-                                            <label for="sg_brochure">Upload Brochure</label>
-                                            <input type="file" class="form-control" name="sg_brochure"
-                                                id="sg_brochure" accept="application/pdf"
-                                                placeholder="Upload Brochure">
+                                            <label for="sg_brochure">Upload Brochure <span
+                                                    class="instructionClass">(Valid file (.pdf) Max6MB)</span></label>
+                                            <input type="file" onchange="validateImageSize2(this);"
+                                                class="form-control" name="sg_brochure" id="sg_brochure"
+                                                accept="application/pdf" placeholder="Upload Brochure">
                                         </div>
                                         @if ($card->sg_brochure && $card->sg_brochure_title)
                                             <p class="delete_image"
@@ -1035,17 +1096,20 @@
                                         <div class="form-group">
                                             <label for="sg_brochure_title">Brochure Title</label>
                                             <input type="text" value="{{ $card->sg_brochure_title }}"
-                                                class="form-control" name="sg_brochure_title" id="sg_brochure_title"
-                                                placeholder="Enter Brochure Title" maxlength="20">
+                                                class="form-control" name="sg_brochure_title"
+                                                id="sg_brochure_title" placeholder="Enter Brochure Title"
+                                                maxlength="20">
                                         </div>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-primary"
                                     onclick="stepper.previous()">Previous</button>
-                                <button type="button" class="btn btn-primary" onclick="stepper.next()">Next</button>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="stepper.next()">Next</button>
                             </div>
 
-                            <div id="qr-part" class="content" role="tabpanel" aria-labelledby="qr-part-trigger">
+                            <div id="qr-part" class="content" role="tabpanel"
+                                aria-labelledby="qr-part-trigger">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">

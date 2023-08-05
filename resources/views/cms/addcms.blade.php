@@ -23,13 +23,15 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="sg_cms_popup_image">Home Popup Image</label>
-                <input type="file" class="form-control" name="sg_cms_popup_image" id="sg_cms_popup_image">
+                <input type="file" onchange="validateImageSize(this);" class="form-control"
+                    accept="image/png, image/jpeg" name="sg_cms_popup_image" id="sg_cms_popup_image">
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <label for="sg_cms_header_image">Home Header Image</label>
-                <input type="file" class="form-control" name="sg_cms_header_image" id="sg_cms_header_image">
+                <input type="file" onchange="validateImageSize(this);" class="form-control"
+                    accept="image/png, image/jpeg" name="sg_cms_header_image" id="sg_cms_header_image">
             </div>
         </div>
 

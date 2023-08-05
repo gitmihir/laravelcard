@@ -702,7 +702,8 @@ $(".removecoupon").on("click", function () {
 /* Javascript Validations */
 
 function validatePhoneNumber(numberval) {
-  if (!numberval.value.match(/^[0-9]{10}$/)) {
+  debugger;
+  if (!numberval.value.match(/^[0-9]{11}$/)) {
     $(".errorclass_" + numberval.name).remove();
     $("input[name=" + numberval.name + "]").after(
       '<div class="errorclass_' +
@@ -719,20 +720,132 @@ function validatePhoneNumber(numberval) {
   }
 }
 
-function validatePhoneNumber(numberval) {
-  if (!numberval.value.match(/^[0-9]{10}$/)) {
-    $(".errorclass_" + numberval.name).remove();
-    $("input[name=" + numberval.name + "]").after(
+function validateInputText(textval) {
+  if (!textval.value.match(/^[a-zA-Z]*$/)) {
+    $(".errorclass_" + textval.name).remove();
+    $("input[name=" + textval.name + "]").after(
       '<div class="errorclass_' +
-        numberval.name +
-        '">Please Enter a Valid Phone Number</div>'
+        textval.name +
+        '">Only alphabets are allowed</div>'
     );
-    $("input[name=" + numberval.name + "]").addClass("errorborderclass");
-    numberval.value = "";
+    $("input[name=" + textval.name + "]").addClass("errorborderclass");
+    textval.value = "";
     $(".disabledclass").attr("disabled", "disabled");
   } else {
-    $("input[name=" + numberval.name + "]").removeClass("errorborderclass");
-    $(".errorclass_" + numberval.name).remove();
+    $("input[name=" + textval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + textval.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+function validateEmail(emailval) {
+  if (!emailval.value.match(/^\S+@\S+\.\S+$/)) {
+    $(".errorclass_" + emailval.name).remove();
+    $("input[name=" + emailval.name + "]").after(
+      '<div class="errorclass_' +
+        emailval.name +
+        '">Please Enter a Valid Email!</div>'
+    );
+    $("input[name=" + emailval.name + "]").addClass("errorborderclass");
+    emailval.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + emailval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + emailval.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+
+function validateURL(urlval) {
+  if (
+    !urlval.value.match(
+      /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?\/?$/gm
+    )
+  ) {
+    $(".errorclass_" + urlval.name).remove();
+    $("input[name=" + urlval.name + "]").after(
+      '<div class="errorclass_' +
+        urlval.name +
+        '">Please enter a valid URL</div>'
+    );
+    $("input[name=" + urlval.name + "]").addClass("errorborderclass");
+    urlval.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + urlval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + urlval.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+
+function validateImageSize(imagedata) {
+  var max = 3000000;
+  if (imagedata.files[0].size > max) {
+    $(".errorclass_" + imagedata.name).remove();
+    $("input[name=" + imagedata.name + "]").after(
+      '<div class="errorclass_' +
+        imagedata.name +
+        '">Please upload a valid file (.jpg, .png) not exceeding 3MB</div>'
+    );
+    $("input[name=" + imagedata.name + "]").addClass("errorborderclass");
+    imagedata.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + imagedata.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + imagedata.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+function validateImageSize2(imagedata) {
+  var max = 6000000;
+  if (imagedata.files[0].size > max) {
+    $(".errorclass_" + imagedata.name).remove();
+    $("input[name=" + imagedata.name + "]").after(
+      '<div class="errorclass_' +
+        imagedata.name +
+        '">Please upload a valid file (.pdf) not exceeding 6MB</div>'
+    );
+    $("input[name=" + imagedata.name + "]").addClass("errorborderclass");
+    imagedata.value = "";
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + imagedata.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + imagedata.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+function validateTextSize(textdata) {
+  var max = 250;
+  if (textdata.value.length > max) {
+    $(".errorclass_" + textdata.name).remove();
+    $("textarea[name=" + textdata.name + "]").after(
+      '<div class="errorclass_' +
+        textdata.name +
+        '">The text entered exceeds the maximum character limit of 250</div>'
+    );
+    $("textarea[name=" + textdata.name + "]").addClass("errorborderclass");
+    textdata.value.substring(0, 250);
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("textarea[name=" + textdata.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + textdata.name).remove();
+    $(".disabledclass").removeAttr("disabled");
+  }
+}
+function validateTextSize2(textdata) {
+  var max = 20;
+  if (textdata.value.length > max) {
+    $(".errorclass_" + textdata.name).remove();
+    $("input[name=" + textdata.name + "]").after(
+      '<div class="errorclass_' +
+        textdata.name +
+        '">The text entered exceeds the maximum character limit of 20</div>'
+    );
+    $("input[name=" + textdata.name + "]").addClass("errorborderclass");
+    textdata.value.substring(0, 20);
+    $(".disabledclass").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + textdata.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + textdata.name).remove();
     $(".disabledclass").removeAttr("disabled");
   }
 }

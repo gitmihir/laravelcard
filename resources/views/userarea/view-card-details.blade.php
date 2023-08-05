@@ -108,148 +108,192 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="social-menu">
-                            <h4> Social Profiles: </h4>
-                            <div class='buttons-container'>
-                                @if ($carddata->sg_cd_Facebook)
-                                    @php
-                                        $url = $carddata->sg_cd_Facebook;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button facebook'>
-                                                <i class="fa fa-facebook fa-2x"></i>
+                        @if (
+                            $carddata->sg_cd_Facebook ||
+                                $carddata->sg_cd_Twitter ||
+                                $carddata->sg_cd_Pinterest ||
+                                $carddata->sg_cd_Instagram ||
+                                $carddata->sg_cd_Youtube ||
+                                $carddata->sg_cd_Linkedin ||
+                                $carddata->sg_cd_Snapchat ||
+                                $carddata->sg_cd_google_business)
+                            <div class="social-menu">
+                                <h4> Social Profiles: </h4>
+                                <div class='buttons-container'>
+                                    @if ($carddata->sg_cd_Facebook)
+                                        @php
+                                            $url = $carddata->sg_cd_Facebook;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button facebook'>
+                                                    <i class="fa fa-facebook fa-2x"></i>
+                                                </div>
+                                                <h6>Facebook</h6>
                                             </div>
-                                            <h6>Facebook</h6>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if ($carddata->sg_cd_Twitter)
-                                    @php
-                                        $url = $carddata->sg_cd_Twitter;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button twitter'>
-                                                <i class="fa fa-twitter fa-2x"></i>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Twitter)
+                                        @php
+                                            $url = $carddata->sg_cd_Twitter;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button twitter'>
+                                                    <i class="fa fa-twitter fa-2x"></i>
+                                                </div>
+                                                <h6>Twitter</h6>
                                             </div>
-                                            <h6>Twitter</h6>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if ($carddata->sg_cd_Pinterest)
-                                    @php
-                                        $url = $carddata->sg_cd_Pinterest;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button pinterest'>
-                                                <i class="fa fa-pinterest fa-2x"></i>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Pinterest)
+                                        @php
+                                            $url = $carddata->sg_cd_Pinterest;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button pinterest'>
+                                                    <i class="fa fa-pinterest fa-2x"></i>
+                                                </div>
+                                                <h6>Pinterest</h6>
                                             </div>
-                                            <h6>Pinterest</h6>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if ($carddata->sg_cd_Instagram)
-                                    @php
-                                        $url = $carddata->sg_cd_Instagram;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button instagram'>
-                                                <i class="fa fa-instagram fa-2x"></i>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Instagram)
+                                        @php
+                                            $url = $carddata->sg_cd_Instagram;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button instagram'>
+                                                    <i class="fa fa-instagram fa-2x"></i>
+                                                </div>
+                                                <h6>Instagram</h6>
                                             </div>
-                                            <h6>Instagram</h6>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if ($carddata->sg_cd_Youtube)
-                                    @php
-                                        $url = $carddata->sg_cd_Youtube;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button youtube'>
-                                                <i class="fa fa-youtube fa-2x"></i>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Youtube)
+                                        @php
+                                            $url = $carddata->sg_cd_Youtube;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button youtube'>
+                                                    <i class="fa fa-youtube fa-2x"></i>
+                                                </div>
+                                                <h6>Youtube</h6>
                                             </div>
-                                            <h6>Youtube</h6>
-                                        </div>
-                                    </a>
-                                @endif
-                                @if ($carddata->sg_cd_Linkedin)
-                                    @php
-                                        $url = $carddata->sg_cd_Linkedin;
-                                        if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                            $url = 'http://' . $url;
-                                        }
-                                    @endphp
-                                    <a target="_blank" href="{{ $url }}">
-                                        <div class="socail-box">
-                                            <div class='button linkedin'>
-                                                <i class="fa fa-linkedin fa-2x"></i>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Linkedin)
+                                        @php
+                                            $url = $carddata->sg_cd_Linkedin;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button linkedin'>
+                                                    <i class="fa fa-linkedin fa-2x"></i>
+                                                </div>
+                                                <h6>Linkedin</h6>
                                             </div>
-                                            <h6>Linkedin</h6>
-                                        </div>
-                                    </a>
-                                @endif
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Snapchat)
+                                        @php
+                                            $url = $carddata->sg_cd_Snapchat;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button linkedin'>
+                                                    <i class="fa fa-snapchat-ghost fa-2x"></i>
+                                                </div>
+                                                <h6>SnapChat</h6>
+                                            </div>
+                                        </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_google_business)
+                                        @php
+                                            $url = $carddata->sg_cd_google_business;
+                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                $url = 'http://' . $url;
+                                            }
+                                        @endphp
+                                        <a target="_blank" href="{{ $url }}">
+                                            <div class="socail-box">
+                                                <div class='button linkedin'>
+                                                    <i class="fa fa-google fa-2x"></i>
+                                                </div>
+                                                <h6>Google Business</h6>
+                                            </div>
+                                        </a>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                        <div class="social-menu">
-                            <h4> Locations: </h4>
-                            <div class='buttons-container'>
-                                @if ($carddata->sg_cd_Office)
-                                    <div class="socail-box">
-                                        <div class="button facebook">
-                                            <a data-toggle="modal" class="modalapendclassaddress"
-                                                data-address="<?php echo $carddata->sg_cd_Office; ?>" data-target="#exampleModalCenter">
-                                                <i class="fa fa-map-o fa-2x"></i>
-                                            </a>
+                        @endif
+                        @if ($carddata->sg_cd_Office || $carddata->sg_cd_Branch || $carddata->sg_cd_Branch2)
+                            <div class="social-menu">
+                                <h4> Locations: </h4>
+                                <div class='buttons-container'>
+                                    @if ($carddata->sg_cd_Office)
+                                        <div class="socail-box">
+                                            <div class="button facebook">
+                                                <a data-toggle="modal" class="modalapendclassaddress"
+                                                    data-address="<?php echo $carddata->sg_cd_Office; ?>"
+                                                    data-target="#exampleModalCenter">
+                                                    <i class="fa fa-map-o fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <h6>Office</h6>
                                         </div>
-                                        <h6>Office</h6>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Branch)
-                                    <div class="socail-box">
-                                        <div class="button facebook">
-                                            <a data-toggle="modal" class="modalapendclassaddress"
-                                                data-address={{ $carddata->sg_cd_Branch }}
-                                                data-target="#exampleModalCenter">
-                                                <i class="fa fa-map-signs fa-2x"></i>
-                                            </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Branch)
+                                        <div class="socail-box">
+                                            <div class="button facebook">
+                                                <a data-toggle="modal" class="modalapendclassaddress"
+                                                    data-address={{ $carddata->sg_cd_Branch }}
+                                                    data-target="#exampleModalCenter">
+                                                    <i class="fa fa-map-signs fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <h6>Branch</h6>
                                         </div>
-                                        <h6>Branch</h6>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Branch2)
-                                    <div class="socail-box">
-                                        <div class="button facebook">
-                                            <a data-toggle="modal" class="modalapendclassaddress"
-                                                data-address={{ $carddata->sg_cd_Branch2 }}
-                                                data-target="#exampleModalCenter">
-                                                <i class="fa fa-map-signs fa-2x"></i>
-                                            </a>
+                                    @endif
+                                    @if ($carddata->sg_cd_Branch2)
+                                        <div class="socail-box">
+                                            <div class="button facebook">
+                                                <a data-toggle="modal" class="modalapendclassaddress"
+                                                    data-address={{ $carddata->sg_cd_Branch2 }}
+                                                    data-target="#exampleModalCenter">
+                                                    <i class="fa fa-map-signs fa-2x"></i>
+                                                </a>
+                                            </div>
+                                            <h6>Branch</h6>
                                         </div>
-                                        <h6>Branch</h6>
-                                    </div>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-
+                        @endif
                         <div class="service-card">
                             @if ($carddata->sg_cd_Service_Title_1)
                                 <h3> Services </h3>
@@ -354,75 +398,85 @@
                             </div>
                         </div>
 
-                        <div class="service-card">
-                            <h3> Gallery </h3>
-                            <div id="service-card-1" class="owl-carousel">
-                                @if ($carddata->sg_cd_Gallery_1)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_1) }}">
+                        @if (
+                            $carddata->sg_cd_Gallery_1 ||
+                                $carddata->sg_cd_Gallery_2 ||
+                                $carddata->sg_cd_Gallery_3 ||
+                                $carddata->sg_cd_Gallery_4 ||
+                                $carddata->sg_cd_Gallery_5 ||
+                                $carddata->sg_cd_Gallery_6 ||
+                                $carddata->sg_cd_Gallery_7 ||
+                                $carddata->sg_cd_Gallery_8)
+                            <div class="service-card">
+                                <h3> Gallery </h3>
+                                <div id="service-card-1" class="owl-carousel">
+                                    @if ($carddata->sg_cd_Gallery_1)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_1) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_2)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_2) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_2)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_2) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_3)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_3) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_3)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_3) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_4)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_4) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_4)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_4) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_5)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_5) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_5)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_5) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_6)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_6) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_6)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_6) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_7)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_7) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_7)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_7) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
-                                @if ($carddata->sg_cd_Gallery_8)
-                                    <div class="item">
-                                        <div class="card">
-                                            <img class="card-img-top"
-                                                src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_8) }}">
+                                    @endif
+                                    @if ($carddata->sg_cd_Gallery_8)
+                                        <div class="item">
+                                            <div class="card">
+                                                <img class="card-img-top"
+                                                    src="{{ asset('images/galleryimages/' . $carddata->sg_cd_Gallery_8) }}">
+                                            </div>
                                         </div>
-                                    </div>
-                                @endif
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         @if ($carddata->sg_cd_YouTube_Link)
                             <div class="service-card">
                                 <h3> Video </h3>
@@ -437,126 +491,133 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="payment-icon-row">
-                            <div class="social-menu">
-                                <h4> Links option: </h4>
-                                <div class='buttons-container'>
-                                    @if ($carddata->sg_cd_Title_1 && $carddata->sg_cd_Link_1)
-                                        @php
-                                            $url = $carddata->sg_cd_Link_1;
-                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                                $url = 'http://' . $url;
-                                            }
-                                        @endphp
-                                        <div class="socail-box">
-                                            <div class='button amex'>
-                                                <a target="_blank" href="{{ $url }}"><i
-                                                        class="fa fa-external-link fa-2x"></i></a>
+                        @if (
+                            ($carddata->sg_cd_Title_1 && $carddata->sg_cd_Link_1) ||
+                                ($carddata->sg_cd_Title_2 && $carddata->sg_cd_Link_2) ||
+                                ($carddata->sg_cd_Title_3 && $carddata->sg_cd_Link_3) ||
+                                ($carddata->sg_cd_Title_4 && $carddata->sg_cd_Link_4))
+                            <div class="payment-icon-row">
+                                <div class="social-menu">
+                                    <h4> Links option: </h4>
+                                    <div class='buttons-container'>
+                                        @if ($carddata->sg_cd_Title_1 && $carddata->sg_cd_Link_1)
+                                            @php
+                                                $url = $carddata->sg_cd_Link_1;
+                                                if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                    $url = 'http://' . $url;
+                                                }
+                                            @endphp
+                                            <div class="socail-box">
+                                                <div class='button amex'>
+                                                    <a target="_blank" href="{{ $url }}"><i
+                                                            class="fa fa-external-link fa-2x"></i></a>
+                                                </div>
+                                                <h6>{{ $carddata->sg_cd_Title_1 }}</h6>
                                             </div>
-                                            <h6>{{ $carddata->sg_cd_Title_1 }}</h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_cd_Title_2 && $carddata->sg_cd_Link_2)
-                                        @php
-                                            $url = $carddata->sg_cd_Link_2;
-                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                                $url = 'http://' . $url;
-                                            }
-                                        @endphp
-                                        <div class="socail-box">
-                                            <div class='button amex'>
-                                                <a target="_blank" href="{{ $url }}"><i
-                                                        class="fa fa-external-link fa-2x"></i></a>
+                                        @endif
+                                        @if ($carddata->sg_cd_Title_2 && $carddata->sg_cd_Link_2)
+                                            @php
+                                                $url = $carddata->sg_cd_Link_2;
+                                                if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                    $url = 'http://' . $url;
+                                                }
+                                            @endphp
+                                            <div class="socail-box">
+                                                <div class='button amex'>
+                                                    <a target="_blank" href="{{ $url }}"><i
+                                                            class="fa fa-external-link fa-2x"></i></a>
+                                                </div>
+                                                <h6>{{ $carddata->sg_cd_Title_2 }}</h6>
                                             </div>
-                                            <h6>{{ $carddata->sg_cd_Title_2 }}</h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_cd_Title_3 && $carddata->sg_cd_Link_3)
-                                        @php
-                                            $url = $carddata->sg_cd_Link_3;
-                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                                $url = 'http://' . $url;
-                                            }
-                                        @endphp
-                                        <div class="socail-box">
-                                            <div class='button amex'>
-                                                <a target="_blank" href="{{ $url }}"><i
-                                                        class="fa fa-external-link fa-2x"></i></a>
+                                        @endif
+                                        @if ($carddata->sg_cd_Title_3 && $carddata->sg_cd_Link_3)
+                                            @php
+                                                $url = $carddata->sg_cd_Link_3;
+                                                if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                    $url = 'http://' . $url;
+                                                }
+                                            @endphp
+                                            <div class="socail-box">
+                                                <div class='button amex'>
+                                                    <a target="_blank" href="{{ $url }}"><i
+                                                            class="fa fa-external-link fa-2x"></i></a>
+                                                </div>
+                                                <h6>{{ $carddata->sg_cd_Title_3 }}</h6>
                                             </div>
-                                            <h6>{{ $carddata->sg_cd_Title_3 }}</h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_cd_Title_4 && $carddata->sg_cd_Link_4)
-                                        @php
-                                            $url = $carddata->sg_cd_Link_4;
-                                            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
-                                                $url = 'http://' . $url;
-                                            }
-                                        @endphp
-                                        <div class="socail-box">
-                                            <div class='button amex'>
-                                                <a target="_blank" href="{{ $url }}"><i
-                                                        class="fa fa-external-link fa-2x"></i></a>
+                                        @endif
+                                        @if ($carddata->sg_cd_Title_4 && $carddata->sg_cd_Link_4)
+                                            @php
+                                                $url = $carddata->sg_cd_Link_4;
+                                                if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                                                    $url = 'http://' . $url;
+                                                }
+                                            @endphp
+                                            <div class="socail-box">
+                                                <div class='button amex'>
+                                                    <a target="_blank" href="{{ $url }}"><i
+                                                            class="fa fa-external-link fa-2x"></i></a>
+                                                </div>
+                                                <h6>{{ $carddata->sg_cd_Title_4 }}</h6>
                                             </div>
-                                            <h6>{{ $carddata->sg_cd_Title_4 }}</h6>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="payment-icon-row">
-                            <div class="social-menu">
-                                <h4> Payment: </h4>
-                                <div class='buttons-container'>
-                                    @if ($carddata->sg_cd_Google_Pay)
-                                        <div class="socail-box">
-                                            <div class='button wallet'>
-                                                <a href="#" class="viewpaymentimage" data-toggle="modal"
-                                                    data-target="#paymrntmodal"
-                                                    payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Google_Pay) }}">
-                                                    <i class="fa fa-google-wallet fa-2x"></i> </a>
+                        @endif
+                        @if ($carddata->sg_cd_Google_Pay || $carddata->sg_cd_Phone_pe || $carddata->sg_cd_Paytm || $carddata->sg_Bhim_UPI)
+                            <div class="payment-icon-row">
+                                <div class="social-menu">
+                                    <h4> Payment: </h4>
+                                    <div class='buttons-container'>
+                                        @if ($carddata->sg_cd_Google_Pay)
+                                            <div class="socail-box">
+                                                <div class='button wallet'>
+                                                    <a href="#" class="viewpaymentimage" data-toggle="modal"
+                                                        data-target="#paymrntmodal"
+                                                        payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Google_Pay) }}">
+                                                        <i class="fa fa-google-wallet fa-2x"></i> </a>
+                                                </div>
+                                                <h6> Google Pay </h6>
                                             </div>
-                                            <h6> Google Pay </h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_cd_Phone_pe)
-                                        <div class="socail-box">
-                                            <div class='button credit'>
-                                                <a href="#" class="viewpaymentimage" data-toggle="modal"
-                                                    data-target="#paymrntmodal"
-                                                    payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Phone_pe) }}">
-                                                    <i class="fa fa-credit-card fa-2x"></i> </a>
+                                        @endif
+                                        @if ($carddata->sg_cd_Phone_pe)
+                                            <div class="socail-box">
+                                                <div class='button credit'>
+                                                    <a href="#" class="viewpaymentimage" data-toggle="modal"
+                                                        data-target="#paymrntmodal"
+                                                        payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Phone_pe) }}">
+                                                        <i class="fa fa-credit-card fa-2x"></i> </a>
+                                                </div>
+                                                <h6> Phone Pay </h6>
                                             </div>
-                                            <h6> Phone Pay </h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_cd_Paytm)
-                                        <div class="socail-box">
-                                            <div class='button paypal'>
-                                                <a href="#" class="viewpaymentimage" data-toggle="modal"
-                                                    data-target="#paymrntmodal"
-                                                    payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Paytm) }}">
-                                                    <i class="fa fa-paypal fa-2x"></i>
-                                                </a>
+                                        @endif
+                                        @if ($carddata->sg_cd_Paytm)
+                                            <div class="socail-box">
+                                                <div class='button paypal'>
+                                                    <a href="#" class="viewpaymentimage" data-toggle="modal"
+                                                        data-target="#paymrntmodal"
+                                                        payment-image="{{ asset('images/paymentimages/' . $carddata->sg_cd_Paytm) }}">
+                                                        <i class="fa fa-paypal fa-2x"></i>
+                                                    </a>
+                                                </div>
+                                                <h6> Paytm </h6>
                                             </div>
-                                            <h6> Paytm </h6>
-                                        </div>
-                                    @endif
-                                    @if ($carddata->sg_Bhim_UPI)
-                                        <div class="socail-box">
-                                            <div class='button paypal'>
-                                                <a href="#" class="viewpaymentimage"
-                                                    payment-image="{{ asset('images/paymentimages/' . $carddata->sg_Bhim_UPI) }}"
-                                                    data-toggle="modal" data-target="#paymrntmodal"> <i
-                                                        class="fa fa-cc-diners-club fa-2x"></i> </a>
+                                        @endif
+                                        @if ($carddata->sg_Bhim_UPI)
+                                            <div class="socail-box">
+                                                <div class='button paypal'>
+                                                    <a href="#" class="viewpaymentimage"
+                                                        payment-image="{{ asset('images/paymentimages/' . $carddata->sg_Bhim_UPI) }}"
+                                                        data-toggle="modal" data-target="#paymrntmodal"> <i
+                                                            class="fa fa-cc-diners-club fa-2x"></i> </a>
+                                                </div>
+                                                <h6> Bhim UPI </h6>
                                             </div>
-                                            <h6> Bhim UPI </h6>
-                                        </div>
-                                    @endif
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
                         @if ($carddata->sg_brochure && $carddata->sg_brochure_title)
                             <div class="card-inline-row">
                                 <a href="{{ asset('images/brochures/' . $carddata->sg_brochure) }}"

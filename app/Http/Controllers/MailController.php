@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
-
-//use Session;
-
+use App\Models\Brand;
 
 class MailController extends Controller
 {
@@ -22,7 +20,12 @@ class MailController extends Controller
         \Mail::html(
             "Name: " . $data['fullname'] . "</br>" . "Email: " . $data['conemail'] . "</br>" . "Phone Number: " . $data['phonenumber'] . "</br>" . "Message: " . $data['comment'],
             function ($message) {
-                $message->to('developermihir009@gmail.com')->subject('Email From ContactUs Form');
+                $brand = Brand::all();
+                $emailtosend = [];
+                foreach ($brand as $brandemail) {
+                    $emailtosend = $brandemail->sg_brand_business_email;
+                }
+                $message->to($emailtosend)->subject('Email From ContactUs Form');
             }
         );
         if (count(\Mail::failures()) > 0) {

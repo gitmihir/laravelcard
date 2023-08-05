@@ -16,8 +16,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="sg_owner_image">Image</label>
-                <input id="sg_owner_image" name="sg_owner_image" type="file" required="required"
-                    class="form-control">
+                <input id="sg_owner_image" name="sg_owner_image" onchange="validateImageSize(this);" type="file"
+                    accept="image/png, image/jpeg" required="required" class="form-control">
             </div>
         </div>
         <div class="col-md-12">

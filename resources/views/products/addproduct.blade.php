@@ -41,7 +41,8 @@
                 <label for="exampleInputFile">Display Picture</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" onchange="validateImageSize(this);" name="image"
+                            accept="image/png, image/jpeg" class="custom-file-input" id="exampleInputFile">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                 </div>
@@ -53,7 +54,8 @@
                 <label for="exampleInputFile">Display Picture 1</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="image1" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" onchange="validateImageSize(this);" name="image1"
+                            accept="image/png, image/jpeg" class="custom-file-input" id="exampleInputFile">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                 </div>
@@ -65,7 +67,8 @@
                 <label for="exampleInputFile">Display Picture 2</label>
                 <div class="input-group">
                     <div class="custom-file">
-                        <input type="file" name="image2" class="custom-file-input" id="exampleInputFile">
+                        <input type="file" onchange="validateImageSize(this);" name="image2"
+                            accept="image/png, image/jpeg" class="custom-file-input" id="exampleInputFile">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
                 </div>
