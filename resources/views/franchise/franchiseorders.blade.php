@@ -9,6 +9,7 @@
         <table id="example1" data-order='[[ 0, "desc" ]]' class="table table-bordered table-hover dataTable dtr-inline">
             <thead>
                 <tr>
+                    <th>Invoice No.</th>
                     <th>Order Id</th>
                     <th>Order Date</th>
                     <th>Full Name</th>
