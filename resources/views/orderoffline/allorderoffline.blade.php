@@ -30,6 +30,7 @@
         <table id="example0" data-order='[[ 0, "desc" ]]' class="table table-bordered table-hover dataTable dtr-inline">
             <thead>
                 <tr>
+                    <th>Invoice No.</th>
                     <th>Order Id</th>
                     <th>Order Date</th>
                     <th>Full Name</th>
@@ -43,6 +44,7 @@
 
                 @foreach ($viewallorder as $orderdata)
                     <tr>
+                        <td>{{ $orderdata->id }}</td>
                         <td>{{ $orderdata->order_id_for_status }}</td>
                         <td>
                             @php

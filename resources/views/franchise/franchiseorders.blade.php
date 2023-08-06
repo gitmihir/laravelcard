@@ -10,6 +10,7 @@
             <thead>
                 <tr>
                     <th>Order Id</th>
+                    <th>Order Date</th>
                     <th>Full Name</th>
                     <th>Total</th>
                     <th>Order Status</th>
@@ -22,6 +23,13 @@
                 @foreach ($viewfranchiseorders as $orderdata)
                     <tr>
                         <td>{{ $orderdata->id }}</td>
+                        <td>{{ $orderdata->order_id_for_status }}</td>
+                        <td>
+                            @php
+                                $createDate = new DateTime($orderdata->created_at);
+                                $strip = $createDate->format('d-m-Y');
+                            @endphp
+                            {{ $strip }}</td>
                         <td>{{ $orderdata->sg_full_name }}</td>
                         <td>{{ $orderdata->after_discount_total }}</td>
                         <td>
