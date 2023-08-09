@@ -52,17 +52,17 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="fullname"> Name :</label>
-                                                        <input id="fullname" name="fullname"
-                                                            class="form-control form-mane fullname" required=""
-                                                            type="text">
+                                                        <input id="fullname" onblur="validateInputText(this);"
+                                                            name="fullname" class="form-control form-mane fullname"
+                                                            required="" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="conemail">E-mail :</label>
-                                                        <input id="conemail" name="conemail"
-                                                            class="form-control form-email conemail" required=""
-                                                            type="email">
+                                                        <input id="conemail" onblur="validateEmail(this);"
+                                                            name="conemail" class="form-control form-email conemail"
+                                                            required="" type="email">
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,7 +70,8 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="phonenumber">Phone Number: </label>
-                                                        <input id="phonenumber" name="phonenumber"
+                                                        <input id="phonenumber" onblur="validatePhoneNumber(this);"
+                                                            name="phonenumber"
                                                             class="form-control form-mane phonenumber" required=""
                                                             type="text">
                                                     </div>

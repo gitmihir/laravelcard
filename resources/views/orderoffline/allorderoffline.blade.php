@@ -59,7 +59,7 @@
                             @php
                                 
                                 if (empty($orderdata->franchise_ID)) {
-                                    echo 'NA';
+                                    echo 'kessr';
                                 } else {
                                     $productname = App\Models\Franchise::where('id', $orderdata->franchise_ID)->first();
                                     echo $productname->sg_franchise_name;

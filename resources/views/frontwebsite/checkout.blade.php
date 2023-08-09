@@ -159,21 +159,22 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" name="sg_business_name"
-                                                                    placeholder="Business Name" required=""
+                                                                <input type="text" onblur="validateInputText(this);"
+                                                                    name="sg_business_name" placeholder="Business Name"
+                                                                    required=""
                                                                     class="form-control sg_business_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" name="sg_full_name"
-                                                                    placeholder="Full Name" required=""
-                                                                    class="form-control sg_full_name" />
+                                                                <input type="text" onblur="validateInputText(this);"
+                                                                    name="sg_full_name" placeholder="Full Name *"
+                                                                    required="" class="form-control sg_full_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Address"
+                                                                <input type="text" placeholder="Address *"
                                                                     name="sg_business_address" required=""
                                                                     class="form-control sg_business_address" />
                                                             </div>
@@ -181,28 +182,34 @@
 
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="GSTIN NO"
+                                                                <input type="text"
+                                                                    onblur="validateGSTNumber(this);"
+                                                                    placeholder="GSTIN NO"
                                                                     name="sg_business_GST_number" required=""
                                                                     class="form-control sg_business_GST_number" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="email" name="sg_business_email"
-                                                                    placeholder="Email" required=""
+                                                                <input type="email" onblur="validateEmail(this);"
+                                                                    name="sg_business_email" placeholder="Email *"
+                                                                    required=""
                                                                     class="form-control sg_business_email" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" name="sg_business_phone"
-                                                                    placeholder="Phone Number" required=""
+                                                                <input type="text"
+                                                                    onblur="validatePhoneNumber(this);"
+                                                                    name="sg_business_phone"
+                                                                    placeholder="Phone Number *" required=""
                                                                     class="form-control sg_business_phone" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select name="sg_state"
+                                                                <select onchange="requiredfield(this);"
+                                                                    name="sg_state"
                                                                     class="form-control sg_state statechangecalculation">
                                                                     <option value="">Select State</option>
                                                                     <option value="Andhra Pradesh">Andhra Pradesh
@@ -287,35 +294,38 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" name="sg_s_name"
-                                                                    placeholder="First Name" required=""
+                                                                <input type="text"
+                                                                    onblur="validateInputText(this);" name="sg_s_name"
+                                                                    placeholder="First Name *" required=""
                                                                     class="form-control sg_s_name" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Address"
+                                                                <input type="text" placeholder="Address *"
                                                                     name="sg_s_address" required=""
                                                                     class="form-control sg_s_address" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="email" placeholder="Email"
-                                                                    name="sg_s_email" required=""
-                                                                    class="form-control sg_s_email" />
+                                                                <input type="email" onblur="validateEmail(this);"
+                                                                    placeholder="Email *" name="sg_s_email"
+                                                                    required="" class="form-control sg_s_email" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" name="sg_s_phone"
-                                                                    placeholder="Phone Number" required=""
-                                                                    class="form-control sg_s_phone" />
+                                                                <input type="text"
+                                                                    onblur="validatePhoneNumber(this);"
+                                                                    name="sg_s_phone" placeholder="Phone Number *"
+                                                                    required="" class="form-control sg_s_phone" />
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select name="sg_s_state" id="sg_s_state"
+                                                                <select onchange="requiredfield(this);"
+                                                                    name="sg_s_state" id="sg_s_state"
                                                                     class="form-control sg_s_state">
                                                                     <option value="">Select State</option>
                                                                     <option value="Andhra Pradesh">Andhra Pradesh
