@@ -47,11 +47,27 @@ class AuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home')
-                ->with('You have Successfully loggedin');
+
+            //$request->authenticate();
+            $request->session()->regenerate();
+            $role = Auth::user()->user_role;
+            switch ($role) {
+                case 'super_admin':
+                    return redirect()->intended('home')
+                        ->with('You have Successfully loggedin');
+                    break;
+                case 'franchiseuser':
+                    return redirect()->intended('home')
+                        ->with('You have Successfully loggedin');
+                    break;
+                case 'normaluser':
+                    return redirect(url('/userarea/allcards'));
+                    break;
+
+            }
+
         } else {
             return redirect('/login')->with('message', 'Oppes! You have entered invalid credentials!');
-            //Redirect::back()->with('message', 'message|Record updated.');
         }
 
 
