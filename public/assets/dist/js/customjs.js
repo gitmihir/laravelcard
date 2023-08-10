@@ -703,7 +703,7 @@ $(".removecoupon").on("click", function () {
 
 function validatePhoneNumber(numberval) {
   debugger;
-  if (!numberval.value.match(/^[0-9]{11}$/)) {
+  if (!numberval.value.match(/^[0-9]{10}$/)) {
     $(".errorclass_" + numberval.name).remove();
     $("input[name=" + numberval.name + "]").after(
       '<div class="errorclass_' +
@@ -713,15 +713,17 @@ function validatePhoneNumber(numberval) {
     $("input[name=" + numberval.name + "]").addClass("errorborderclass");
     numberval.value = "";
     $(".disabledclass").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
   } else {
     $("input[name=" + numberval.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + numberval.name).remove();
     $(".disabledclass").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
   }
 }
 
 function validateInputText(textval) {
-  if (!textval.value.match(/^[a-zA-Z]*$/)) {
+  if (!textval.value.match(/^[a-zA-Z ]*$/)) {
     $(".errorclass_" + textval.name).remove();
     $("input[name=" + textval.name + "]").after(
       '<div class="errorclass_' +
@@ -730,15 +732,35 @@ function validateInputText(textval) {
     );
     $("input[name=" + textval.name + "]").addClass("errorborderclass");
     textval.value = "";
-    $(".disabledclass").attr("disabled", "disabled");
+    $(".buy_now").attr("disabled", "disabled");
+  } else if (textval.value === "") {
+    $(".errorclass_" + textval.name).remove();
+    $("input[name=" + textval.name + "]").after(
+      '<div class="errorclass_' +
+        textval.name +
+        '">This field is required.</div>'
+    );
+    $("input[name=" + textval.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
   } else {
     $("input[name=" + textval.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + textval.name).remove();
-    $(".disabledclass").removeAttr("disabled");
+    $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
   }
 }
 function validateEmail(emailval) {
-  if (!emailval.value.match(/^\S+@\S+\.\S+$/)) {
+  if (emailval.value === "") {
+    $(".errorclass_" + emailval.name).remove();
+    $("input[name=" + emailval.name + "]").after(
+      '<div class="errorclass_' +
+        emailval.name +
+        '">This field is required.</div>'
+    );
+    $("input[name=" + emailval.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+  } else if (!emailval.value.match(/^\S+@\S+\.\S+$/)) {
     $(".errorclass_" + emailval.name).remove();
     $("input[name=" + emailval.name + "]").after(
       '<div class="errorclass_' +
@@ -747,11 +769,13 @@ function validateEmail(emailval) {
     );
     $("input[name=" + emailval.name + "]").addClass("errorborderclass");
     emailval.value = "";
-    $(".disabledclass").attr("disabled", "disabled");
+    $(".buy_now").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
   } else {
     $("input[name=" + emailval.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + emailval.name).remove();
-    $(".disabledclass").removeAttr("disabled");
+    $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
   }
 }
 
@@ -847,5 +871,19 @@ function validateTextSize2(textdata) {
     $("input[name=" + textdata.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + textdata.name).remove();
     $(".disabledclass").removeAttr("disabled");
+  }
+}
+function requiredfield(field) {
+  if (field.value === "") {
+    $(".errorclass_" + field.name).remove();
+    $("select[name=" + field.name + "]").after(
+      '<div class="errorclass_' + field.name + '">This field is required.</div>'
+    );
+    $("select[name=" + field.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+  } else {
+    $("select[name=" + field.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + field.name).remove();
+    $(".buy_now").removeAttr("disabled");
   }
 }

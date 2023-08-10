@@ -1002,9 +1002,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Title_1">Link Title 1</label>
-                                            <input type="text" value="{{ $card->sg_cd_Title_1 }}"
-                                                class="form-control" name="sg_cd_Title_1" id="sg_cd_Title_1"
-                                                placeholder="Enter Title">
+                                            <input type="text" onblur="validateTextSize2(this);"
+                                                value="{{ $card->sg_cd_Title_1 }}" class="form-control"
+                                                name="sg_cd_Title_1" id="sg_cd_Title_1" placeholder="Enter Title">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1019,9 +1019,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Title_2">Link Title 2</label>
-                                            <input type="text" value="{{ $card->sg_cd_Title_2 }}"
-                                                class="form-control" name="sg_cd_Title_2" id="sg_cd_Title_2"
-                                                placeholder="Enter Title">
+                                            <input type="text" onblur="validateTextSize2(this);"
+                                                value="{{ $card->sg_cd_Title_2 }}" class="form-control"
+                                                name="sg_cd_Title_2" id="sg_cd_Title_2" placeholder="Enter Title">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1036,9 +1036,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Title_3">Link Title 3</label>
-                                            <input type="text" value="{{ $card->sg_cd_Title_3 }}"
-                                                class="form-control" name="sg_cd_Title_3" id="sg_cd_Title_3"
-                                                placeholder="Enter Title">
+                                            <input type="text" onblur="validateTextSize2(this);"
+                                                value="{{ $card->sg_cd_Title_3 }}" class="form-control"
+                                                name="sg_cd_Title_3" id="sg_cd_Title_3" placeholder="Enter Title">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1053,9 +1053,9 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_Title_4">Link Title 4</label>
-                                            <input type="text" value="{{ $card->sg_cd_Title_4 }}"
-                                                class="form-control" name="sg_cd_Title_4" id="sg_cd_Title_4"
-                                                placeholder="Enter Title">
+                                            <input type="text" onblur="validateTextSize2(this);"
+                                                value="{{ $card->sg_cd_Title_4 }}" class="form-control"
+                                                name="sg_cd_Title_4" id="sg_cd_Title_4" placeholder="Enter Title">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -1095,10 +1095,10 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_brochure_title">Brochure Title</label>
-                                            <input type="text" value="{{ $card->sg_brochure_title }}"
-                                                class="form-control" name="sg_brochure_title"
-                                                id="sg_brochure_title" placeholder="Enter Brochure Title"
-                                                maxlength="20">
+                                            <input type="text" onblur="validateTextSize2(this);"
+                                                value="{{ $card->sg_brochure_title }}" class="form-control"
+                                                name="sg_brochure_title" id="sg_brochure_title"
+                                                placeholder="Enter Brochure Title" maxlength="20">
                                         </div>
                                     </div>
                                 </div>

@@ -603,7 +603,7 @@
             );
             $("input[name=" + numberval.name + "]").addClass("errorborderclass");
             $(".buy_now").attr("disabled", "disabled");
-        } else if (!numberval.value.match(/^[0-9]{11}$/)) {
+        } else if (!numberval.value.match(/^[0-9]{10}$/)) {
             $(".errorclass_" + numberval.name).remove();
             $("input[name=" + numberval.name + "]").after(
                 '<div class="errorclass_' +
@@ -621,7 +621,7 @@
     }
 
     function validateInputText(textval) {
-        if (!textval.value.match(/^[a-zA-Z]*$/)) {
+        if (!textval.value.match(/^[a-zA-Z ]*$/)) {
             $(".errorclass_" + textval.name).remove();
             $("input[name=" + textval.name + "]").after(
                 '<div class="errorclass_' +
@@ -789,10 +789,8 @@
         }
     }
 
-
-
     function validateGSTNumber(gstval) {
-        if (!gstval.value.match(/^[A-Za-z0-9]*$/)) {
+        if (!gstval.value.match(/^[A-Za-z0-9 ]*$/)) {
             $(".errorclass_" + gstval.name).remove();
             $("input[name=" + gstval.name + "]").after(
                 '<div class="errorclass_' +

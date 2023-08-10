@@ -159,7 +159,7 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" onblur="validateInputText(this);"
+                                                                <input type="text" onblur="validateGSTNumber(this);"
                                                                     name="sg_business_name" placeholder="Business Name"
                                                                     required=""
                                                                     class="form-control sg_business_name" />
