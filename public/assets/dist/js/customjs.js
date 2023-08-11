@@ -340,10 +340,8 @@ $.ajaxSetup({
 });
 $(".containersp").hide();
 $(".orderstatus").hide();
+$(".ordernow").attr("disabled", "disabled");
 $("body").on("click", ".ordernow", function (e) {
-  $(".containersp").show();
-  $(".orderstatus").hide();
-
   /* Store Order Details */
   var ajaxurlforofforder = $(".ajaxurlforofforder").val();
   var sg_full_name = $(".sg_full_name").val();
@@ -392,16 +390,104 @@ $("body").on("click", ".ordernow", function (e) {
     product_prices.push($(this).val());
   });
   var OfflineOrder = "OfflineOrder";
+
   if (
-    sg_full_name.length === 0 &&
-    sg_business_name.length === 0 &&
-    sg_business_address.length === 0 &&
-    sg_business_GST_number.length === 0 &&
-    sg_business_email.length === 0 &&
-    sg_business_phone.length === 0
+    sg_full_name.length === 0 ||
+    sg_business_name.length === 0 ||
+    sg_business_address.length === 0 ||
+    sg_business_GST_number.length === 0 ||
+    sg_business_email.length === 0 ||
+    sg_business_phone.length === 0 ||
+    sg_s_email.length === 0 ||
+    sg_s_phone.length === 0
   ) {
-    alert("Please Fillup all billing details before payment!");
+    if (sg_full_name.length === 0) {
+      $(".sg_full_name").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_business_name.length === 0) {
+      $(".sg_business_name").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_business_address.length === 0) {
+      $(".sg_business_address").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_business_GST_number.length === 0) {
+      $(".sg_business_GST_number").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_business_email.length === 0) {
+      $(".sg_business_email").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_business_phone.length === 0) {
+      $(".sg_business_phone").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_s_email.length === 0) {
+      $(".sg_s_email").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_s_phone.length === 0) {
+      $(".sg_s_phone").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_s_name.length === 0) {
+      $(".sg_s_name").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_s_address.length === 0) {
+      $(".sg_s_address").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+
+    if (sg_state === "") {
+      $(".sg_state").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (sg_s_state === "") {
+      $(".sg_s_state").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if ($(".product_name").val() === "") {
+      $(".product_name").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if ($(".product_quantity").val() === "") {
+      $(".product_quantity").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if ($(".payment_remark").val() === "") {
+      $(".payment_remark").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+    if (Order_status === "") {
+      $(".Order_status").after(
+        "<div class='errorclass'>This field is required.</div>"
+      );
+    }
+
+    $(".ordernow").attr("disabled", "disabled");
+    return;
   } else {
+    $(".containersp").show();
+    $(".orderstatus").hide();
     $.ajax({
       url: ajaxurlforofforder,
       method: "GET",
@@ -702,7 +788,6 @@ $(".removecoupon").on("click", function () {
 /* Javascript Validations */
 
 function validatePhoneNumber(numberval) {
-  debugger;
   if (!numberval.value.match(/^[0-9]{10}$/)) {
     $(".errorclass_" + numberval.name).remove();
     $("input[name=" + numberval.name + "]").after(
@@ -884,6 +969,34 @@ function requiredfield(field) {
   } else {
     $("select[name=" + field.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + field.name).remove();
+    $(".buy_now").removeAttr("disabled");
+  }
+}
+
+function validateGSTNumber(gstval) {
+  if (gstval.value === "") {
+    $(".errorclass_" + gstval.name).remove();
+    $("input[name=" + gstval.name + "]").after(
+      '<div class="errorclass_' +
+        gstval.name +
+        '">This field is required.</div>'
+    );
+    $("input[name=" + gstval.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+  } else if (!gstval.value.match(/^[A-Za-z0-9 ]*$/)) {
+    $(".errorclass_" + gstval.name).remove();
+    $("input[name=" + gstval.name + "]").after(
+      '<div class="errorclass_' +
+        gstval.name +
+        '">Special characters are not allowed, only numbers and latters are allowed.</div>'
+    );
+    $("input[name=" + gstval.name + "]").addClass("errorborderclass");
+    gstval.value = "";
+    $(".buy_now").attr("disabled", "disabled");
+  } else {
+    $(".errorclass").remove();
+    $("input[name=" + gstval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + gstval.name).remove();
     $(".buy_now").removeAttr("disabled");
   }
 }

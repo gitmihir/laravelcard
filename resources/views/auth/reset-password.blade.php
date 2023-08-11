@@ -1,4 +1,4 @@
-@include('frontwebsite.frontheader')
+@include('layout.partials.head')
 <main class="login-form">
     <div class="cotainer">
         <div class="row justify-content-center">
@@ -34,4 +34,4 @@
         </div>
     </div>
 </main>
-@include('frontwebsite.frontfooter')
+@include('layout.partials.footer')

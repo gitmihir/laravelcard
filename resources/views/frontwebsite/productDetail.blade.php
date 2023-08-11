@@ -73,23 +73,24 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input id="fullname" name="fullname"
-                                                            class="form-control form-mane fullname" required=""
-                                                            type="text" placeholder="Your Name">
+                                                        <input id="fullname" onblur="validateInputText(this);"
+                                                            name="fullname" class="form-control form-mane fullname"
+                                                            required="" type="text" placeholder="Your Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input id="conemail" name="conemail"
-                                                            class="form-control form-email conemail" required=""
-                                                            placeholder="Your Email" type="email">
+                                                        <input id="conemail" onblur="validateEmail(this);"
+                                                            name="conemail" class="form-control form-email conemail"
+                                                            required="" placeholder="Your Email" type="email">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input id="phonenumber" name="phonenumber"
+                                                        <input id="phonenumber" onblur="validatePhoneNumber(this);"
+                                                            name="phonenumber"
                                                             class="form-control form-mane phonenumber" required=""
                                                             type="text" placeholder="Your Phone Number">
                                                     </div>

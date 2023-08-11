@@ -113,6 +113,7 @@
 </body>
 <script type="text/javascript">
     $('.lightbox').littleLightBox();
+    $(".leaddata").attr("disabled", "disabled");
     $(window).load(function() {});
     $(document).on("click", ".ajaxemail", function() {
         var urlval = $(".ajaxurl").val();
@@ -340,6 +341,7 @@
     });
     $(".containersp").hide();
     $('body').on('click', '.buy_now', function(e) {
+        debugger
         /* Store Order Details */
         var sg_full_name = $(".sg_full_name").val();
         var sg_business_name = $(".sg_business_name").val();
@@ -389,16 +391,43 @@
         //var product_ids = $("input[name='product_ids[]']").val();
         //var product_quantities = $("input[name='product_quantities[]']").val();
         //var product_prices = $(".input[name='product_prices[]']").val();
-        if (sg_full_name.length === 0 &&
-            sg_business_name.length === 0 &&
-            sg_business_address.length === 0 &&
-            sg_business_GST_number.length === 0 &&
-            sg_business_email.length === 0 &&
-            sg_business_phone.length === 0) {
-            alert("Please Fillup all billing details before payment!");
-        } else {
+        if (sg_full_name.length === 0 ||
+            sg_business_name.length === 0 ||
+            sg_business_address.length === 0 ||
+            sg_business_GST_number.length === 0 ||
+            sg_business_email.length === 0 ||
+            sg_business_phone.length === 0 ||
+            sg_s_email.length === 0 ||
+            sg_s_phone.length === 0) {
+            //alert("Please Fillup all billing details before payment!");
 
-            /* End */
+            if (sg_full_name.length === 0) {
+                $(".sg_full_name").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_business_name.length === 0) {
+                $(".sg_business_name").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_business_address.length === 0) {
+                $(".sg_business_address").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_business_GST_number.length === 0) {
+                $(".sg_business_GST_number").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_business_email.length === 0) {
+                $(".sg_business_email").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_business_phone.length === 0) {
+                $(".sg_business_phone").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_s_email.length === 0) {
+                $(".sg_s_email").after("<div class='errorclass'>This field is required.</div>");
+            }
+            if (sg_s_phone.length === 0) {
+                $(".sg_s_phone").after("<div class='errorclass'>This field is required.</div>");
+            }
+            $(".buy_now").attr('disabled', "disabled");
+            return;
+        } else {
             var totalAmount = $(this).attr("data-amount");
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
@@ -476,7 +505,8 @@
     $(".sg_CGST_class").hide();
     $(".sg_SGST_class").hide();
     $(".sg_IGST_class").hide();
-    $(".statechangecalculation").on("change", function() {
+    $(
+        ".statechangecalculation").on("change", function() {
         var couponcodeval = $(".coupon_discount").val();
         var sg_order_base_price = $(".sg_order_base_price").val();
         if (couponcodeval === 0 || couponcodeval === '') {
@@ -603,6 +633,7 @@
             );
             $("input[name=" + numberval.name + "]").addClass("errorborderclass");
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else if (!numberval.value.match(/^[0-9]{10}$/)) {
             $(".errorclass_" + numberval.name).remove();
             $("input[name=" + numberval.name + "]").after(
@@ -613,10 +644,13 @@
             $("input[name=" + numberval.name + "]").addClass("errorborderclass");
             numberval.value = "";
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else {
+            $(".errorclass").remove();
             $("input[name=" + numberval.name + "]").removeClass("errorborderclass");
             $(".errorclass_" + numberval.name).remove();
             $(".buy_now").removeAttr("disabled");
+            $(".leaddata").removeAttr("disabled");
         }
     }
 
@@ -631,7 +665,9 @@
             $("input[name=" + textval.name + "]").addClass("errorborderclass");
             textval.value = "";
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else if (textval.value === '') {
+
             $(".errorclass_" + textval.name).remove();
             $("input[name=" + textval.name + "]").after(
                 '<div class="errorclass_' +
@@ -640,10 +676,13 @@
             );
             $("input[name=" + textval.name + "]").addClass("errorborderclass");
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else {
+            $(".errorclass").remove();
             $("input[name=" + textval.name + "]").removeClass("errorborderclass");
             $(".errorclass_" + textval.name).remove();
             $(".buy_now").removeAttr("disabled");
+            $(".leaddata").removeAttr("disabled");
         }
     }
 
@@ -658,6 +697,7 @@
             $("select[name=" + field.name + "]").addClass("errorborderclass");
             $(".buy_now").attr("disabled", "disabled");
         } else {
+            $(".errorclass").remove();
             $("select[name=" + field.name + "]").removeClass("errorborderclass");
             $(".errorclass_" + field.name).remove();
             $(".buy_now").removeAttr("disabled");
@@ -674,7 +714,9 @@
             );
             $("input[name=" + emailval.name + "]").addClass("errorborderclass");
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else if (!emailval.value.match(/^\S+@\S+\.\S+$/)) {
+            $(".errorclass").remove();
             $(".errorclass_" + emailval.name).remove();
             $("input[name=" + emailval.name + "]").after(
                 '<div class="errorclass_' +
@@ -684,10 +726,12 @@
             $("input[name=" + emailval.name + "]").addClass("errorborderclass");
             emailval.value = "";
             $(".buy_now").attr("disabled", "disabled");
+            $(".leaddata").attr("disabled", "disabled");
         } else {
             $("input[name=" + emailval.name + "]").removeClass("errorborderclass");
             $(".errorclass_" + emailval.name).remove();
             $(".buy_now").removeAttr("disabled");
+            $(".leaddata").removeAttr("disabled");
         }
     }
 
@@ -801,6 +845,7 @@
             gstval.value = "";
             $(".buy_now").attr("disabled", "disabled");
         } else {
+            $(".errorclass").remove();
             $("input[name=" + gstval.name + "]").removeClass("errorborderclass");
             $(".errorclass_" + gstval.name).remove();
             $(".buy_now").removeAttr("disabled");

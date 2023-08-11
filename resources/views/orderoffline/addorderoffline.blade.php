@@ -49,8 +49,9 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" placeholder="Enter Address" name="sg_business_address"
-                                        required="" class="form-control sg_business_address" />
+                                    <input type="text" onblur="validateInputText(this);" placeholder="Enter Address"
+                                        name="sg_business_address" required=""
+                                        class="form-control sg_business_address" />
                                 </div>
                             </div>
 
@@ -81,7 +82,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>State</label>
-                                    <select onchange="requiredfield(this);" name="sg_state" id="state"
+                                    <select onkeyup="requiredfield(this);" name="sg_state" id="state"
                                         class="form-control sg_state">
                                         <option value="">Select</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -153,8 +154,9 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" placeholder="Enter Address" name="sg_s_address"
-                                        required="" class="form-control sg_s_address" />
+                                    <input type="text" placeholder="Enter Address"
+                                        onblur="validateInputText(this);" name="sg_s_address" required=""
+                                        class="form-control sg_s_address" />
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -175,7 +177,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>State</label>
-                                    <select onchange="requiredfield(this);" name="sg_s_state" id="state"
+                                    <select onkeyup="requiredfield(this);" name="sg_s_state" id="state"
                                         class="form-control sg_s_state">
                                         <option value="">Select</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -228,15 +230,16 @@
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
                 <label for="payment_remark">Payment Remark</label>
-                <input type="text" id="payment_remark" name="payment_remark" placeholder="Enter Payment Remark"
-                    required="" class="form-control payment_remark" />
+                <input onblur="validateInputText(this);" type="text" id="payment_remark" name="payment_remark"
+                    placeholder="Enter Payment Remark" required="" class="form-control payment_remark" />
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
                 <label for="Order_status">Order Status</label>
                 <div class="form-group">
-                    <select name="Order_status" id="Order_status" class="form-control Order_status">
+                    <select onkeyup="requiredfield(this);" name="Order_status" id="Order_status"
+                        class="form-control Order_status">
                         <option value="">Select Status</option>
                         <option value="Order placed">Order placed</option>
                         <option value="Card Under design">Card under design</option>
@@ -262,7 +265,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <select name="product_name[]" class="form-control product_name">
+                            <select onkeyup="requiredfield(this);" name="product_name[]"
+                                class="form-control product_name">
                                 <option value="">Select Product</option>
                                 @foreach ($productselectquery as $productdata)
                                     <option

@@ -182,7 +182,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sg_cd_company_name">Company Name</label>
-                                            <input type="text" onblur="validateInputText(this);"
+                                            <input type="text" onblur="validateGSTNumber(this);"
                                                 class="form-control" name="sg_cd_company_name"
                                                 id="sg_cd_company_name" value="{{ $card->sg_cd_company_name }}"
                                                 placeholder="Enter Company Name">
@@ -1098,7 +1098,7 @@
                                             <input type="text" onblur="validateTextSize2(this);"
                                                 value="{{ $card->sg_brochure_title }}" class="form-control"
                                                 name="sg_brochure_title" id="sg_brochure_title"
-                                                placeholder="Enter Brochure Title" maxlength="20">
+                                                placeholder="Enter Brochure Title">
                                         </div>
                                     </div>
                                 </div>

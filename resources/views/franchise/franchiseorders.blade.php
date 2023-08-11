@@ -33,15 +33,7 @@
                             {{ $strip }}</td>
                         <td>{{ $orderdata->sg_full_name }}</td>
                         <td>{{ $orderdata->after_discount_total }}</td>
-                        <td>
-                            @php
-                                if ($orderdata->sg_order_status == '0') {
-                                    echo 'Not Completed';
-                                } else {
-                                    echo 'Completed';
-                                }
-                            @endphp
-                        </td>
+                        <td>{{ $orderdata->Order_status }}</td>
                         <td>
                             @php
                                 
