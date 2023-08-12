@@ -199,7 +199,26 @@ $(document).on(
     bill_amount_calculate();
   }
 );
-
+$(document).on("change", ".product_name", function () {
+  $(".ordernow").removeAttr("disabled");
+  $(".errorclass").remove();
+});
+$(document).on("change", ".sg_state", function () {
+  $(".ordernow").removeAttr("disabled");
+  $(".errorclass").remove();
+});
+$(document).on("change", ".sg_state", function () {
+  $(".ordernow").removeAttr("disabled");
+  $(".errorclass").remove();
+});
+$(document).on("change", ".sg_s_state", function () {
+  $(".ordernow").removeAttr("disabled");
+  $(".errorclass").remove();
+});
+$(document).on("change", ".product_quantity", function () {
+  $(".ordernow").removeAttr("disabled");
+  $(".errorclass").remove();
+});
 $(document).on(
   "change click blur keyup keypress keydown",
   ".billtransactions_transaction_amount",
@@ -392,6 +411,12 @@ $("body").on("click", ".ordernow", function (e) {
   var OfflineOrder = "OfflineOrder";
 
   if (
+    $(".product_name").val().length != 0 &&
+    $(".product_quantity").val() !== ""
+  ) {
+    $(".ordernow").removeAttr("disabled");
+  }
+  if (
     sg_full_name.length === 0 ||
     sg_business_name.length === 0 ||
     sg_business_address.length === 0 ||
@@ -399,7 +424,11 @@ $("body").on("click", ".ordernow", function (e) {
     sg_business_email.length === 0 ||
     sg_business_phone.length === 0 ||
     sg_s_email.length === 0 ||
-    sg_s_phone.length === 0
+    sg_s_phone.length === 0 ||
+    $(".product_name").val().length === 0 ||
+    $(".product_quantity").val() === "" ||
+    $(".payment_remark").val() === "" ||
+    Order_status === ""
   ) {
     if (sg_full_name.length === 0) {
       $(".sg_full_name").after(
@@ -462,7 +491,7 @@ $("body").on("click", ".ordernow", function (e) {
         "<div class='errorclass'>This field is required.</div>"
       );
     }
-    if ($(".product_name").val() === "") {
+    if ($(".product_name").val().length === 0) {
       $(".product_name").after(
         "<div class='errorclass'>This field is required.</div>"
       );
@@ -482,10 +511,9 @@ $("body").on("click", ".ordernow", function (e) {
         "<div class='errorclass'>This field is required.</div>"
       );
     }
-
     $(".ordernow").attr("disabled", "disabled");
-    return;
   } else {
+    $(".ordernow").removeAttr("disabled");
     $(".containersp").show();
     $(".orderstatus").hide();
     $.ajax({
@@ -804,6 +832,7 @@ function validatePhoneNumber(numberval) {
     $(".errorclass_" + numberval.name).remove();
     $(".disabledclass").removeAttr("disabled");
     $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 
@@ -833,6 +862,7 @@ function validateInputText(textval) {
     $(".errorclass_" + textval.name).remove();
     $(".buy_now").removeAttr("disabled");
     $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 function validateEmail(emailval) {
@@ -847,6 +877,7 @@ function validateEmail(emailval) {
     $(".buy_now").attr("disabled", "disabled");
   } else if (!emailval.value.match(/^\S+@\S+\.\S+$/)) {
     $(".errorclass_" + emailval.name).remove();
+    $(".errorclass").remove();
     $("input[name=" + emailval.name + "]").after(
       '<div class="errorclass_' +
         emailval.name +
@@ -861,6 +892,7 @@ function validateEmail(emailval) {
     $(".errorclass_" + emailval.name).remove();
     $(".buy_now").removeAttr("disabled");
     $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 
@@ -938,6 +970,8 @@ function validateTextSize(textdata) {
     $("textarea[name=" + textdata.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + textdata.name).remove();
     $(".disabledclass").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 function validateTextSize2(textdata) {
@@ -956,6 +990,8 @@ function validateTextSize2(textdata) {
     $("input[name=" + textdata.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + textdata.name).remove();
     $(".disabledclass").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 function requiredfield(field) {
@@ -970,6 +1006,25 @@ function requiredfield(field) {
     $("select[name=" + field.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + field.name).remove();
     $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
+  }
+}
+function requiredfield2(field) {
+  if (field.value === "") {
+    $(".errorclass_" + field.name).remove();
+    $("select[name=" + field.name + "]").after(
+      '<div class="errorclass">This field is required.</div>'
+    );
+    $("select[name=" + field.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
+  } else {
+    $("select[name=" + field.name + "]").removeClass("errorborderclass");
+    $(".errorclass").remove();
+    $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }
 
@@ -998,5 +1053,7 @@ function validateGSTNumber(gstval) {
     $("input[name=" + gstval.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + gstval.name).remove();
     $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
   }
 }

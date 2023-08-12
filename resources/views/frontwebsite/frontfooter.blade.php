@@ -394,7 +394,6 @@
         if (sg_full_name.length === 0 ||
             sg_business_name.length === 0 ||
             sg_business_address.length === 0 ||
-            sg_business_GST_number.length === 0 ||
             sg_business_email.length === 0 ||
             sg_business_phone.length === 0 ||
             sg_s_email.length === 0 ||
@@ -410,9 +409,9 @@
             if (sg_business_address.length === 0) {
                 $(".sg_business_address").after("<div class='errorclass'>This field is required.</div>");
             }
-            if (sg_business_GST_number.length === 0) {
-                $(".sg_business_GST_number").after("<div class='errorclass'>This field is required.</div>");
-            }
+            // if (sg_business_GST_number.length === 0) {
+            //     $(".sg_business_GST_number").after("<div class='errorclass'>This field is required.</div>");
+            // }
             if (sg_business_email.length === 0) {
                 $(".sg_business_email").after("<div class='errorclass'>This field is required.</div>");
             }

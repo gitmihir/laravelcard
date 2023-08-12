@@ -208,8 +208,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select onchange="requiredfield(this);"
-                                                                    name="sg_state"
+                                                                <select onkeyup="requiredfield(this);" name="sg_state"
                                                                     class="form-control sg_state statechangecalculation">
                                                                     <option value="">Select State</option>
                                                                     <option value="Andhra Pradesh">Andhra Pradesh
@@ -324,7 +323,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select onchange="requiredfield(this);"
+                                                                <select onkeyup="requiredfield(this);"
                                                                     name="sg_s_state" id="sg_s_state"
                                                                     class="form-control sg_s_state">
                                                                     <option value="">Select State</option>

@@ -49,7 +49,7 @@
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" onblur="validateInputText(this);" placeholder="Enter Address"
+                                    <input type="text" onblur="validateGSTNumber(this);" placeholder="Enter Address"
                                         name="sg_business_address" required=""
                                         class="form-control sg_business_address" />
                                 </div>
@@ -155,7 +155,7 @@
                                 <div class="form-group">
                                     <label>Address</label>
                                     <input type="text" placeholder="Enter Address"
-                                        onblur="validateInputText(this);" name="sg_s_address" required=""
+                                        onblur="validateGSTNumber(this);" name="sg_s_address" required=""
                                         class="form-control sg_s_address" />
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <select onkeyup="requiredfield(this);" name="product_name[]"
+                            <select onkeyup="requiredfield2(this);" name="product_name[]"
                                 class="form-control product_name">
                                 <option value="">Select Product</option>
                                 @foreach ($productselectquery as $productdata)
