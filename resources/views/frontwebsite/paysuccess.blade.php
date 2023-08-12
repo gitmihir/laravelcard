@@ -5,7 +5,6 @@
         <div class="checkout-page cart-page pt-50 pb-50">
             <div class="container">
                 <div class="row">
-                    <h3>Payment successfull.</h3>
                     @php
                         $payment_id = $_GET['payment_id'];
                         $product_id = $_GET['product_id'];
@@ -26,11 +25,19 @@
                         curl_close($curl);
                         $resultdata = json_decode($response);
                         $authorized = $resultdata->status;
+                        echo '<pre>';
+                        print_r($resultdata);
+                        echo '</pre>';
                         if ($authorized == 'authorized') {
                             App\Models\Order::where('order_id_for_status', $product_id)->update(['sg_order_status' => '1', 'payment_remark' => $payment_id]);
                             App\Models\Card::where('sg_order_id', $product_id)->update(['sg_order_status' => '1']);
                         }
                     @endphp
+                    Dear $Name, we are delighted to confirm your order. Your Order ID: $OrderID. if you are an existing
+                    user you can access all updates by logging into your account. if you are a new user you can access
+                    all updates by logging into your account using provided ID and password on your registered email.
+                    Thank you for selecting us. For inquiries, kindly contact us at $BusinessPhone or email us at
+                    $BusinessEmail
                 </div>
             </div>
         </div>

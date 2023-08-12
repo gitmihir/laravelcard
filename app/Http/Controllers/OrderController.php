@@ -114,6 +114,13 @@ class OrderController extends Controller
             $card->save();
         }
         if (User::where('email', '=', $_GET['sg_business_email'])->exists()) {
+            $brand = Brand::all();
+            $brandemail = [];
+            $brandphone = [];
+            foreach ($brand as $branddata) {
+                $brandemail = $branddata->sg_brand_business_email;
+                $brandphone = $branddata->sg_brand_busienss_phone;
+            }
             \Mail::html(
                 "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
                 function ($message) {
