@@ -47,6 +47,8 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
+                                <h3>Thank you for your order!</h3>
+                                <hr>
                                 <p>
                                     Dear {{ $name }}, we are delighted to confirm your order. Your Order
                                     ID:{{ $OrderID }}. if you are an existing
