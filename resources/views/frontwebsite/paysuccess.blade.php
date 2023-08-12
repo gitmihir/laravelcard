@@ -35,7 +35,7 @@
                                 $name = $userdata->sg_full_name;
                                 $OrderID = $userdata->order_id_for_status;
                             }
-                            $brand = Brand::all();
+                            $brand = App\Models\Brand::all();
                             $brandemail = [];
                             $brandphone = [];
                             foreach ($brand as $branddata) {
