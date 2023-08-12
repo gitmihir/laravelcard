@@ -433,7 +433,7 @@
             var email = $(".sg_business_email").val();
             var options = {
                 "key": "{{ $razorpaykey }}",
-                "amount": int(totalAmount * 100), // 2000 paise = INR 20
+                "amount": (totalAmount * 100), // 2000 paise = INR 20
                 "name": "CS",
                 "description": "Payment",
                 "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
