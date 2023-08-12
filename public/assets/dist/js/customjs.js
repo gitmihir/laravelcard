@@ -1057,3 +1057,18 @@ function validateGSTNumber(gstval) {
     $(".errorclass").remove();
   }
 }
+$(".successmsg").hide();
+$(".failmsg").hide();
+$(".disablebtn").attr("disabled", "disabled");
+function matchpassword(returnval) {
+  let firstpassword = $(".firstpassword").val();
+  if (returnval.value === firstpassword) {
+    $(".disablebtn").removeAttr("disabled");
+    $(".successmsg").show();
+    $(".failmsg").hide();
+  } else {
+    $(".disablebtn").attr("disabled", "disabled");
+    $(".successmsg").hide();
+    $(".failmsg").show();
+  }
+}

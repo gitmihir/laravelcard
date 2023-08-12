@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Mockery\Undefined;
 use Paytm;
 use DB;
+use App\Models\Brand;
 
 class OrderController extends Controller
 {
@@ -113,7 +114,12 @@ class OrderController extends Controller
             $card->save();
         }
         if (User::where('email', '=', $_GET['sg_business_email'])->exists()) {
-
+            \Mail::html(
+                "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
+                function ($message) {
+                    $message->to($_GET['sg_business_email'])->subject('Order');
+                }
+            );
         } else {
             $user = new User();
             $user['name'] = $_GET['sg_full_name'];
@@ -121,8 +127,23 @@ class OrderController extends Controller
             $psw = $randomString;
             $user['password'] = \Hash::make($psw);
             $user['user_role'] = 'normaluser';
+            // Welcome Email
+            $brand = Brand::all();
+            $brandemail = [];
+            $brandphone = [];
+            foreach ($brand as $branddata) {
+                $brandemail = $branddata->sg_brand_business_email;
+                $brandphone = $branddata->sg_brand_busienss_phone;
+            }
             \Mail::html(
-                "Name: " . $_GET['sg_full_name'] . "</br>" . "Email: " . $_GET['sg_business_email'] . "</br>" . "Password: " . $psw,
+                "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", Welcome to KESSR. Here is your ID (" . $_GET['sg_business_email'] . ") and secure password (" . $psw . ") to access your account. Keep this information confidential and ensure its safety. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
+                function ($message) {
+                    $message->to($_GET['sg_business_email'])->subject('Order');
+                }
+            );
+            // Order Email
+            \Mail::html(
+                "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
                 function ($message) {
                     $message->to($_GET['sg_business_email'])->subject('Order');
                 }

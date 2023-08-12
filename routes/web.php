@@ -602,5 +602,6 @@ Route::get('view-user/{id}', 'App\Http\Controllers\UserController@viewuserindeta
 Route::get('edit-user/{id}', 'App\Http\Controllers\UserController@edituser');
 Route::put('update-user/{id}', 'App\Http\Controllers\UserController@updateuser');
 Route::get('delete-user/{id}', 'App\Http\Controllers\UserController@destroyuser');
-
 Route::post('/send-email', 'App\Http\Controllers\SmtpController@testemail');
+Route::get('reset-your-password/{id}', 'App\Http\Controllers\UserController@resetyourpassword');
+Route::put('update-password/{id}', 'App\Http\Controllers\UserController@updatepassword');

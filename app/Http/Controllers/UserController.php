@@ -28,6 +28,24 @@ class UserController extends Controller
         $user = User::find($id);
         return view('/usermanagement/edituser', compact('user'));
     }
+    public function resetyourpassword($id)
+    {
+        $user = User::find($id);
+        return view('/usermanagement/resetpassword', compact('user'));
+    }
+    public function updatepassword(Request $request, $id)
+    {
+        $user = User::find($id);
+        if (!empty($request->input('password'))) {
+            $user->password = \Hash::make($request->input('password'));
+        } else {
+
+        }
+        $user->update();
+        //return redirect('/reset-your-password/' . $id);
+        return redirect('/reset-your-password/' . $id)->with('message', 'Your password has been changed.');
+    }
+
     public function updateuser(Request $request, $id)
     {
         $user = User::find($id);

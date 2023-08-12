@@ -128,10 +128,7 @@
                 <i class="fa fa-cog"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                @if (Route::has('user-password.update', '/user/password'))
-                    <a href="{{ route('user-password.update', '/user/password') }}" class="dropdown-item">
-                        {{ __('Reset Password') }}</a>
-                @endif
+                <a href="{{ url('reset-your-password/' . Auth::user()->id) }}" class="dropdown-item">Reset Password</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
                 <div class="dropdown-divider"></div>
