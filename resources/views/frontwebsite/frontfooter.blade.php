@@ -393,30 +393,29 @@
         $("input[name='product_prices[]']").each(function() {
             product_prices.push($(this).val());
         });
-        //var product_ids = $("input[name='product_ids[]']").val();
-        //var product_quantities = $("input[name='product_quantities[]']").val();
-        //var product_prices = $(".input[name='product_prices[]']").val();
+
         if (sg_full_name.length === 0 ||
-            sg_business_name.length === 0 ||
             sg_business_address.length === 0 ||
             sg_business_email.length === 0 ||
             sg_business_phone.length === 0 ||
             sg_s_email.length === 0 ||
-            sg_s_phone.length === 0) {
-            //alert("Please Fillup all billing details before payment!");
-
+            sg_s_phone.length === 0 ||
+            sg_state === "" ||
+            sg_s_state === "" ||
+            sg_s_name.length === 0 ||
+            sg_s_address.length === 0) {
             if (sg_full_name.length === 0) {
                 $(".sg_full_name").after("<div class='errorclass'>This field is required.</div>");
             }
-            if (sg_business_name.length === 0) {
-                $(".sg_business_name").after("<div class='errorclass'>This field is required.</div>");
+            if (sg_s_name.length === 0) {
+                $(".sg_s_name").after("<div class='errorclass'>This field is required.</div>");
             }
             if (sg_business_address.length === 0) {
                 $(".sg_business_address").after("<div class='errorclass'>This field is required.</div>");
             }
-            // if (sg_business_GST_number.length === 0) {
-            //     $(".sg_business_GST_number").after("<div class='errorclass'>This field is required.</div>");
-            // }
+            if (sg_s_address.length === 0) {
+                $(".sg_s_address").after("<div class='errorclass'>This field is required.</div>");
+            }
             if (sg_business_email.length === 0) {
                 $(".sg_business_email").after("<div class='errorclass'>This field is required.</div>");
             }
@@ -428,6 +427,17 @@
             }
             if (sg_s_phone.length === 0) {
                 $(".sg_s_phone").after("<div class='errorclass'>This field is required.</div>");
+            }
+
+            if (sg_state === "") {
+                $(".sg_state").after(
+                    "<div class='errorclass'>This field is required.</div>"
+                );
+            }
+            if (sg_s_state === "") {
+                $(".sg_s_state").after(
+                    "<div class='errorclass'>This field is required.</div>"
+                );
             }
             $(".buy_now").attr('disabled', "disabled");
             return;
@@ -687,6 +697,24 @@
             $(".errorclass_" + textval.name).remove();
             $(".buy_now").removeAttr("disabled");
             $(".leaddata").removeAttr("disabled");
+        }
+    }
+
+    function requiredfield2(field) {
+        if (field.value === '') {
+            $(".errorclass_" + field.name).remove();
+            $("input[name=" + field.name + "]").after(
+                '<div class="errorclass_' +
+                field.name +
+                '">This field is required.</div>'
+            );
+            $("input[name=" + field.name + "]").addClass("errorborderclass");
+            $(".buy_now").attr("disabled", "disabled");
+        } else {
+            $(".errorclass").remove();
+            $("select[name=" + field.name + "]").removeClass("errorborderclass");
+            $(".errorclass_" + field.name).remove();
+            $(".buy_now").removeAttr("disabled");
         }
     }
 

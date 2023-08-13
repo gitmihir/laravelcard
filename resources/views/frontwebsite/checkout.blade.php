@@ -101,17 +101,6 @@
                                                                                         class="fa fa-trash-o"></i></button>
                                                                             </div>
                                                                         </td>
-
-                                                                        {{-- <td>
-                                                                        <div class="cart-price text-center">
-                                                                            <span>${{ $details['price'] }}</span>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td>
-                                                                        <div class="cart-price text-center">
-                                                                            <span>${{ $details['price'] * $details['quantity'] }}</span>
-                                                                        </div>
-                                                                    </td> --}}
                                                                     </tr>
                                                                     <input type="hidden" name="product_ids[]"
                                                                         value="{{ $id }}">
@@ -121,7 +110,6 @@
                                                                         value="{{ $details['price'] * $details['quantity'] }}">
                                                                 @endforeach
                                                             @endif
-
                                                         </tbody>
                                                     </table>
                                                     <div class="shipping-buttons">
@@ -139,7 +127,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--end of .table-responsive-->
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +162,8 @@
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
                                                                 <input type="text" placeholder="Address *"
-                                                                    name="sg_business_address" required=""
+                                                                    name="sg_business_address"
+                                                                    onblur="requiredfield2(this);" required=""
                                                                     class="form-control sg_business_address" />
                                                             </div>
                                                         </div>
@@ -208,7 +196,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select onkeyup="requiredfield(this);" name="sg_state"
+                                                                <select onblur="requiredfield(this);" name="sg_state"
                                                                     class="form-control sg_state statechangecalculation">
                                                                     <option value="">Select State</option>
                                                                     <option value="Andhra Pradesh">Andhra Pradesh
@@ -301,8 +289,9 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <input type="text" placeholder="Address *"
-                                                                    name="sg_s_address" required=""
+                                                                <input type="text" onblur="requiredfield2(this);"
+                                                                    placeholder="Address *" name="sg_s_address"
+                                                                    required=""
                                                                     class="form-control sg_s_address" />
                                                             </div>
                                                         </div>
@@ -323,7 +312,7 @@
                                                         </div>
                                                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                                             <div class="form-group">
-                                                                <select onkeyup="requiredfield(this);"
+                                                                <select onblur="requiredfield(this);"
                                                                     name="sg_s_state" id="sg_s_state"
                                                                     class="form-control sg_s_state">
                                                                     <option value="">Select State</option>

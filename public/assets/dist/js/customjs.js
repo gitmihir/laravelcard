@@ -418,7 +418,6 @@ $("body").on("click", ".ordernow", function (e) {
   }
   if (
     sg_full_name.length === 0 ||
-    sg_business_name.length === 0 ||
     sg_business_address.length === 0 ||
     sg_business_GST_number.length === 0 ||
     sg_business_email.length === 0 ||
@@ -432,11 +431,6 @@ $("body").on("click", ".ordernow", function (e) {
   ) {
     if (sg_full_name.length === 0) {
       $(".sg_full_name").after(
-        "<div class='errorclass'>This field is required.</div>"
-      );
-    }
-    if (sg_business_name.length === 0) {
-      $(".sg_business_name").after(
         "<div class='errorclass'>This field is required.</div>"
       );
     }
@@ -1027,18 +1021,43 @@ function requiredfield2(field) {
     $(".errorclass").remove();
   }
 }
+function requiredfieldproduct(field) {
+  if (field.value === "") {
+    $(".errorclass").remove();
+    $(".validateclass").after(
+      '<div class="errorclass">This field is required.</div>'
+    );
+    $(".validateclass").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
+  } else {
+    $(".validateclass").removeClass("errorborderclass");
+    $(".errorclass").remove();
+    $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
+  }
+}
+function requiredfieldqty(field) {
+  if (field.value === "") {
+    $(".errorclass").remove();
+    $(".product_quantity").after(
+      '<div class="errorclass">This field is required.</div>'
+    );
+    $(".product_quantity").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+    $(".ordernow").attr("disabled", "disabled");
+  } else {
+    $(".product_quantity").removeClass("errorborderclass");
+    $(".errorclass").remove();
+    $(".buy_now").removeAttr("disabled");
+    $(".ordernow").removeAttr("disabled");
+    $(".errorclass").remove();
+  }
+}
 
 function validateGSTNumber(gstval) {
-  if (gstval.value === "") {
-    $(".errorclass_" + gstval.name).remove();
-    $("input[name=" + gstval.name + "]").after(
-      '<div class="errorclass_' +
-        gstval.name +
-        '">This field is required.</div>'
-    );
-    $("input[name=" + gstval.name + "]").addClass("errorborderclass");
-    $(".buy_now").attr("disabled", "disabled");
-  } else if (!gstval.value.match(/^[A-Za-z0-9 ]*$/)) {
+  if (!gstval.value.match(/^[A-Za-z0-9 ]*$/)) {
     $(".errorclass_" + gstval.name).remove();
     $("input[name=" + gstval.name + "]").after(
       '<div class="errorclass_' +
@@ -1053,8 +1072,6 @@ function validateGSTNumber(gstval) {
     $("input[name=" + gstval.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + gstval.name).remove();
     $(".buy_now").removeAttr("disabled");
-    $(".ordernow").removeAttr("disabled");
-    $(".errorclass").remove();
   }
 }
 $(".successmsg").hide();
@@ -1070,5 +1087,20 @@ function matchpassword(returnval) {
     $(".disablebtn").attr("disabled", "disabled");
     $(".successmsg").hide();
     $(".failmsg").show();
+  }
+}
+function requiredfield3(field) {
+  if (field.value === "") {
+    $(".errorclass_" + field.name).remove();
+    $("input[name=" + field.name + "]").after(
+      '<div class="errorclass_' + field.name + '">This field is required.</div>'
+    );
+    $("input[name=" + field.name + "]").addClass("errorborderclass");
+    $(".buy_now").attr("disabled", "disabled");
+  } else {
+    $(".errorclass").remove();
+    $("select[name=" + field.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + field.name).remove();
+    $(".buy_now").removeAttr("disabled");
   }
 }

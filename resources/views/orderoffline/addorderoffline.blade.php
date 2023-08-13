@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Full Name</label>
+                                    <label>Full Name <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="text" onblur="validateInputText(this);" name="sg_full_name"
                                         placeholder="Enter Full Name" required=""
                                         class="form-control sg_full_name" />
@@ -48,8 +48,8 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Address</label>
-                                    <input type="text" onblur="validateGSTNumber(this);" placeholder="Enter Address"
+                                    <label>Address <span style="color: rgb(237, 78, 78)">*</span></label>
+                                    <input type="text" onblur="requiredfield3(this);" placeholder="Enter Address"
                                         name="sg_business_address" required=""
                                         class="form-control sg_business_address" />
                                 </div>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Email</label>
+                                    <label>Email <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="email" onblur="validateEmail(this);" name="sg_business_email"
                                         placeholder="Enter Email" required=""
                                         class="form-control sg_business_email" />
@@ -73,7 +73,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Phone Number</label>
+                                    <label>Phone Number <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="text" onblur="validatePhoneNumber(this);" name="sg_business_phone"
                                         placeholder="Enter Phone Number" required=""
                                         class="form-control sg_business_phone" />
@@ -81,8 +81,8 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>State</label>
-                                    <select onkeyup="requiredfield(this);" name="sg_state" id="state"
+                                    <label>State <span style="color: rgb(237, 78, 78)">*</span></label>
+                                    <select onblur="requiredfield(this);" name="sg_state" id="state"
                                         class="form-control sg_state">
                                         <option value="">Select</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -145,7 +145,7 @@
 
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>First Name</label>
+                                    <label>First Name <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="text" onblur="validateInputText(this);" name="sg_s_name"
                                         placeholder="Enter First Name" required=""
                                         class="form-control sg_s_name" />
@@ -153,22 +153,21 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Address</label>
-                                    <input type="text" placeholder="Enter Address"
-                                        onblur="validateGSTNumber(this);" name="sg_s_address" required=""
-                                        class="form-control sg_s_address" />
+                                    <label>Address <span style="color: rgb(237, 78, 78)">*</span></label>
+                                    <input type="text" placeholder="Enter Address" onblur="requiredfield3(this);"
+                                        name="sg_s_address" required="" class="form-control sg_s_address" />
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Email</label>
+                                    <label>Email <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="email" onblur="validateEmail(this);" placeholder="Enter Email"
                                         name="sg_s_email" required="" class="form-control sg_s_email" />
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>Phone Number</label>
+                                    <label>Phone Number <span style="color: rgb(237, 78, 78)">*</span></label>
                                     <input type="text" onblur="validatePhoneNumber(this);" name="sg_s_phone"
                                         placeholder="Enter Phone Number" required=""
                                         class="form-control sg_s_phone" />
@@ -176,8 +175,8 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                 <div class="form-group">
-                                    <label>State</label>
-                                    <select onkeyup="requiredfield(this);" name="sg_s_state" id="state"
+                                    <label>State <span style="color: rgb(237, 78, 78)">*</span></label>
+                                    <select onblur="requiredfield(this);" name="sg_s_state" id="state"
                                         class="form-control sg_s_state">
                                         <option value="">Select</option>
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -229,16 +228,16 @@
     <div class="row mb-3 ml-3 mr-3 mt-3">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
-                <label for="payment_remark">Payment Remark</label>
+                <label for="payment_remark">Payment Remark <span style="color: rgb(237, 78, 78)">*</span></label>
                 <input onblur="validateInputText(this);" type="text" id="payment_remark" name="payment_remark"
                     placeholder="Enter Payment Remark" required="" class="form-control payment_remark" />
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
-                <label for="Order_status">Order Status</label>
+                <label for="Order_status">Order Status <span style="color: rgb(237, 78, 78)">*</span></label>
                 <div class="form-group">
-                    <select onkeyup="requiredfield(this);" name="Order_status" id="Order_status"
+                    <select onblur="requiredfield(this);" name="Order_status" id="Order_status"
                         class="form-control Order_status">
                         <option value="">Select Status</option>
                         <option value="Order placed">Order placed</option>
@@ -257,16 +256,18 @@
             <div class="parentchild">
                 <table class="table">
                     <tr>
-                        <td><label for="product_price">Select Product</label></td>
+                        <td><label for="product_price">Select Product <span
+                                    style="color: rgb(237, 78, 78)">*</span></label></td>
                         <td><label for="product_price">Price</label></td>
-                        <td><label for="product_quantity">Quantity</label></td>
+                        <td><label for="product_quantity">Quantity <span
+                                    style="color: rgb(237, 78, 78)">*</span></label></td>
                         <td><label for="product_total_amount">Sub Total</label></td>
                         <td><label for="product_quantity">Add More / Remove</label></td>
                     </tr>
                     <tr>
                         <td>
-                            <select onkeyup="requiredfield2(this);" name="product_name[]"
-                                class="form-control product_name">
+                            <select onblur="requiredfieldproduct(this);" name="product_name[]"
+                                class="form-control product_name validateclass">
                                 <option value="">Select Product</option>
                                 @foreach ($productselectquery as $productdata)
                                     <option
@@ -281,8 +282,8 @@
                         <td><input type="text" name="product_list_price[]" class="form-control product_price"
                                 readonly>
                         </td>
-                        <td><input type="number" min="1" name="product_quantities[]"
-                                class="form-control product_quantity"></td>
+                        <td><input type="number" onblur="requiredfieldqty(this);" min="1"
+                                name="product_quantities[]" class="form-control product_quantity"></td>
                         <td><input type="text" name="product_total_amount[]"
                                 class="form-control product_total_amount" readonly></td>
                         <td><button type="button" class="btn btn-primary add_more_products"><i
@@ -459,30 +460,4 @@
             background: #29d;
         }
     }
-
-    /* .four-dots:before {
-        display: block;
-        height: 5px;
-        width: 5px;
-        content: '';
-        -webkit-animation: spin 1s infinite;
-        animation: spin 1s infinite;
-        border-radius: 100%;
-        -webkit-box-shadow: 20px 0 0 5px var(--primary), 0 20px 0 5px var(--secondary), 0 -20px 0 5px var(--secondary), -20px 0 0 5px var(--primary);
-        box-shadow: 20px 0 0 5px var(--primary), 0 20px 0 5px var(--secondary), 0 -20px 0 5px var(--secondary), -20px 0 0 5px var(--primary);
-    }
-
-    @-webkit-keyframes spin {
-        to {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes spin {
-        to {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    } */
 </style>
