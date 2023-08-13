@@ -48,10 +48,15 @@
                         <h2 class="ft-title pb-4"><span> Support </span></h2>
                         <div class="ft-link">
                             <ul>
-                                <li><a target="_blank" href="JavaScript:void(0);">Our Products</a></li>
-                                <li><a target="_blank" href="JavaScript:void(0);">Compatible Phones</a></li>
-                                <li><a target="_blank" href="JavaScript:void(0);">Support</a></li>
-                                <li><a target="_blank" href="JavaScript:void(0);">Track Order</a></li>
+                                <li><a target="_blank" href="{{ url('/support/terms-condition/1') }}">Terms &
+                                        Condition</a>
+                                </li>
+                                <li><a target="_blank" href="{{ url('/support/privacy-policy/2') }}">Privacy Policy</a>
+                                </li>
+                                <li><a target="_blank" href="{{ url('/support/payment-policy/3') }}">Payment Policy</a>
+                                </li>
+                                <li><a target="_blank" href="{{ url('/support/cookies-policy/4') }}">Cookies Policy</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -69,7 +69,7 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <label>Tearms & Condition</label>
+                <label>Terms & Condition</label>
                 <textarea id="sg_cms_termscondition" class="form-control" name="sg_cms_termscondition">{{ $cms->sg_cms_termscondition }}</textarea>
             </div>
         </div>

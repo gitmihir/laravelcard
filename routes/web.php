@@ -605,3 +605,29 @@ Route::get('delete-user/{id}', 'App\Http\Controllers\UserController@destroyuser'
 Route::post('/send-email', 'App\Http\Controllers\SmtpController@testemail');
 Route::get('reset-your-password/{id}', 'App\Http\Controllers\UserController@resetyourpassword');
 Route::put('update-password/{id}', 'App\Http\Controllers\UserController@updatepassword');
+
+
+Route::get(
+    '/support/terms-condition/1',
+    function () {
+        return view('frontwebsite/support');
+    }
+);
+Route::get(
+    '/support/privacy-policy/2',
+    function () {
+        return view('frontwebsite/support');
+    }
+);
+Route::get(
+    '/support/payment-policy/3',
+    function () {
+        return view('frontwebsite/support');
+    }
+);
+Route::get(
+    '/support/cookies-policy/4',
+    function () {
+        return view('frontwebsite/support');
+    }
+);

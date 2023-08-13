@@ -122,7 +122,7 @@ class OrderController extends Controller
                 $brandphone = $branddata->sg_brand_busienss_phone;
             }
             \Mail::html(
-                "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
+                "<main style='width: 60%;background-color: #f8f3ed;margin: auto;font-family: 'Segoe UI regular';height: 100%;'><section style='background: white;width: 90%;margin: 0px auto;border-radius: 5%;margin-bottom: 5%;padding: 4% 0;'><p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p></section></main>",
                 function ($message) {
                     $message->to($_GET['sg_business_email'])->subject('Order');
                 }
@@ -150,7 +150,7 @@ class OrderController extends Controller
             );
             // Order Email
             \Mail::html(
-                "<p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p>",
+                "<main style='width: 60%;background-color: #f8f3ed;margin: auto;font-family: 'Segoe UI regular';height: 100%;'><section style='background: white;width: 90%;margin: 0px auto;border-radius: 5%;margin-bottom: 5%;padding: 4% 0;'><p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", we are delighted to confirm your order. Your Order ID is: " . $_GET['order_id_for_status'] . ". Access all updates by logging into your account using your provided ID and password. Thank you for Choosing us. For any queries, kindly contact us at $brandemail or email us at $brandphone.</p></section></main>",
                 function ($message) {
                     $message->to($_GET['sg_business_email'])->subject('Order');
                 }
