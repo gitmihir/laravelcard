@@ -441,7 +441,7 @@
             $(".buy_now").attr('disabled', "disabled");
             return;
         } else {
-            var totalAmount = $(this).attr("data-amount");
+            var totalAmount = $(this).attr("data-amount").toFixed(2);
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
             var email = $(".sg_business_email").val();
