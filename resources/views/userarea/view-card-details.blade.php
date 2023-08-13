@@ -62,10 +62,17 @@
                                     <a
                                         href="//api.whatsapp.com/send?phone=91{{ $carddata->sg_cd_Business_whatsapp_number }}&text=Hi">
                                         <div class="socail-box">
-                                            <div class='button whatsapp'>
+                                            <div class='button whatsapp'
+                                                style="
+                                            margin-bottom: 0;
+                                        ">
                                                 <i class="fa fa-whatsapp fa-2x"></i>
                                             </div>
-                                            <h6>Whatsapp Business</h6>
+                                            <h6
+                                                style="
+                                            margin-top: 3px;
+                                        ">
+                                                Whatsapp<br>Business</h6>
                                         </div>
                                     </a>
                                 @endif
@@ -244,7 +251,7 @@
                                                 <div class='button linkedin'>
                                                     <i class="fa fa-google fa-2x"></i>
                                                 </div>
-                                                <h6>Google Business</h6>
+                                                <h6>Google<br>Business</h6>
                                             </div>
                                         </a>
                                     @endif
@@ -657,9 +664,8 @@
                             <h4> Or check my social channels: </h4>
                             <div class='buttons-container customcolor'>
                                 <div class="socail-box">
-                                    <a
-                                        href='https://www.facebook.com/sharer.php?u={{ $qrurl }}
-                                        target="_blank"'>
+                                    <a href='https://www.facebook.com/sharer.php?u={{ $qrurl }}'
+                                        target="_blank">
                                         <div class='button facebook'>
                                             <i class="fa fa-facebook fa-2x"></i>
                                         </div>

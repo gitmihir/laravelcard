@@ -5502,7 +5502,7 @@ input[type="checkbox"] + label:before {
   text-align: center;
   line-height: 70px;
   border-radius: 15px;
-  padding: 15px;
+  /* padding: 15px; */
 }
 .popup-social-menu .buttons-container .socail-box .button:hover {
   background: #b78e3b;
@@ -5513,10 +5513,10 @@ input[type="checkbox"] + label:before {
 }
 .qr-code-row .modal-header .close a {
   background: #222;
-  width: 35px;
+  width: 45px;
   display: inline-block;
-  height: 35px;
-  line-height: 32px;
+  height: 45px;
+  line-height: 30px;
   text-shadow: none;
   color: #fff;
   border-radius: 50%;

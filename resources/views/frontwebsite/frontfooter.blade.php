@@ -7,7 +7,6 @@
     foreach ($paymentkeys as $razorpkey) {
         $razorpaykey = $razorpkey->sg_pc_public_key;
     }
-    
 @endphp
 @foreach ($viewFooter as $footerData)
     <footer class="footer-section">
@@ -330,7 +329,7 @@
                             $(".after_discount_total").val(grand_total.toFixed(2));
                         }
                     }
-                    $(".buy_now").attr("data-amount", grand_total.toFixed(2));
+                    $(".buy_now").attr("data-amount", grand_total);
                 }
             }
         });
@@ -345,7 +344,6 @@
     });
     $(".containersp").hide();
     $('body').on('click', '.buy_now', function(e) {
-        debugger
         /* Store Order Details */
         var sg_full_name = $(".sg_full_name").val();
         var sg_business_name = $(".sg_business_name").val();
@@ -441,14 +439,15 @@
             $(".buy_now").attr('disabled', "disabled");
             return;
         } else {
-            var totalAmount = $(this).attr("data-amount").toFixed(2);
+            var totalAmount = $(this).attr("data-amount");
+            var convertedamt = +totalAmount * 100;
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
             var email = $(".sg_business_email").val();
             var options = {
                 "key": "{{ $razorpaykey }}",
-                "amount": (totalAmount * 100), // 2000 paise = INR 20
-                "name": "CS",
+                "amount": convertedamt, // 2000 paise = INR 20
+                "name": "Kessr",
                 "description": "Payment",
                 "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
                 "handler": function(response) {
@@ -561,7 +560,7 @@
             }
         }
         $(".after_discount_total").val(grand_total.toFixed(2));
-        $(".buy_now").attr("data-amount", grand_total.toFixed(2));
+        $(".buy_now").attr("data-amount", grand_total);
     });
     $(".removecoupon").on("click", function() {
         $(".removecode").hide();
