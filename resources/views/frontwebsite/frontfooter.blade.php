@@ -311,8 +311,7 @@
                                 parseFloat($(".sgst").val());
                             $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
                                 2));
-                            $(".after_discount_total").val(grand_total);
-
+                            $(".after_discount_total").val(grand_total.toFixed(2));
                         }
                     } else {
                         $(".sg_CGST_class").hide();
@@ -328,10 +327,10 @@
                                 parseFloat($(".igst").val());
                             $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
                                 2));
-                            $(".after_discount_total").val(grand_total);
+                            $(".after_discount_total").val(grand_total.toFixed(2));
                         }
                     }
-                    $(".buy_now").attr("data-amount", grand_total);
+                    $(".buy_now").attr("data-amount", grand_total.toFixed(2));
                 }
             }
         });
@@ -561,8 +560,8 @@
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(2));
             }
         }
-        $(".after_discount_total").val(grand_total);
-        $(".buy_now").attr("data-amount", grand_total);
+        $(".after_discount_total").val(grand_total.toFixed(2));
+        $(".buy_now").attr("data-amount", grand_total.toFixed(2));
     });
     $(".removecoupon").on("click", function() {
         $(".removecode").hide();
@@ -599,7 +598,7 @@
                     parseFloat($(".sgst").val());
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
                     2));
-                $(".after_discount_total").val(grand_total);
+                $(".after_discount_total").val(grand_total.toFixed(2));
             }
         } else if (stateval !== "Gujarat") {
             $(".sg_CGST_class").hide();
@@ -615,7 +614,7 @@
                     parseFloat($(".igst").val());
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
                     2));
-                $(".after_discount_total").val(grand_total);
+                $(".after_discount_total").val(grand_total.toFixed(2));
             }
         } else {
             $(".sg_CGST_class").hide();
@@ -631,7 +630,7 @@
                     parseFloat($(".igst").val());
                 $(".grandTotalafterGstInclusion").html("&#8377;" + grand_total.toFixed(
                     2));
-                $(".after_discount_total").val(grand_total);
+                $(".after_discount_total").val(grand_total.toFixed(2));
             }
         }
         $(".buy_now").attr("data-amount", $('.after_discount_total').val());
