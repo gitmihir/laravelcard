@@ -40,6 +40,7 @@
         $franchise_today = DB::table('sg_order')
             ->select('sg_total_product_count', 'return_coupon_code', 'created_at')
             ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $current_date)
+            ->where('return_coupon_code', '!=', '0')
             ->where('return_coupon_code', '!=', '')
             ->get()
             ->sum('sg_total_product_count');

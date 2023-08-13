@@ -56,7 +56,7 @@
                                     you can access
                                     all updates by logging into your account using provided ID and password on your
                                     registered email.
-                                    Thank you for selecting us. For inquiries, kindly contact us at <a
+                                    Thank you for selecting us. For any query, kindly contact us at <a
                                         href="tel:{{ $brandphone }}">{{ $brandphone }}</a>
                                     or
                                     email us at
@@ -65,7 +65,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
