@@ -375,7 +375,7 @@
             <input type="hidden" value="{{ url('check-coupon-code') }}" class="couponcheckurl">
             <input type="hidden" class="coupon_ID" name="coupon_ID" value="0">
             <input type="hidden" class="franchise_ID" name="franchise_ID" value="0">
-            <input type="hidden" class="return_coupon_code" name="return_coupon_code" value="0">
+            <input type="hidden" class="return_coupon_code" name="return_coupon_code">
             <input type="hidden" class="coupon_discount" name="coupon_discount" value="0">
             <input type="hidden" class="shipping_fee" name="shipping_fee" value="0">
             <input type="hidden" class="before_discount_total" name="before_discount_total" value="0">
