@@ -329,7 +329,7 @@
                             $(".after_discount_total").val(grand_total.toFixed(2));
                         }
                     }
-                    $(".buy_now").attr("data-amount", grand_total);
+                    $(".buy_now").attr("data-amount", grand_total.toFixed(2));
                 }
             }
         });
@@ -440,13 +440,13 @@
             return;
         } else {
             var totalAmount = $(this).attr("data-amount");
-            var convertedamt = +totalAmount * 100;
+            var convertedamt = parseInt(totalAmount * 100);
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
             var email = $(".sg_business_email").val();
             var options = {
                 "key": "{{ $razorpaykey }}",
-                "amount": convertedamt, // 2000 paise = INR 20
+                "amount": convertedamt,
                 "name": "Kessr",
                 "description": "Payment",
                 "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
@@ -560,7 +560,7 @@
             }
         }
         $(".after_discount_total").val(grand_total.toFixed(2));
-        $(".buy_now").attr("data-amount", grand_total);
+        $(".buy_now").attr("data-amount", grand_total.toFixed(2));
     });
     $(".removecoupon").on("click", function() {
         $(".removecode").hide();
