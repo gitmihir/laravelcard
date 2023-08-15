@@ -36,15 +36,15 @@ class DownloadVcardController extends Controller
                 ''
             );
             $vcard->addLabel('-');
-            $vcard->addURL($carddata->sg_cd_website);
-            $vcard->addURL($carddata->sg_cd_Facebook);
-            $vcard->addURL($carddata->sg_cd_Instagram);
-            $vcard->addURL($carddata->sg_cd_Twitter);
-            $vcard->addURL($carddata->sg_cd_Pinterest);
-            $vcard->addURL($carddata->sg_cd_Youtube);
-            $vcard->addURL($carddata->sg_cd_Linkedin);
-            $vcard->addURL($carddata->sg_cd_Snapchat);
-            $vcard->addURL($carddata->sg_cd_google_business);
+            $vcard->addURL($carddata->sg_cd_website, 'TYPE=Website');
+            $vcard->addURL($carddata->sg_cd_Facebook, 'TYPE=Facebook');
+            $vcard->addURL($carddata->sg_cd_Instagram, 'TYPE=Instagram');
+            $vcard->addURL($carddata->sg_cd_Twitter, 'TYPE=Twitter');
+            $vcard->addURL($carddata->sg_cd_Pinterest, 'TYPE=Pinterest');
+            $vcard->addURL($carddata->sg_cd_Youtube, 'TYPE=Youtube');
+            $vcard->addURL($carddata->sg_cd_Linkedin, 'TYPE=Linkedin');
+            $vcard->addURL($carddata->sg_cd_Snapchat, 'TYPE=Snapchat');
+            $vcard->addURL($carddata->sg_cd_google_business, 'TYPE=Google Business');
 
             $path = public_path() . '/images/cards/';
 
