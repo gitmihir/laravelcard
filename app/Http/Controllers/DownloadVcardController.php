@@ -26,6 +26,7 @@ class DownloadVcardController extends Controller
             $vcard->addEmail($carddata->sg_cd_email);
             $vcard->addPhoneNumber($carddata->sg_cd_phone_number, 'PREF;WORK');
             $vcard->addPhoneNumber($carddata->sg_cd_whatsapp_number, 'TYPE=Whatsapp');
+            $vcard->addPhoneNumber($carddata->sg_cd_Business_whatsapp_number, 'TYPE=Whatsapp Business');
             $vcard->addAddress();
             $logopath = public_path() . '/images/cardimages/';
             $logo = isset($carddata->sg_cd_profile_image) && !empty($carddata->sg_cd_profile_image) ? $logopath . $carddata->sg_cd_profile_image : $logopath . $carddata->sg_cd_profile_image;
