@@ -26,15 +26,10 @@ class DownloadVcardController extends Controller
             $vcard->addEmail($carddata->sg_cd_email);
             $vcard->addPhoneNumber($carddata->sg_cd_phone_number, 'PREF;WORK');
             $vcard->addPhoneNumber($carddata->sg_cd_whatsapp_number, 'WORK');
-            $vcard->addAddress(
-                null,
-                null,
-                '',
-                '',
-                null,
-                '',
-                ''
-            );
+            $vcard->addAddress($carddata->sg_cd_whatsapp_number);
+            $logopath = public_path() . '/images/cardimages/';
+            $logo = isset($carddata->sg_cd_profile_image) && !empty($carddata->sg_cd_profile_image) ? $logopath . $carddata->sg_cd_profile_image : $logopath . $carddata->sg_cd_profile_image;
+            $vcard->addPhoto($logo);
             $vcard->addLabel('-');
             $vcard->addURL($carddata->sg_cd_website, 'TYPE=Website');
             $vcard->addURL($carddata->sg_cd_Facebook, 'TYPE=Facebook');
@@ -45,6 +40,7 @@ class DownloadVcardController extends Controller
             $vcard->addURL($carddata->sg_cd_Linkedin, 'TYPE=Linkedin');
             $vcard->addURL($carddata->sg_cd_Snapchat, 'TYPE=Snapchat');
             $vcard->addURL($carddata->sg_cd_google_business, 'TYPE=Google Business');
+            $vcard->addURL(URL('/') . $carddata->sg_cd_QR_Library, 'TYPE=Card Link');
 
             $path = public_path() . '/images/cards/';
 
