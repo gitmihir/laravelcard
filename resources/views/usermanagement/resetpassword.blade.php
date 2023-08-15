@@ -31,7 +31,11 @@
         </div>
         <div class="col-md-12">
             <input type="submit" value="Update Password" class="btn btn-primary disablebtn">
-            <a href="{{ url('/') }}" type="button" class="btn btn-info">Cancel</a>
+            @if (Auth::user()->user_role === 'normaluser')
+                <a href="{{ url('/userarea/allcards') }}" type="button" class="btn btn-info">Cancel</a>
+            @else
+                <a href="{{ url('/') }}" type="button" class="btn btn-info">Cancel</a>
+            @endif
         </div>
     </div>
 </form>

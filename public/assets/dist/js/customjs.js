@@ -923,11 +923,11 @@ function validateImageSize(imagedata) {
     );
     $("input[name=" + imagedata.name + "]").addClass("errorborderclass");
     imagedata.value = "";
-    $(".disabledclass").attr("disabled", "disabled");
+    //$(".disabledclass").attr("disabled", "disabled");
   } else {
     $("input[name=" + imagedata.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + imagedata.name).remove();
-    $(".disabledclass").removeAttr("disabled");
+    //$(".disabledclass").removeAttr("disabled");
   }
 }
 function validateImageSize2(imagedata) {
@@ -941,11 +941,11 @@ function validateImageSize2(imagedata) {
     );
     $("input[name=" + imagedata.name + "]").addClass("errorborderclass");
     imagedata.value = "";
-    $(".disabledclass").attr("disabled", "disabled");
+    // $(".disabledclass").attr("disabled", "disabled");
   } else {
     $("input[name=" + imagedata.name + "]").removeClass("errorborderclass");
     $(".errorclass_" + imagedata.name).remove();
-    $(".disabledclass").removeAttr("disabled");
+    //$(".disabledclass").removeAttr("disabled");
   }
 }
 function validateTextSize(textdata) {
