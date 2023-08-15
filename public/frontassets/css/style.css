@@ -5829,3 +5829,7 @@ input[type="checkbox"] + label:before {
 .customcolor .socail-box a {
   color: #fccd6d !important;
 }
+.linkcard .button.amex {
+  margin-left: 3em;
+  margin-right: 3em;
+}

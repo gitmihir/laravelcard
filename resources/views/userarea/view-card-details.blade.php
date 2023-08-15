@@ -306,7 +306,7 @@
                                 <h3> Services </h3>
                             @endif
                             <div id="service-card" class="owl-carousel">
-                                @if ($carddata->sg_cd_Service_Title_1 && $carddata->sg_Service_Image_1 && $carddata->sg_cd_Service_About_1)
+                                @if (($carddata->sg_cd_Service_Title_1 && $carddata->sg_Service_Image_1) || $carddata->sg_cd_Service_About_1)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -318,7 +318,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_2 && $carddata->sg_Service_Image_2 && $carddata->sg_cd_Service_About_2)
+                                @if (($carddata->sg_cd_Service_Title_2 && $carddata->sg_Service_Image_2) || $carddata->sg_cd_Service_About_2)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -330,7 +330,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_3 && $carddata->sg_Service_Image_3 && $carddata->sg_cd_Service_About_3)
+                                @if (($carddata->sg_cd_Service_Title_3 && $carddata->sg_Service_Image_3) || $carddata->sg_cd_Service_About_3)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -342,7 +342,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_4 && $carddata->sg_Service_Image_4 && $carddata->sg_cd_Service_About_4)
+                                @if (($carddata->sg_cd_Service_Title_4 && $carddata->sg_Service_Image_4) || $carddata->sg_cd_Service_About_4)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -354,7 +354,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_5 && $carddata->sg_Service_Image_5 && $carddata->sg_cd_Service_About_5)
+                                @if (($carddata->sg_cd_Service_Title_5 && $carddata->sg_Service_Image_5) || $carddata->sg_cd_Service_About_5)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -366,7 +366,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_6 && $carddata->sg_Service_Image_6 && $carddata->sg_cd_Service_About_6)
+                                @if (($carddata->sg_cd_Service_Title_6 && $carddata->sg_Service_Image_6) || $carddata->sg_cd_Service_About_6)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -378,7 +378,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_7 && $carddata->sg_Service_Image_7 && $carddata->sg_cd_Service_About_7)
+                                @if (($carddata->sg_cd_Service_Title_7 && $carddata->sg_Service_Image_7) || $carddata->sg_cd_Service_About_7)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -390,7 +390,7 @@
                                         </div>
                                     </div>
                                 @endif
-                                @if ($carddata->sg_cd_Service_Title_8 && $carddata->sg_Service_Image_8 && $carddata->sg_cd_Service_About_8)
+                                @if (($carddata->sg_cd_Service_Title_8 && $carddata->sg_Service_Image_8) || $carddata->sg_cd_Service_About_8)
                                     <div class="item">
                                         <div class="card">
                                             <img class="card-img-top"
@@ -503,7 +503,7 @@
                                 ($carddata->sg_cd_Title_2 && $carddata->sg_cd_Link_2) ||
                                 ($carddata->sg_cd_Title_3 && $carddata->sg_cd_Link_3) ||
                                 ($carddata->sg_cd_Title_4 && $carddata->sg_cd_Link_4))
-                            <div class="payment-icon-row">
+                            <div class="payment-icon-row linkcard">
                                 <div class="social-menu">
                                     <h4> Links option: </h4>
                                     <div class='buttons-container'>

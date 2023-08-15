@@ -37,6 +37,15 @@ class DownloadVcardController extends Controller
             );
             $vcard->addLabel('-');
             $vcard->addURL($carddata->sg_cd_website);
+            $vcard->addURL($carddata->sg_cd_Facebook);
+            $vcard->addURL($carddata->sg_cd_Instagram);
+            $vcard->addURL($carddata->sg_cd_Twitter);
+            $vcard->addURL($carddata->sg_cd_Pinterest);
+            $vcard->addURL($carddata->sg_cd_Youtube);
+            $vcard->addURL($carddata->sg_cd_Linkedin);
+            $vcard->addURL($carddata->sg_cd_Snapchat);
+            $vcard->addURL($carddata->sg_cd_google_business);
+
             $path = public_path() . '/images/cards/';
 
             \File::delete($path);
