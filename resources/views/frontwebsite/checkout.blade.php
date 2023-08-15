@@ -458,6 +458,8 @@
                                             value="<?php echo time(); ?>">
                                         <input type="hidden" class="sg_order_status" name="sg_order_status"
                                             value="0">
+                                        <input type="hidden" class="urlclass"
+                                            value="<?php echo URL('/'); ?>/images/Razorpaylogo.png">
                                         <button type="button" data-amount="" data-current-method="razorpay"
                                             data-id="<?php echo time(); ?>" class="button button--full buy_now mb-3">
                                             <svg class="icon">

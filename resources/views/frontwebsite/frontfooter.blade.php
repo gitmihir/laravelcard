@@ -444,12 +444,13 @@
             var product_id = $(this).attr("data-id");
             var contact = $(".sg_business_phone").val();
             var email = $(".sg_business_email").val();
+            var imageurl = $(".urlclass").val();
             var options = {
                 "key": "{{ $razorpaykey }}",
                 "amount": convertedamt,
                 "name": "Kessr",
                 "description": "Payment",
-                "image": "http://127.0.0.1:8000/images/brandimages/16725396391536265872.png",
+                "image": imageurl,
                 "handler": function(response) {
                     if (response.razorpay_payment_id) {
                         $(".containersp").show();
