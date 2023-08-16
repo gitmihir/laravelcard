@@ -301,7 +301,7 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="service-card">
+                        <div class="service-card servicecard">
                             @if ($carddata->sg_cd_Service_Title_1)
                                 <h3> Services </h3>
                             @endif
