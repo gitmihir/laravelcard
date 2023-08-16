@@ -5837,7 +5837,7 @@ input[type="checkbox"] + label:before {
 .galleryclass .card-img-top {
   height: 250px;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 480px) {
   .servicecard .card-img-top,
   .galleryclass .card-img-top {
     height: auto;
