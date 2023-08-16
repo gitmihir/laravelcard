@@ -5833,6 +5833,13 @@ input[type="checkbox"] + label:before {
   margin-left: 3em;
   margin-right: 3em;
 }
-.servicecard .card-img-top {
+.servicecard .card-img-top,
+.galleryclass .card-img-top {
   height: 250px;
+}
+@media screen and (min-width: 600px) {
+  .servicecard .card-img-top,
+  .galleryclass .card-img-top {
+    height: auto;
+  }
 }

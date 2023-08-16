@@ -416,7 +416,7 @@
                                 $carddata->sg_cd_Gallery_8)
                             <div class="service-card">
                                 <h3> Gallery </h3>
-                                <div id="service-card-1" class="owl-carousel">
+                                <div id="service-card-1" class="owl-carousel galleryclass">
                                     @if ($carddata->sg_cd_Gallery_1)
                                         <div class="item">
                                             <div class="card">
