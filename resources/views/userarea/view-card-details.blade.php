@@ -10,7 +10,7 @@
                             @if ($carddata->sg_cd_cover_image)
                                 <img src="{{ asset('images/cardimages/' . $carddata->sg_cd_cover_image) }}">
                             @else
-                                <img src="{{ asset('images/defaultcardimage.jpg') }}">
+                                <img src="{{ asset('images/defaultcardimage.jpeg') }}">
                             @endif
                         </div>
                         <div class="card-prfile">
