@@ -25,7 +25,7 @@ class MailController extends Controller
                 foreach ($brand as $brandemail) {
                     $emailtosend = $brandemail->sg_brand_business_email;
                 }
-                $message->to($emailtosend)->subject('Email From ContactUs Form');
+                $message->to($emailtosend)->subject('Contact form');
             }
         );
         if (count(\Mail::failures()) > 0) {

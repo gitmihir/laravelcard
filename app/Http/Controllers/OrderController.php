@@ -145,7 +145,7 @@ class OrderController extends Controller
             \Mail::html(
                 "<main style='width: 60%;background-color: #f8f3ed;margin: auto;font-family: 'Segoe UI regular';height: 100%;'><section style='background: white;width: 90%;margin: 0px auto;border-radius: 5%;margin-bottom: 5%;padding: 4% 0;'><p style='text-align: center;'>Dear " . $_GET['sg_full_name'] . ", Welcome to KESSR. Here is your ID (" . $_GET['sg_business_email'] . ") and secure password (" . $psw . ") to access your account. Keep this information confidential and ensure its safety. Thank you for Choosing us. For any queries, kindly contact us at <a href='tel:$brandphone'>$brandphone</a> or email us at <a href='mailto:$brandemail'>$brandemail</a>.</p></section></main>",
                 function ($message) {
-                    $message->to($_GET['sg_business_email'])->subject('Order');
+                    $message->to($_GET['sg_business_email'])->subject('Credentials');
                 }
             );
             // Order Email

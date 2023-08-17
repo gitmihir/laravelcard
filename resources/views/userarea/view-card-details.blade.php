@@ -8,7 +8,8 @@
                     <div class="offset-xl-2 offset-lg-2 offset-md-1 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
                         <div class="card-main-img">
                             @if ($carddata->sg_cd_cover_image)
-                                <img src="{{ asset('images/cardimages/' . $carddata->sg_cd_cover_image) }}">
+                                <img src="{{ asset('images/cardimages/' . $carddata->sg_cd_cover_image) }}"
+                                    style="width: 100%;height:500px;">
                             @else
                                 <img src="{{ asset('images/defaultcardimage.jpeg') }}">
                             @endif
