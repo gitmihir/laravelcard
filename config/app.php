@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
+
             /*
              * Package Service Providers...
              */
@@ -179,6 +180,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
         Paytm\JsCheckout\PaytmServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -236,6 +238,7 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
         'Paytm' => Paytm\JsCheckout\Facades\Paytm::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];

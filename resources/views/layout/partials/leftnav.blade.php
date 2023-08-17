@@ -226,6 +226,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/exports/leadexport') }}" class="nav-link">
+                            <i class="nav-icon fas fa-id-card"></i>
+                            <p>
+                                Exports
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             @endif
             @if (Auth::user()->user_role === 'normaluser')
