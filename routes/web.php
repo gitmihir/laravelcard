@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\OrderExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -639,6 +640,8 @@ Route::get(
     }
 );
 Route::controller(ExportController::class)->group(function () {
-    Route::get('leads', 'index');
     Route::get('leads-export', 'export')->name('leads.export');
+});
+Route::controller(OrderExportController::class)->group(function () {
+    Route::get('orders-export', 'export')->name('orders.export');
 });
