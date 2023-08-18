@@ -116,6 +116,12 @@
 @include('frontwebsite.front-script')
 </body>
 <script type="text/javascript">
+    var SITEURL = "{{ URL::to(' / ') }}";
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
     $('.lightbox').littleLightBox();
     $(".leaddata").attr("disabled", "disabled");
     $(window).load(function() {});

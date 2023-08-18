@@ -480,7 +480,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Route::post('/sendemail', 'App\Http\Controllers\MailController@sendemailcontroller');
     /* Ajax For Contact Form */
-    Route::get('/ajaxform', 'App\Http\Controllers\MailController@sendemailcontroller');
+
 
 
     /* Franchise Routes */
@@ -645,3 +645,4 @@ Route::controller(ExportController::class)->group(function () {
 Route::controller(OrderExportController::class)->group(function () {
     Route::get('orders-export', 'export')->name('orders.export');
 });
+Route::get('/ajaxform', 'App\Http\Controllers\ContactController@sendemailcontroller');

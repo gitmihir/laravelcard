@@ -254,7 +254,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="fullname"> Name :</label>
-                                    <input id="fullname" onblur="validateInputText(this);" name="fullname"
+                                    <input id="fullname" name="fullname" onblur="validateInputText(this);"
                                         class="form-control form-mane fullname" required="" type="text">
                                 </div>
                             </div>
@@ -277,7 +277,8 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Write a Message :</label>
-                            <textarea id="message" class="form-control form-comment message" name="comment" required=""></textarea>
+                            <textarea id="message" class="form-control form-comment message" cols="10" rows="8" name="comment"
+                                required=""></textarea>
                         </div>
                         <div class="buttons pt-3">
                             <input type="hidden" class="ajaxurl" value="{{ url('/ajaxform') }}">

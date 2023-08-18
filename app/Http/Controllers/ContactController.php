@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 
-class MailController extends Controller
+class ContactController extends Controller
 {
     public function sendemailcontroller(Request $request)
     {
