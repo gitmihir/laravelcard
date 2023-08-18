@@ -74,11 +74,11 @@
                                                                         <td>
                                                                             <div class="qit-box">
                                                                                 <div class="input-group">
-                                                                                    <input type="number"
+                                                                                    <input type="text"
                                                                                         id="quantity{{ $id }}"
                                                                                         class="form-control input-number quantity"
                                                                                         value="{{ $details['quantity'] }}"
-                                                                                        min="0">
+                                                                                        readonly>
                                                                                     <input type="hidden" class="ids"
                                                                                         value="{{ $id }}">
                                                                                 </div>
@@ -91,10 +91,10 @@
                                                                         </td>
                                                                         <td>
                                                                             <div class="cart-p-edit">
-                                                                                <button type="button"
+                                                                                {{-- <button type="button"
                                                                                     class="btn btn-info btn-sm update-cart"
                                                                                     data-id="{{ $id }}"><i
-                                                                                        class="fa fa-refresh"></i></button>
+                                                                                        class="fa fa-refresh"></i></button> --}}
                                                                                 <button
                                                                                     class="btn btn-danger btn-sm remove-from-cart"
                                                                                     data-id="{{ $id }}"><i
@@ -120,9 +120,9 @@
                                                                     MORE </a>
                                                             </div>
                                                             <div class="button pull-right">
-                                                                <button
+                                                                {{-- <button
                                                                     class="btn btn-button update-shopping-cart">UPDATE
-                                                                    CART</button>
+                                                                    CART</button> --}}
                                                             </div>
                                                         </div>
                                                     </div>

@@ -98,6 +98,27 @@
             </div>
         </div>
         <div class="col-md-12">
+            <h3>Product Section</h3>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="sg_cms_product_header_text">Header Text</label>
+                <textarea id="sg_cms_product_header_text" class="form-control" name="sg_cms_product_header_text">{{ $cms->sg_cms_product_header_text }}</textarea>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="sg_cms_product_section_image">Product Section Image</label>
+                <input type="file" onchange="validateImageSize(this);" id="sg_cms_product_section_image"
+                    accept="image/png, image/jpeg" class="form-control" name="sg_cms_product_section_image">
+            </div>
+            @if ($cms->sg_cms_product_section_image)
+                <div class="backendimage">
+                    <img src="{{ asset('images/popupimage/' . $cms->sg_cms_product_section_image) }}">
+                </div>
+            @endif
+        </div>
+        <div class="col-md-12">
             <h3>Block Section</h3>
         </div>
         <div class="col-md-12">

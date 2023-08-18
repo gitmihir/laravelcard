@@ -167,7 +167,21 @@ class CMSController extends Controller
             }
         }
         $cms->sg_shipping_rate = $request->input('sg_shipping_rate');
-
+        $cms->sg_cms_product_header_text = $request->input('sg_cms_product_header_text');
+        if ($request->sg_cms_product_section_image != '') {
+            $path = public_path() . '/images/popupimage/';
+            if ($cms->sg_cms_product_section_image != '' && $cms->sg_cms_product_section_image != null) {
+                $file_old = $path . $cms->sg_cms_product_section_image;
+                unlink($file_old);
+            }
+            if ($request->hasfile('sg_cms_product_section_image')) {
+                $file = $request->file('sg_cms_product_section_image');
+                $extenstion = $file->getClientOriginalExtension();
+                $filename = time() . rand() . '.' . $extenstion;
+                $file->move('images/popupimage/', $filename);
+                $cms->sg_cms_product_section_image = $filename;
+            }
+        }
         $cms->update();
         return redirect('/edit-cms/1');
     }

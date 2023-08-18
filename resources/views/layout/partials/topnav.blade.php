@@ -123,17 +123,20 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li> --}}
-        <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fa fa-cog"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="{{ url('reset-your-password/' . Auth::user()->id) }}" class="dropdown-item">Reset Password</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                <div class="dropdown-divider"></div>
-            </div>
-        </li>
+        @if (isset(Auth::user()->id))
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fa fa-cog"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="{{ url('reset-your-password/' . Auth::user()->id) }}" class="dropdown-item">Reset
+                        Password</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
+        @endif
     </ul>
 </nav>
 <!-- /.navbar -->

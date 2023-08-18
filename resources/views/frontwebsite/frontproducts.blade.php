@@ -4,6 +4,13 @@
     $productCat = App\Models\Category::all();
     $products = App\Models\Product::all();
     $productwithcat = App\Models\Product::where(['user_name' => 'John']);
+    $cms = App\Models\CMS::all();
+    $ptitle = [];
+    $pimage = [];
+    foreach ($cms as $cmsdata) {
+        $ptitle = $cmsdata->sg_cms_product_header_text;
+        $pimage = $cmsdata->sg_cms_product_section_image;
+    }
 @endphp
 <section class="product-video">
     <div class="container">
@@ -229,14 +236,14 @@
         <div class="row pt-50 pb-50">
             <div class="col-xl-12 col-lg-12 col-md-10">
                 <div class="hadidng-box text-center">
-                    <h2> Want to stand out with your <br> Unique Card Design? </h2>
+                    <h2> {!! $ptitle !!} </h2>
                 </div>
             </div>
         </div>
         <div class="row pb-50 justify-content-center align-items-center">
             <div class="col-xl-4 col-lg-4 col-md-4">
                 <div class="pro-bottom-left">
-                    <img src="{{ asset('frontassets/images/product/4x/pro-4.png') }}" alt="image">
+                    <img src="{{ asset('/images/popupimage/' . $pimage) }}" alt="image">
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4">

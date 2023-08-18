@@ -24,7 +24,9 @@ class CMS extends Model
         'sg_cms_block_content',
         'sg_cms_block_link',
         'sg_cms_block_image',
-        'sg_shipping_rate'
+        'sg_shipping_rate',
+        "sg_cms_product_header_text",
+        "sg_cms_product_section_image"
     ];
     public $timestamps = false;
 }

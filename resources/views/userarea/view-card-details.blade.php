@@ -6,10 +6,9 @@
             <div class="container">
                 <div class="row">
                     <div class="offset-xl-2 offset-lg-2 offset-md-1 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
-                        <div class="card-main-img">
+                        <div class="card-main-img responsiveclass">
                             @if ($carddata->sg_cd_cover_image)
-                                <img src="{{ asset('images/cardimages/' . $carddata->sg_cd_cover_image) }}"
-                                    style="width: 100%;height:500px;">
+                                <img src="{{ asset('images/cardimages/' . $carddata->sg_cd_cover_image) }}">
                             @else
                                 <img src="{{ asset('images/defaultcardimage.jpeg') }}">
                             @endif
