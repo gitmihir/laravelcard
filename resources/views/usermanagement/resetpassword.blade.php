@@ -21,11 +21,17 @@
         <div class="col-md-12">
             <p class="successmsg">Password Matched!</p>
             <p class="failmsg">Password did not match!</p>
-            <p>
-                @if (Session::has('message'))
-                    {{ Session::get('message') }}
-                @endif
-            </p>
+
+            @if (session('success'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    <p> {{ $message }} </p>
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="mb-4 font-medium text-sm text-green-600">
+                    <p> {{ $message }} </p>
+                </div>
+            @endif
         </div>
         <div class="col-md-12">
             <input type="submit" value="Update Password" class="btn btn-primary disablebtn">
