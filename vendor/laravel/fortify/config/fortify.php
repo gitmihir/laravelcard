@@ -6,7 +6,15 @@ return [
     'guard' => 'web',
     'middleware' => ['web'],
     'auth_middleware' => 'auth',
-    'passwords' => 'users',
+    'passwords' => [
+        'password_reset' => [
+            'broker' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+            'redirect' => '/login',
+        ],
+    ],
     'username' => 'email',
     'email' => 'email',
     'views' => true,
@@ -55,4 +63,5 @@ return [
         Features::updatePasswords(),
         Features::twoFactorAuthentication(),
     ],
+
 ];

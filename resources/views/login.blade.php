@@ -7,6 +7,10 @@
                  <div class="card">
                      <h3 class="card-header">Login</h3>
                      <div class="card-body">
+
+                         @if (Session::has('msg'))
+                             {{ Session::get('msg') }}
+                         @endif
                          <form action="{{ route('login.post') }}" method="POST">
                              @csrf
                              <div class="form-group">

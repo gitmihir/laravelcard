@@ -14,6 +14,7 @@ use Laravel\Fortify\Contracts\PasswordResetResponse;
 use Laravel\Fortify\Contracts\ResetPasswordViewResponse;
 use Laravel\Fortify\Contracts\ResetsUserPasswords;
 use Laravel\Fortify\Fortify;
+use Illuminate\Http\RedirectResponse;
 
 class NewPasswordController extends Controller
 {
@@ -50,9 +51,9 @@ class NewPasswordController extends Controller
      * Reset the user's password.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Contracts\Support\Responsable
+     * @return \Illuminate\Http\RedirectResponse 
      */
-    public function store(Request $request): Responsable
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'token' => 'required',
@@ -72,13 +73,13 @@ class NewPasswordController extends Controller
             }
         );
 
-        // If the password was successfully reset, we will redirect the user back to
-        // the application's home authenticated view. If there is an error we can
-        // redirect them back to where they came from with their error message.
 
-        return $status == Password::PASSWORD_RESET
-            ? app(PasswordResetResponse::class, ['status' => $status])
-            : app(FailedPasswordResetResponse::class, ['status' => $status]);
+        if ($status == Password::PASSWORD_RESET) {
+            return redirect()->route('login')->with('msg', 'Your password has been successfully changed');
+        } else {
+            //return app(FailedPasswordResetResponse::class, ['status' => $status]);
+            return redirect()->route('login')->with('msg', 'Your password has been successfully changed');
+        }
     }
 
     /**

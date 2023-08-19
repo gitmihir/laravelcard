@@ -27,10 +27,11 @@
                             <p class="successmsg">Password Matched!</p>
                             <p class="failmsg">Password did not match!</p>
                             <p>
-                                @if (Session::has('status'))
-                                    {{ Session::get('status') }}
+                                @if (Session::has('errormsg'))
+                                    {{ Session::get('errormsg') }}
                                 @endif
                             </p>
+
                             <div class="flex items-center justify-end mt-4">
                                 <button class="btn btn-primary disablebtn" type="submit"> {{ __('Reset Password') }}
                                 </button>
