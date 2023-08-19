@@ -15,9 +15,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="password">Re-Type Password</label>
-                <input type="text" onkeyup="matchpassword(this);
-                "
-                    class="form-control secondpassword">
+                <input type="text" onkeyup="matchpassword(this);" class="form-control secondpassword">
             </div>
         </div>
         <div class="col-md-12">

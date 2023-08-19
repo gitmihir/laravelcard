@@ -9,11 +9,6 @@
                     </h3>
                     <div class="card-body">
                         <div>
-                            @if (session('status'))
-                                <div class="mb-4 font-medium text-sm text-green-600">
-                                    {{ session('status') }}
-                                </div>
-                            @endif
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
                                 <div class="block">
@@ -26,6 +21,11 @@
                                     </button>
                                 </div>
                             </form>
+                            @if (session('status'))
+                                <div class="mb-4 font-medium text-sm text-green-600">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

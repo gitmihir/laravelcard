@@ -1,4 +1,4 @@
-@include('layout.partials.head')
+@include('frontwebsite.frontheader')
 <main class="login-form">
     <div class="cotainer">
         <div class="row justify-content-center">
@@ -15,16 +15,24 @@
                             </div>
                             <div class="mt-4">
                                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                                <x-jet-input id="password" class="form-control" type="password" name="password"
-                                    required autocomplete="new-password" />
+                                <x-jet-input id="password" class="form-control firstpassword" type="password"
+                                    name="password" required autocomplete="new-password" />
                             </div>
                             <div class="mt-4">
                                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                                <x-jet-input id="password_confirmation" class="form-control" type="password"
-                                    name="password_confirmation" required autocomplete="new-password" />
+                                <x-jet-input id="password_confirmation" onkeyup="matchpassword(this);"
+                                    class="form-control secondpassword" type="password" name="password_confirmation"
+                                    required autocomplete="new-password" />
                             </div>
+                            <p class="successmsg">Password Matched!</p>
+                            <p class="failmsg">Password did not match!</p>
+                            <p>
+                                @if (Session::has('status'))
+                                    {{ Session::get('status') }}
+                                @endif
+                            </p>
                             <div class="flex items-center justify-end mt-4">
-                                <button class="btn btn-primary" type="submit"> {{ __('Reset Password') }}
+                                <button class="btn btn-primary disablebtn" type="submit"> {{ __('Reset Password') }}
                                 </button>
                             </div>
                         </form>
@@ -34,4 +42,4 @@
         </div>
     </div>
 </main>
-@include('layout.partials.footer')
+@include('frontwebsite.frontfooter')

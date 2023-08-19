@@ -40,7 +40,7 @@ class FailedPasswordResetResponse implements FailedPasswordResetResponseContract
         }
 
         return back()
-                ->withInput($request->only('email'))
-                ->withErrors(['email' => trans($this->status)]);
+            ->withInput($request->only('email'))
+            ->withErrors(['email' => trans($this->status)]);
     }
 }
