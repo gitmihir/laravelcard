@@ -10,6 +10,8 @@ class ExportController extends Controller
 {
     public function export(Request $request)
     {
-        return Excel::download(new LeadExport, 'leads.xlsx');
+        $from_date = $request->from_date;
+        $to_date = $request->to_date;
+        return Excel::download(new LeadExport($from_date, $to_date), 'leads.xlsx');
     }
 }

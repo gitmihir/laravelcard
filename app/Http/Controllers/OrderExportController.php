@@ -10,6 +10,8 @@ class OrderExportController extends Controller
 {
     public function export(Request $request)
     {
-        return Excel::download(new OrderExport, 'Orders.xlsx');
+        $from_date = $request->from_date;
+        $to_date = $request->to_date;
+        return Excel::download(new OrderExport($from_date, $to_date), 'Orders.xlsx');
     }
 }
