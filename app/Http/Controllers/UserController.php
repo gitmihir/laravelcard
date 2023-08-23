@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -68,5 +69,15 @@ class UserController extends Controller
             ->delete();
         //$user->delete();
         return redirect('/usermanagement/allusers');
+    }
+    public function checkemail()
+    {
+        $email = $_GET['emailcheckfr'];
+        $userEmailDetails = User::where('email', '=', $email)->first();
+        if ($userEmailDetails === null) {
+            echo '1';
+        } else {
+            echo '0';
+        }
     }
 }

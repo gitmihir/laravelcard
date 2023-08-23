@@ -17,8 +17,8 @@ class LeadController extends Controller
 
         $lead = new Lead;
         $lead->sg_lead_name = $_GET['fullname'];
-        $lead->sg_lead_contact_number = $_GET['conemail'];
-        $lead->sg_lead_email_address = $_GET['phonenumber'];
+        $lead->sg_lead_contact_number = $_GET['phonenumber'];
+        $lead->sg_lead_email_address = $_GET['conemail'];
 
         $lead->save();
 

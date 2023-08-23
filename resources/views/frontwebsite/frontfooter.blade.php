@@ -524,8 +524,7 @@
     $(".sg_CGST_class").hide();
     $(".sg_SGST_class").hide();
     $(".sg_IGST_class").hide();
-    $(
-        ".statechangecalculation").on("change", function() {
+    $(".statechangecalculation").on("change", function() {
         var couponcodeval = $(".coupon_discount").val();
         var sg_order_base_price = $(".sg_order_base_price").val();
         if (couponcodeval === 0 || couponcodeval === '') {
@@ -904,6 +903,31 @@
             $(".failmsg").show();
         }
     }
+
+    $(".error-block").hide();
+    $('body').on('keyup keypress blur change', '.emailcheckfr', function() {
+        var ajaxurlforforgotpassword = $(".ajaxurlforforgotpassword").val();
+        var emailcheckfr = $(".emailcheckfr").val();
+        $.ajax({
+            type: "GET",
+            context: this,
+            data: {
+                emailcheckfr: emailcheckfr,
+            },
+            url: ajaxurlforforgotpassword,
+            success: function(result) {
+                if (result === '1') {
+                    $(".error-block").show();
+                    $(".error-block").html(
+                        "Email does not exist please enter correct email address!");
+                    $(".disableclass").attr('disabled', 'disabled');
+                } else {
+                    $(".error-block").hide();
+                    $(".disableclass").removeAttr('disabled');
+                }
+            },
+        });
+    });
 </script>
 <style>
     div[class*="errorclass_"] {

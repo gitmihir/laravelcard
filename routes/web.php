@@ -607,6 +607,7 @@ Route::get('delete-user/{id}', 'App\Http\Controllers\UserController@destroyuser'
 Route::post('/send-email', 'App\Http\Controllers\SmtpController@testemail');
 Route::get('reset-your-password/{id}', 'App\Http\Controllers\UserController@resetyourpassword');
 Route::put('update-password/{id}', 'App\Http\Controllers\UserController@updatepassword');
+Route::get('/forgotpasswordfr', 'App\Http\Controllers\UserController@checkemail');
 
 
 Route::get(

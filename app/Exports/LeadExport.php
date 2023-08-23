@@ -25,10 +25,17 @@ class LeadExport implements FromQuery, WithHeadings
     }
     public function query()
     {
-        $data = DB::table('sg_leads')
-            ->whereBetween('created_at', [$this->from_date, $this->to_date])
-            ->select('id', 'sg_lead_name', 'sg_lead_contact_number', 'sg_lead_email_address', "created_at")
-            ->orderBy('id');
+        if ($this->from_date === $this->to_date) {
+            $data = DB::table('sg_leads')
+                ->select('id', 'sg_lead_name', 'sg_lead_contact_number', 'sg_lead_email_address', 'created_at')
+                ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $this->from_date)
+                ->orderBy('id');
+        } else {
+            $data = DB::table('sg_leads')
+                ->whereBetween('created_at', [$this->from_date, $this->to_date])
+                ->select('id', 'sg_lead_name', 'sg_lead_contact_number', 'sg_lead_email_address', "created_at")
+                ->orderBy('id');
+        }
         return $data;
     }
 

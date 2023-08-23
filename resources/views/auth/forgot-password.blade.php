@@ -2,22 +2,26 @@
 <main class="login-form">
     <div class="cotainer">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="card">
-                    <h3 class="card-header">
+                    <h5 class="card-header">
                         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-                    </h3>
+                    </h5>
                     <div class="card-body">
                         <div>
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
                                 <div class="block">
                                     <x-jet-label for="email" value="{{ __('Email') }}" />
-                                    <x-jet-input id="email" class="form-control" type="email" name="email"
-                                        :value="old('email')" required autofocus />
+                                    <x-jet-input id="email" class="form-control emailcheckfr" type="email"
+                                        name="email" :value="old('email')" required autofocus />
                                 </div>
+                                <p class="error-block"></p>
                                 <div class="flex items-center justify-end mt-4">
-                                    <button class="btn btn-primary" type="submit">{{ __('Email Password Reset Link') }}
+                                    <input type="hidden" class="ajaxurlforforgotpassword"
+                                        value="{{ url('/forgotpasswordfr') }}">
+                                    <button class="btn btn-primary disableclass"
+                                        type="submit">{{ __('Email Password Reset Link') }}
                                     </button>
                                 </div>
                             </form>

@@ -9,22 +9,22 @@
                 <div class="form-group">
                     <label>Start Date:</label>
                     <div class="input-group mb-3">
-                        <input id="startDate" type="date" name="from_date" class="form-control" name="startDate"
-                            required />
+                        <input id="startDate" type="date" name="from_date" class="form-control startdatec"
+                            name="startDate" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>End Date:</label>
                     <div class="input-group mb-3">
-                        <input id="endDate" type="date" name="to_date" class="form-control" name="endDate"
+                        <input id="endDate" type="date" name="to_date" class="form-control enddatec" name="endDate"
                             required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <button type="submit" class="btn btn-primary">Export</button>
+                        <button type="submit" class="btn btn-primary clicktoclearlead">Export</button>
                     </div>
                 </div>
             </form>
@@ -39,22 +39,22 @@
                 <div class="form-group">
                     <label>Start Date:</label>
                     <div class="input-group mb-3">
-                        <input id="startDate" type="date" name="from_date" class="form-control" name="startDate"
-                            required />
+                        <input id="startDate" type="date" name="from_date" class="form-control sdate"
+                            name="startDate" required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>End Date:</label>
                     <div class="input-group mb-3">
-                        <input id="endDate" type="date" name="to_date" class="form-control" name="endDate"
+                        <input id="endDate" type="date" name="to_date" class="form-control edate" name="endDate"
                             required />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="input-group mb-3">
-                        <button type="submit" class="btn btn-primary">Export</button>
+                        <button type="submit" class="btn btn-primary clearorderdata">Export</button>
                     </div>
                 </div>
             </form>

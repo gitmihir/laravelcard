@@ -26,74 +26,108 @@ class OrderExport implements FromQuery, WithHeadings
 
     public function query()
     {
-        $data = DB::table('sg_order')
-            ->whereBetween('created_at', [$this->from_date, $this->to_date])
-            ->select(
-                "id",
-                "sg_CGST",
-                "sg_SGST",
-                "sg_IGST",
-                "sg_total_tax",
-                'sg_order_base_price',
-                "sg_total_product_count",
-                "sg_full_name",
-                "sg_business_name",
-                "sg_business_address",
-                "sg_state",
-                "sg_business_GST_number",
-                "sg_business_email",
-                "sg_business_phone",
-                "sg_s_name",
-                "sg_s_address",
-                "sg_s_email",
-                "sg_s_phone",
-                "sg_s_state",
-                "return_coupon_code",
-                "coupon_discount",
-                "before_discount_total",
-                "discounted_price",
-                "after_discount_total",
-                "sg_order_status",
-                "order_id_for_status",
-                "payment_remark",
-                "created_at",
-                "Order_status"
-            )
-            ->orderBy('id');
+        if ($this->from_date === $this->to_date) {
+            $data = DB::table('sg_order')
+                ->select(
+                    "id",
+                    "created_at",
+                    "order_id_for_status",
+                    "Order_status",
+                    "sg_business_name",
+                    "sg_full_name",
+                    "sg_business_address",
+                    "sg_state",
+                    "sg_business_GST_number",
+                    "sg_business_email",
+                    "sg_business_phone",
+                    "sg_total_product_count",
+                    "before_discount_total",
+                    "discounted_price",
+                    'sg_order_base_price',
+                    "sg_CGST",
+                    "sg_SGST",
+                    "sg_IGST",
+                    "sg_total_tax",
+                    "after_discount_total",
+                    "payment_remark",
+                    "return_coupon_code",
+                    "coupon_discount",
+                    "sg_s_name",
+                    "sg_s_address",
+                    "sg_s_email",
+                    "sg_s_phone",
+                    "sg_s_state",
+                )
+                ->where(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), $this->from_date)
+                ->orderBy('id');
+        } else {
+            $data = DB::table('sg_order')
+                ->whereBetween('created_at', [$this->from_date, $this->to_date])
+                ->select(
+                    "id",
+                    "created_at",
+                    "order_id_for_status",
+                    "Order_status",
+                    "sg_business_name",
+                    "sg_full_name",
+                    "sg_business_address",
+                    "sg_state",
+                    "sg_business_GST_number",
+                    "sg_business_email",
+                    "sg_business_phone",
+                    "sg_total_product_count",
+                    "before_discount_total",
+                    "discounted_price",
+                    'sg_order_base_price',
+                    "sg_CGST",
+                    "sg_SGST",
+                    "sg_IGST",
+                    "sg_total_tax",
+                    "after_discount_total",
+                    "payment_remark",
+                    "return_coupon_code",
+                    "coupon_discount",
+                    "sg_s_name",
+                    "sg_s_address",
+                    "sg_s_email",
+                    "sg_s_phone",
+                    "sg_s_state",
+                )
+                ->orderBy('id');
+        }
         return $data;
     }
     public function headings(): array
     {
         return [
-            "ID",
+            "Invoice No",
+            "Invoice Date",
+            "Order ID",
+            "Order Status",
+            "Business Name",
+            "Full Name",
+            "Business Address",
+            "State",
+            "GST number",
+            "Business Email",
+            "Business phone",
+            "Product Count",
+            "Total Price",
+            "Discount",
+            "After Discount Price",
             "CGST",
             "SGST",
             "IGST",
             "Total Tax",
-            "Base Price",
-            "Product Count",
-            "Full Name",
-            "Business Name",
-            "Business Address",
-            "State",
-            "Business GST number",
-            "Business Email",
-            "Business phone",
+            "Grand Total",
+            "Payment Remark",
+            "Coupon code",
+            "Coupon Discount",
             "Shipping name",
             "Shipping Address",
             "Shipping Email",
             "Shipping Phone",
-            "ShippingState",
-            "Coupon code",
-            "Coupon Discount",
-            "Before Discount Total",
-            "Discounted Price",
-            "After Discount Total",
-            "Order status",
-            "Order id for status",
-            "Payment Remark",
-            "Created Date",
-            "Order Status"
+            "Shipping State",
         ];
     }
 }

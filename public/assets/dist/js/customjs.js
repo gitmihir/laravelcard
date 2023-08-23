@@ -1104,3 +1104,26 @@ function requiredfield3(field) {
     $(".buy_now").removeAttr("disabled");
   }
 }
+
+$(".clicktoclearlead").click(function () {
+  setTimeout(function () {
+    var startdatec = $(".startdatec").val();
+    var enddatec = $(".enddatec").val();
+    if (startdatec.length === 0 && enddatec.length === 0) {
+    } else {
+      $(".startdatec").val("");
+      $(".enddatec").val("");
+    }
+  }, 2000);
+});
+$(".clearorderdata").click(function () {
+  setTimeout(function () {
+    var startdatec = $(".sdate").val();
+    var enddatec = $(".edate").val();
+    if (startdatec.length === 0 && enddatec.length === 0) {
+    } else {
+      $(".sdate").val("");
+      $(".edate").val("");
+    }
+  }, 2000);
+});
