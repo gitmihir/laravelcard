@@ -638,9 +638,13 @@
                             <a target="_blank" href="{{ url('downloadvcard/' . $carddata->id) }}"><i
                                     class="fa fa-shopping-basket"></i>Save Card</a>
                             <a href="#" class="btn btn-info btn-lg" data-toggle="modal"
-                                data-target="#myModal"> <i class="fa fa-sign-out"></i> share Our Card </a>
+                                data-target="#myModal"> <i class="fa fa-sign-out"></i> Share Card </a>
                         </div>
-
+                        <div class="card-content text-center mb-5 cardtextcustomlink">
+                            <a target="_blank"
+                                href="https://wa.me/918306988887?text=Hello,%20i%20am%20interested%20in%20getting%20smart%20card.%20please%20help%20me%20with%20more%20details">Get
+                                Your Smart Card</a>
+                        </div>
                     </div>
                 </div>
             </div>

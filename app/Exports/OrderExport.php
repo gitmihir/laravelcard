@@ -62,7 +62,7 @@ class OrderExport implements FromQuery, WithHeadings
                 ->orderBy('id');
         } else {
             $data = DB::table('sg_order')
-                ->whereBetween('created_at', [$this->from_date, $this->to_date])
+                ->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$this->from_date, $this->to_date])
                 ->select(
                     "id",
                     "created_at",

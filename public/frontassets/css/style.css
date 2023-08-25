@@ -5862,3 +5862,9 @@ input[type="checkbox"] + label:before {
     height: auto;
   }
 }
+.cardtextcustomlink a {
+  font-weight: 700;
+  color: #e61616;
+  font-size: 16px;
+  letter-spacing: 1px;
+}

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use App\Models\Lead;
 
 class LeadExport implements FromQuery, WithHeadings
 {
@@ -32,9 +33,9 @@ class LeadExport implements FromQuery, WithHeadings
                 ->orderBy('id');
         } else {
             $data = DB::table('sg_leads')
-                ->whereBetween('created_at', [$this->from_date, $this->to_date])
+                ->whereBetween(DB::raw("(DATE_FORMAT(created_at,'%Y-%m-%d'))"), [$this->from_date, $this->to_date])
                 ->select('id', 'sg_lead_name', 'sg_lead_contact_number', 'sg_lead_email_address', "created_at")
-                ->orderBy('id');
+                ->orderBy('created_at');
         }
         return $data;
     }
